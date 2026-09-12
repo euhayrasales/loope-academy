@@ -72,17 +72,16 @@ p:last-child{margin-bottom:0}
 
 /* ── hero ── */
 .hero{padding:74px 0 0}
-.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
-.hero h1{margin-bottom:22px}
-.hero .lead{margin-bottom:30px;max-width:30em}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center}
+.hero h1{margin-bottom:20px}
+.hero .lead{margin-bottom:14px;max-width:30em}
 .hero .cta-linha{display:flex;flex-direction:column;gap:11px;align-items:flex-start}
 .selo-tempo{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mid)}
 .selo-tempo b{color:var(--ink);font-weight:600}
 .hero-fig{position:relative}
 .hero-fig .quadro{position:relative;border:1px solid var(--hair);border-radius:6px;
-  overflow:hidden;max-height:600px;box-shadow:0 22px 50px -28px rgba(0,0,0,.35)}
-.hero-fig .quadro::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;
-  background:linear-gradient(to bottom,rgba(250,250,248,0),var(--ground))}
+  overflow:hidden;box-shadow:0 22px 50px -28px rgba(0,0,0,.35)}
+.hero-fig .quadro img{display:block;width:100%}
 .hero-fig figcaption{font-size:11.5px;color:var(--soft);margin-top:11px;letter-spacing:.02em}
 
 /* ── faixa de fatos ── */
@@ -290,23 +289,26 @@ p:last-child{margin-bottom:0}
   </div>
 </header>
 
-<!-- 1 · tese -->
+<!-- 1 · a dor, e o que resolve -->
 <section class="hero">
   <div class="wrap">
     <div>
       <div class="olho">Para quem vende o próprio trabalho</div>
-      <h1>Não é que você<br>não leva jeito.<br>É que o <em>formato</em><br>não é o seu.</h1>
-      <p class="lead">Vinte perguntas sobre como você comunica de verdade. No fim, você
-      descobre quais formatos de conteúdo combinam com a sua personalidade, com o seu
-      negócio e com o tempo que você tem, e recebe sete roteiros prontos para gravar.</p>
+      <h1>Você sabe o que dizer.<br>Trava na hora de <em>gravar</em>.</h1>
+      <p class="lead">O <b>DNA de Conteúdo</b> é um consultor de inteligência artificial que
+      descobre o seu jeito de comunicar em vinte perguntas e entrega os próximos sete
+      conteúdos com roteiro pronto, tempo de cada bloco e direção de gravação.</p>
+      <p class="small" style="max-width:30em;margin-bottom:28px">Diferente de pedir roteiro ao
+      ChatGPT: ele só escreve depois do diagnóstico, usa apenas formatos escritos antes, e é
+      proibido de inventar caso, número ou cliente no seu nome.</p>
       <div class="cta-linha">
-        <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Descobrir meu DNA de Conteúdo · R$&nbsp;47</a>
-        <span class="selo-tempo"><b>Resultado na hora.</b> Leva de 4 a 6 minutos para responder.</span>
+        <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Quero meu DNA de Conteúdo · R$&nbsp;47</a>
+        <span class="selo-tempo"><b>Acesso na hora.</b> Leva de 4 a 6 minutos para responder.</span>
       </div>
     </div>
     <figure class="hero-fig">
-      <div class="quadro"><img src="img/resultado.png" alt="Tela de resultado do diagnóstico mostrando a combinação de perfis de conteúdo" loading="eager" width="900" height="1400"></div>
-      <figcaption>Tela real do diagnóstico, não é ilustração.</figcaption>
+      <div class="quadro"><img src="img/mock-consultor-notebook.jpg" alt="O Consultor DNA de Conteúdo aberto num notebook" loading="eager" width="1600" height="1045"></div>
+      <figcaption>O Consultor DNA de Conteúdo, na sua área da Hotmart.</figcaption>
     </figure>
   </div>
 </section>
@@ -320,12 +322,39 @@ p:last-child{margin-bottom:0}
   </div>
 </div>
 
-<!-- 2 · cena de identificação -->
+<!-- 2 · o que você recebe, logo de cara -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">O que você recebe</div>
+      <h2>Um consultor que já<br>conhece o seu <em>jeito</em>.</h2>
+      <p class="lead">Você entra, responde, e sai com a semana definida. Não tem aula para
+      assistir, nem material para estudar antes.</p>
+      <ul class="recebe">
+        <li><span class="q">01</span><div><h3>O Consultor DNA de Conteúdo</h3>
+          <p>Um agente que fica no seu acesso. Ele faz o diagnóstico, monta o plano, adapta um roteiro a um tema seu, refaz um dia que não funcionou e monta as semanas seguintes a partir do que você publicou.</p></div></li>
+        <li><span class="q">02</span><div><h3>Seu perfil de comunicação</h3>
+          <p>Principal e complementar entre os quatro do Método MAPA, com a proporção entre os dois, onde você rende, onde você trava e a pergunta que abre pauta.</p></div></li>
+        <li><span class="q">03</span><div><h3>Sete roteiros prontos para gravar</h3>
+          <p>Um formato por dia, com a abertura escrita, os blocos cronometrados, como enquadrar e gravar, a métrica para olhar e o erro comum daquele formato.</p></div></li>
+        <li><span class="q">04</span><div><h3>Seus outros formatos</h3>
+          <p>Os que combinam com você e não entraram na primeira semana, com a indicação de quando usar cada um.</p></div></li>
+        <li><span class="q">05</span><div><h3>A versão em página, se você preferir clicar</h3>
+          <p>O mesmo diagnóstico em formulário, para quem quer resolver em quatro minutos sem conversar. O plano aparece pronto na tela com botão para salvar em PDF.</p></div></li>
+      </ul>
+      <div class="acoes" style="margin-top:34px">
+        <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Começar agora · R$&nbsp;47</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · cena de identificação -->
 <section class="cena">
   <div class="wrap">
     <div class="col">
       <div class="olho">A cena</div>
-      <h2>Você sabe o que fazer.<br>Só não consegue manter.</h2>
+      <h2>A semana passa e o<br>conteúdo fica para trás.</h2>
       <p class="lead">Você domina o seu assunto. Sabe explicar na consulta, na reunião, no
       atendimento. Mas na frente da câmera vira outra pessoa, e no fim da semana o
       conteúdo é a única coisa que ficou para trás outra vez.</p>
@@ -344,17 +373,56 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- 3 · mecanismo -->
+<!-- 4 · por que a IA comum falha -->
 <section>
   <div class="wrap">
     <div class="col">
-      <div class="olho">O que é</div>
-      <h2>Um diagnóstico aplicado,<br>não mais um curso.</h2>
-      <p class="lead">O DNA de Conteúdo não te ensina teoria de roteiro para você aplicar
-      depois. Ele descobre como você já comunica e devolve a resposta prática: quais
-      formatos são seus, como gravar cada um e o que publicar na segunda-feira.</p>
-      <p>A teoria está dentro da entrega. Você não precisa entender de atenção, interesse,
-      desejo e ação para usar. Isso já vem distribuído ao longo dos sete dias.</p>
+      <div class="olho">Por que não é só pedir para o ChatGPT</div>
+      <h2>A inteligência artificial<br>não te conhece. <em>Ainda</em>.</h2>
+      <p class="lead">Você já tentou. Pediu roteiro, veio algo correto e sem graça, que
+      serviria para qualquer profissional da sua área. Não é defeito da ferramenta: é que
+      ela começa a escrever sem saber quem você é, o que você vende e o que você aguenta
+      gravar.</p>
+      <p>O Consultor resolve isso invertendo a ordem. Ele não escreve nada antes de
+      descobrir três coisas: o seu jeito de comunicar, o seu negócio e o tempo que você
+      tem. Só depois ele monta.</p>
+    </div>
+    <div class="par" style="margin-top:34px">
+      <div class="lado ruim">
+        <div class="rot">Pedir roteiro para uma IA comum</div>
+        <ul>
+          <li>Escreve antes de saber quem é você</li>
+          <li>Inventa o número, o caso e o cliente que faltam</li>
+          <li>Cada vez devolve uma estrutura diferente</li>
+          <li>Dá o mesmo formato para quem odeia e para quem adora aparecer</li>
+          <li>Nunca diz como gravar</li>
+        </ul>
+      </div>
+      <div class="lado bom">
+        <div class="rot">O Consultor DNA de Conteúdo</div>
+        <ul>
+          <li>Começa por vinte perguntas sobre o seu comportamento real</li>
+          <li>Deixa em branco o que só você sabe, e pede para você preencher</li>
+          <li>Usa vinte formatos escritos e cronometrados antes, sempre os mesmos</li>
+          <li>Filtra os formatos pelo quanto você aceita aparecer e pelo que você tem</li>
+          <li>Entrega direção de gravação em cada dia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mix-nota" style="margin-top:18px">
+      <p style="flex:1"><b>É inteligência artificial com coleira.</b> O agente conversa, adapta e
+      explica, mas não pode criar formato novo nem preencher um dado seu por conta própria.
+      Essa restrição é o produto. Sem ela, seria mais um gerador de texto genérico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · o método -->
+<section class="cena">
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">Como ele faz isso</div>
+      <h2>Método MAPA,<br>em quatro movimentos.</h2>
     </div>
     <div class="mapa">
       <div><div class="l">M</div><h3>Mapear</h3>
@@ -433,32 +501,17 @@ p:last-child{margin-bottom:0}
   <div class="wrap">
     <div class="col">
       <div class="olho">Como você usa</div>
-      <h2>Dois caminhos para<br>a mesma <em>resposta</em>.</h2>
-      <p class="lead">Tem dia de resolver rápido, e tem dia de pensar junto. Você recebe
-      as duas formas e usa a que couber no seu dia, sem pagar a mais por isso.</p>
+      <h2>O Consultor é o produto.<br>A página é o <em>atalho</em>.</h2>
+      <p class="lead">A entrega principal é o agente, porque ele continua com você depois
+      da primeira semana. Mas se no dia você só quer responder rápido e ir gravar, a versão
+      em página faz o diagnóstico em quatro minutos, por cliques.</p>
     </div>
 
     <div class="caminhos">
       <article class="cam">
-        <div class="shot recorte"><img src="img/resultado.png" alt="Tela do diagnóstico mostrando a combinação de perfis" loading="lazy" width="900" height="1400"></div>
-        <div class="txt">
-          <div class="rot"><i></i>A página</div>
-          <h3>Quatro minutos, por cliques</h3>
-          <p>Você responde as vinte perguntas clicando, e o plano da semana aparece
-          pronto na tela. É o caminho mais rápido, e o que a maioria vai escolher.</p>
-          <ul>
-            <li>Resultado calculado na hora, sem espera</li>
-            <li>Plano inteiro com botão para salvar em PDF</li>
-            <li>Se você sair no meio, as respostas ficam salvas</li>
-          </ul>
-          <div class="pe">Para quando você quer resolver e ir gravar.</div>
-        </div>
-      </article>
-
-      <article class="cam">
         <div class="shot foto"><img src="img/mock-consultor-notebook.jpg" alt="O Consultor DNA de Conteúdo aberto num notebook, oferecendo os dois caminhos" loading="lazy" width="1600" height="1045"></div>
         <div class="txt">
-          <div class="rot"><i></i>O Consultor</div>
+          <div class="rot"><i></i>Entrega principal · O Consultor</div>
           <h3>No seu ritmo, e depois também</h3>
           <p>O mesmo diagnóstico em conversa. E ele continua com você depois da primeira
           semana, que é onde a página não vai.</p>
@@ -468,6 +521,22 @@ p:last-child{margin-bottom:0}
             <li>Monta a semana seguinte a partir do que você publicou</li>
           </ul>
           <div class="pe">Para quando falta decidir, não só executar.</div>
+        </div>
+      </article>
+
+      <article class="cam">
+        <div class="shot recorte"><img src="img/resultado.png" alt="Tela do diagnóstico mostrando a combinação de perfis" loading="lazy" width="900" height="1400"></div>
+        <div class="txt">
+          <div class="rot"><i></i>Alternativa · A página</div>
+          <h3>Para quando o dia é curto</h3>
+          <p>Você responde as vinte perguntas clicando, e o plano da semana aparece
+          pronto na tela. É o caminho mais rápido, e o que a maioria vai escolher.</p>
+          <ul>
+            <li>Resultado calculado na hora, sem espera</li>
+            <li>Plano inteiro com botão para salvar em PDF</li>
+            <li>Se você sair no meio, as respostas ficam salvas</li>
+          </ul>
+          <div class="pe">Para quando você quer resolver e ir gravar.</div>
         </div>
       </article>
     </div>
@@ -498,17 +567,17 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 7 · antes e depois -->
-<section>
+<section class="cena">
   <div class="wrap">
     <div class="col">
       <div class="olho">A diferença na prática</div>
       <h2>O mesmo tema, dois roteiros.</h2>
-      <p class="lead">À esquerda, o que a inteligência artificial devolve quando você pede
-      um roteiro sobre o seu assunto. À direita, o que sai do diagnóstico.</p>
+      <p class="lead">À esquerda, o que volta quando alguém escreve sem saber quem você é.
+      À direita, o que o Consultor entrega depois do diagnóstico.</p>
     </div>
     <div class="par">
       <div class="lado ruim">
-        <div class="rot">Roteiro genérico</div>
+        <div class="rot">Sem diagnóstico</div>
         <p class="fala">"Olá pessoal, tudo bem? Hoje vou falar sobre um assunto muito
         importante que muita gente ignora. Fica até o final que eu vou te contar tudo."</p>
         <ul>
@@ -520,7 +589,7 @@ p:last-child{margin-bottom:0}
         </ul>
       </div>
       <div class="lado bom">
-        <div class="rot">Roteiro do seu DNA</div>
+        <div class="rot">Depois do diagnóstico</div>
         <p class="fala">"O erro que eu mais vejo em [SEU PÚBLICO] é [O ERRO QUE VOCÊ MAIS
         VÊ]." <br><span class="small">0 a 5s · a primeira palavra já é o erro, sem
         apresentação</span></p>
@@ -532,35 +601,6 @@ p:last-child{margin-bottom:0}
           <li>Chamada alinhada ao que você quer que a pessoa faça</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 · o que você recebe -->
-<section class="cena">
-  <div class="wrap">
-    <div class="col">
-      <div class="olho">O que você recebe</div>
-      <h2>Tudo entregue na hora,<br>na mesma página.</h2>
-      <p class="lead">Você responde, o sistema calcula e a entrega aparece. Sem espera, sem
-      alguém montando o seu plano do outro lado. E o que começa como uma semana pronta
-      continua depois, com o Consultor.</p>
-      <ul class="recebe">
-        <li><span class="q">01</span><div><h3>Seu DNA de Conteúdo</h3>
-          <p>Perfil principal e complementar com a proporção entre os dois, onde você rende, onde você trava e a pergunta que abre pauta para cada um.</p></div></li>
-        <li><span class="q">02</span><div><h3>Seus três formatos prioritários</h3>
-          <p>Selecionados entre os vinte do método, filtrados pelo seu tempo, pelos seus recursos e pelo quanto você aceita aparecer.</p></div></li>
-        <li><span class="q">03</span><div><h3>Plano de sete dias com roteiro completo</h3>
-          <p>Um formato por dia, com abertura escrita, blocos cronometrados, direção de gravação, métrica e chamada.</p></div></li>
-        <li><span class="q">04</span><div><h3>Seus outros formatos, para variar depois</h3>
-          <p>Os formatos que combinam com você e não entraram na primeira semana, com a indicação de quando usar cada um.</p></div></li>
-        <li><span class="q">05</span><div><h3>O método de ampliação</h3>
-          <p>Como pegar o conteúdo que teve melhor sinal e transformar em três variações, trocando uma variável por vez.</p></div></li>
-        <li><span class="q">06</span><div><h3>Tudo em PDF, com um clique</h3>
-          <p>O plano inteiro sai em arquivo para você imprimir, salvar ou mandar para quem grava com você.</p></div></li>
-        <li><span class="q">07</span><div><h3>O Consultor DNA de Conteúdo, para as semanas seguintes</h3>
-          <p>A página entrega a primeira semana. O Consultor fica com você depois: adapta um roteiro a um tema, refaz um dia que não funcionou, troca o gancho e monta a semana seguinte a partir do que você publicou.</p></div></li>
-      </ul>
     </div>
   </div>
 </section>
@@ -654,11 +694,13 @@ p:last-child{margin-bottom:0}
         precisar sair no meio, suas respostas ficam salvas.</div>
       </details>
       <details>
-        <summary>Os roteiros são feitos por inteligência artificial?</summary>
-        <div class="r">Não. Os vinte formatos foram escritos um por um, com marcação de
-        tempo e direção de gravação. O que o sistema faz é escolher quais combinam com
-        você e preencher com o seu público, a sua área e o seu objetivo. Por isso nenhum
-        roteiro inventa cliente, número ou história no seu nome.</div>
+        <summary>Então é inteligência artificial? Qual a diferença do ChatGPT?</summary>
+        <div class="r">É, e a diferença está no que ele pode fazer. Os vinte formatos foram
+        escritos um por um antes, com marcação de tempo e direção de gravação, e o agente só
+        pode usar esses. Ele não inventa formato novo, não escreve roteiro do zero e é
+        proibido de preencher o caso, o número ou o cliente que aparecem entre colchetes.
+        Some isso ao diagnóstico que vem antes, e você tem o oposto de pedir roteiro para uma
+        IA que nunca ouviu falar de você.</div>
       </details>
       <details>
         <summary>Serve para a minha área?</summary>
@@ -700,10 +742,9 @@ p:last-child{margin-bottom:0}
 <!-- fecho -->
 <section class="fecho">
   <div class="wrap">
-    <h2>Antes de pedir trinta roteiros para uma inteligência artificial, descubra como você
-    realmente comunica.</h2>
-    <p class="lead">Vinte perguntas. De quatro a seis minutos. Uma semana inteira de
-    conteúdo definida no fim.</p>
+    <h2>Pare de começar do zero toda segunda-feira.</h2>
+    <p class="lead">Vinte perguntas, de quatro a seis minutos, e você sai com a semana
+    inteira definida. Depois é só voltar e pedir a próxima.</p>
     <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Descobrir meu DNA de Conteúdo · R$&nbsp;47</a>
     <p class="small">Acesso imediato e vitalício · 7 dias de garantia · Pagamento único</p>
   </div>
