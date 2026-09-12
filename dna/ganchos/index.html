@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 ganchos · DNA de Conteúdo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Cem aberturas prontas, organizadas pelos quatro perfis do Método MAPA.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{
+  --ink:#111111; --cream:#fafaf8; --papel:#f2f2ef; --papel2:#e7e7e2;
+  --red:#ff0101; --red-dp:#c40000;
+  --dim:#c9c9c4; --gray:#79797a; --gray-c:#adadab; --dark:#33333a;
+  --linha:#e3e3df; --fio:#eeeeea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden}
+body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);
+     color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+     overflow-x:hidden;max-width:100vw}
+button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer;border:none;
+       background:none}
+input{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+em{font-style:normal;color:var(--red)}
+
+/* topo */
+.topo{background:var(--ink);color:var(--cream);padding:14px 20px;display:flex;
+      align-items:center;gap:10px}
+.mk{position:relative;width:24px;height:14px;flex:none}
+.mk i{position:absolute;top:0;width:14px;height:14px;border-radius:50%;background:var(--red)}
+.mk i:first-child{left:0}
+.mk i:last-child{left:10px;box-shadow:-2px 0 0 0 var(--ink)}
+.topo span{font-weight:600;font-size:11px;letter-spacing:.2em;
+           text-transform:uppercase}
+
+/* progresso */
+.prog{height:3px;background:var(--papel2);position:sticky;top:0;z-index:10}
+.prog span{display:block;height:100%;background:var(--red);transition:width .3s ease}
+
+/* telas */
+.tela{max-width:620px;margin:0 auto;padding:48px 22px 70px}
+.tela.larga{max-width:820px}
+h1{font-family:'Poppins';font-weight:700;font-size:clamp(30px,5.2vw,43px);line-height:1.14;
+   letter-spacing:-.018em;margin-bottom:18px;text-wrap:balance}
+h2{font-family:'Poppins';font-weight:600;font-size:clamp(20px,3.2vw,26px);line-height:1.3;
+   letter-spacing:-.012em;margin-bottom:26px;text-wrap:balance}
+h3{font-family:'Poppins';font-weight:600;font-size:18px;line-height:1.34;letter-spacing:-.008em}
+.lead{font-weight:400;font-size:17px;line-height:1.62;
+      color:var(--dark);margin-bottom:26px}
+.sub{color:var(--gray);font-size:14.5px;margin:-14px 0 26px}
+.selo{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);
+      font-weight:600;margin-bottom:16px}
+.contador{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+          font-weight:600;margin-bottom:14px}
+.contador s{color:var(--gray-c);text-decoration:none}
+.mini{font-size:12.5px;color:var(--gray);margin-top:14px;text-align:center}
+
+.aviso{background:var(--papel);border-left:2px solid var(--red);padding:15px 18px;
+       font-size:14.5px;line-height:1.55;color:var(--dark);margin-bottom:30px}
+.aviso b{font-weight:600;color:var(--ink)}
+
+.btn{display:block;width:100%;background:var(--red);color:#fff;
+     font-weight:600;font-size:15.5px;letter-spacing:.005em;padding:16px;border-radius:3px;transition:background .15s}
+.btn:hover{background:var(--red-dp)}
+
+/* opções */
+.ops{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.op{display:flex;align-items:flex-start;gap:13px;text-align:left;padding:15px 17px;
+    border:1px solid var(--linha);border-radius:4px;background:#fff;line-height:1.45;
+    transition:border-color .13s, background .13s;font-size:15.5px}
+.op:hover{border-color:var(--gray-c);background:var(--papel)}
+.op.on{border-color:var(--red);background:#fff;box-shadow:0 0 0 1px var(--red)}
+.op .marca{width:17px;height:17px;border:1.5px solid var(--linha);border-radius:50%;
+           flex:none;margin-top:3px;position:relative;transition:all .13s}
+.op.on .marca{border-color:var(--red)}
+.op.on .marca::after{content:"";position:absolute;inset:3px;border-radius:50%;
+                     background:var(--red)}
+
+.navs{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.voltar,.avancar{font-size:14px;font-weight:600;color:var(--gray);padding:8px 0}
+.voltar:hover{color:var(--ink)}
+.avancar{color:var(--red);font-weight:600}
+
+/* alinhamento */
+.campos{display:flex;flex-direction:column;gap:20px;margin-bottom:30px}
+.campo{display:block}
+.campo > span{display:block;font-size:13.5px;font-weight:600;margin-bottom:8px;
+              color:var(--dark)}
+.campo input{width:100%;padding:12px 14px;border:1px solid var(--linha);border-radius:3px;
+             background:#fff;font-size:15px}
+.campo input:focus{outline:none;border-color:var(--ink)}
+.pills{display:flex;gap:7px;flex-wrap:wrap}
+.pill{padding:9px 14px;border:1px solid var(--linha);border-radius:99px;font-size:13.5px;
+      font-weight:500;background:#fff;transition:all .13s}
+.pill:hover{border-color:var(--gray-c)}
+.pill.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+/* resultado */
+.res h1.dna{font-size:clamp(27px,4.6vw,40px);margin-bottom:26px}
+.mix{background:var(--papel);padding:18px 20px;border-radius:4px;margin-bottom:30px}
+.mixl{display:flex;align-items:center;gap:11px;padding:6px 0;font-size:14px}
+.mixl .pt{width:9px;height:9px;border-radius:50%;flex:none}
+.mixl .nm{width:112px;font-weight:600;flex:none}
+.mixl .bar{flex:1;height:6px;background:var(--papel2);border-radius:99px;overflow:hidden}
+.mixl .bar i{display:block;height:100%;border-radius:99px}
+.mixl .vl{width:22px;text-align:right;font-weight:600;
+          font-variant-numeric:tabular-nums;flex:none}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:34px}
+.carta{border:1px solid var(--linha);border-top:3px solid var(--red);border-radius:4px;
+       padding:20px;background:#fff}
+.carta.comp{border-top-color:var(--gray)}
+.carta .rot{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);
+            font-weight:600;margin-bottom:8px}
+.carta h3{margin-bottom:10px}
+.carta .fr{font-weight:400;font-size:15px;line-height:1.55;color:var(--dark);margin-bottom:16px}
+.linha{font-size:13.5px;line-height:1.5;padding:9px 0;border-top:1px solid var(--fio);
+       color:var(--dark)}
+.linha b{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--gray);font-weight:700;margin-bottom:3px}
+.linha i{font-style:normal;font-weight:500;font-size:14px;color:var(--ink)}
+.linha.alerta b{color:var(--red)}
+
+h3.sec{margin:0 0 14px}
+.fmts{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:34px}
+.fmt{border:1px solid var(--linha);border-radius:4px;padding:16px;background:#fff}
+.fmt .n{font-family:'Poppins';font-weight:700;font-size:11px;color:var(--red);display:block;
+        margin-bottom:7px}
+.fmt b{display:block;font-weight:600;font-size:14.5px;line-height:1.36;margin-bottom:6px}
+.fmt .de{font-size:11px;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;
+         font-weight:600}
+
+.proximo{background:var(--ink);color:var(--cream);padding:26px;border-radius:4px;
+         margin-bottom:22px}
+.proximo .rot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+              font-weight:600;margin-bottom:10px}
+.proximo p{font-size:15px;line-height:1.55;color:var(--dim);margin-bottom:20px}
+.proximo b{color:var(--cream);font-weight:600}
+.proximo .mini{color:var(--gray)}
+
+.refazer{display:block;margin:0 auto;font-size:13px;color:var(--gray);
+         text-decoration:underline;text-underline-offset:3px}
+.refazer:hover{color:var(--red)}
+
+@media (max-width:720px){
+  .duo,.fmts{grid-template-columns:1fr}
+  .tela{padding:34px 18px 60px}
+  .mixl .nm{width:92px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+
+/* ── plano ── */
+.plano .abertura{font-weight:400;font-size:17px;line-height:1.62;color:var(--dark);margin-bottom:24px}
+.plano .abertura b{font-weight:600;color:var(--ink)}
+.regra{background:var(--papel);border-left:2px solid var(--red);padding:15px 18px;
+  font-size:14.5px;line-height:1.55;color:var(--dark);margin-bottom:30px}
+.regra b{font-weight:600;color:var(--ink)}
+.dia{border:1px solid var(--linha);border-radius:5px;padding:22px;margin-bottom:16px;
+  background:#fff;break-inside:avoid}
+.dia-topo{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding-bottom:12px;border-bottom:1px solid var(--fio);margin-bottom:13px;flex-wrap:wrap}
+.dn{font-weight:700;font-size:12px;color:var(--red);letter-spacing:.08em;
+  margin-right:10px}
+.dp{font-size:11px;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;
+  font-weight:600}
+.dt{font-size:11px;color:var(--gray-c);letter-spacing:.06em}
+.dia h3{margin-bottom:6px}
+.dnota{font-size:13.5px;color:var(--gray);margin-bottom:15px}
+.gancho{background:var(--ink);color:var(--cream);padding:15px 17px;border-radius:4px;
+  font-size:16px;font-weight:500;line-height:1.5;margin-bottom:15px}
+.gancho b{display:block;font-family:'Poppins';font-size:9.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:600}
+.beats{margin-bottom:16px}
+.beat{display:flex;gap:13px;padding:8px 0;border-bottom:1px solid var(--fio);font-size:14px;
+  line-height:1.5}
+.beat:last-child{border-bottom:none}
+.bt{font-weight:600;font-size:11px;color:var(--red);width:54px;flex:none;
+  padding-top:2px}
+.dfim{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:14px;
+  border-top:1px solid var(--fio);font-size:13px;line-height:1.5;color:var(--dark)}
+.dfim b{display:block;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:3px;font-weight:700}
+.dfim .cuid b{color:var(--red)}
+.outros{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px}
+.outro{border:1px solid var(--linha);border-radius:4px;padding:15px;background:#fff}
+.outro b{display:block;font-weight:600;font-size:14.5px;margin-bottom:4px}
+.outro span{font-size:10.5px;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600}
+.outro p{font-size:13px;color:var(--dark);margin-top:7px;line-height:1.45}
+.acoes{display:flex;gap:10px;margin-top:8px}
+.acoes .btn,.acoes .btn2{flex:1}
+.btn2{display:block;background:none;border:1px solid var(--linha);color:var(--dark);
+  font-weight:600;font-size:15px;padding:15px;border-radius:3px;
+  transition:all .15s}
+.btn2:hover{border-color:var(--ink)}
+@media (max-width:720px){.dfim,.outros{grid-template-columns:1fr}.acoes{flex-direction:column}}
+@media print{
+  .topo,.prog,.acoes,.regra:last-of-type{display:none!important}
+  body{font-size:11pt} .tela{padding:0;max-width:none}
+  .dia{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+  .gancho{background:#f2ece2;color:#000}
+  .gancho b{color:#c40000}
+}
+
+/* ── 100 ganchos: acrescenta ao dna.css ── */
+.aviso a{color:var(--red);font-weight:600;text-decoration:underline;
+  text-underline-offset:3px;display:inline-block;margin-top:6px}
+
+.filtros{display:flex;flex-direction:column;gap:14px;padding:18px 0 20px;
+  border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);margin-bottom:18px}
+.fl{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.fl > span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);
+  font-weight:600;width:56px;flex:none}
+.conta{font-size:12.5px;color:var(--gray);margin-bottom:26px}
+
+.grupo{display:flex;align-items:center;gap:12px;margin:38px 0 4px}
+.grupo:first-of-type{margin-top:0}
+.gp{width:10px;height:10px;border-radius:50%;flex:none}
+.gr{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);
+  font-weight:600;display:block;margin-bottom:1px}
+.grupo h2{margin:0;font-size:21px}
+
+.fx{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:24px 0 10px;
+  padding-bottom:8px;border-bottom:1px solid var(--fio)}
+.fx b{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);
+  font-weight:600}
+.fx span{font-size:12.5px;color:var(--gray)}
+
+.gc{display:flex;align-items:flex-start;gap:14px;padding:13px 16px;background:#fff;
+  border:1px solid var(--linha);border-radius:4px;margin-bottom:7px;break-inside:avoid}
+.gc .cod{font-size:10px;font-weight:600;color:var(--gray-c);
+  font-variant-numeric:tabular-nums;width:30px;flex:none;padding-top:4px}
+.gc p{flex:1;font-size:15px;line-height:1.5;color:var(--ink);margin:0}
+.cp{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--gray);flex:none;
+  border:1px solid var(--linha);border-radius:3px;padding:6px 11px;transition:all .13s}
+.cp:hover{border-color:var(--ink);color:var(--ink)}
+.cp.ok{border-color:var(--red);color:var(--red)}
+.vazio{font-size:14.5px;color:var(--gray);padding:30px 0}
+
+@media (max-width:720px){
+  .fl > span{width:auto}
+  .gc{flex-wrap:wrap;gap:8px}
+  .gc p{flex:1 1 100%;order:2}
+  .cp{order:3;margin-left:auto}
+}
+@media print{
+  .filtros,.acoes,.aviso{display:none!important}
+  .cp{display:none}
+  .gc{border-color:#ddd;padding:9px 12px}
+  .grupo{break-after:avoid}
+  .fx{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<header class="topo"><span class="mk"><i></i><i></i></span><span>Loope Academy</span></header>
+<main id="app"></main>
+<script>const GANCHOS = [
+ {
+  "id": "A01",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "Ninguém te explicou isso sobre [TEMA QUE VOCÊ DOMINA], e é o que mais causa problema."
+ },
+ {
+  "id": "A02",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "Se você faz [PRÁTICA COMUM], para agora. Vou explicar por quê."
+ },
+ {
+  "id": "A03",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "A pergunta que eu mais ouço de {publico}, e a resposta em trinta segundos."
+ },
+ {
+  "id": "A04",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "Existe um jeito certo e um jeito comum de fazer [TAREFA]. Não são o mesmo."
+ },
+ {
+  "id": "A05",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "[NÚMERO]% dos casos que chegam até mim começaram com o mesmo erro."
+ },
+ {
+  "id": "A06",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "Isso que parece detalhe é o que decide se [RESULTADO] vai acontecer ou não."
+ },
+ {
+  "id": "A07",
+  "perfil": "A",
+  "funcao": "Alcance",
+  "texto": "Três palavras que confundem {publico}, e por que isso muda a conversa."
+ },
+ {
+  "id": "A08",
+  "perfil": "A",
+  "funcao": "Interesse",
+  "texto": "Existem três razões para [SITUAÇÃO]. A terceira quase ninguém considera."
+ },
+ {
+  "id": "A09",
+  "perfil": "A",
+  "funcao": "Interesse",
+  "texto": "Eu analisei [NÚMERO] casos de [TEMA] e encontrei o mesmo padrão em quase todos."
+ },
+ {
+  "id": "A10",
+  "perfil": "A",
+  "funcao": "Interesse",
+  "texto": "Você não precisa de [SOLUÇÃO CARA]. Precisa resolver [CAUSA REAL] primeiro."
+ },
+ {
+  "id": "A11",
+  "perfil": "A",
+  "funcao": "Interesse",
+  "texto": "A diferença entre [OPÇÃO A] e [OPÇÃO B] não é preço. É isto aqui."
+ },
+ {
+  "id": "A12",
+  "perfil": "A",
+  "funcao": "Interesse",
+  "texto": "Por que [PRÁTICA] funciona para uns e falha para outros. O critério é um só."
+ },
+ {
+  "id": "A13",
+  "perfil": "A",
+  "funcao": "Interesse",
+  "texto": "Se eu tivesse que escolher uma única coisa para {publico} corrigir, seria esta."
+ },
+ {
+  "id": "A14",
+  "perfil": "A",
+  "funcao": "Conexão",
+  "texto": "Levei [TEMPO] como {profissao} para entender uma coisa que hoje explico em um minuto."
+ },
+ {
+  "id": "A15",
+  "perfil": "A",
+  "funcao": "Conexão",
+  "texto": "Eu errava nisso no começo da carreira. Vou contar como descobri."
+ },
+ {
+  "id": "A16",
+  "perfil": "A",
+  "funcao": "Conexão",
+  "texto": "Tem uma pergunta que eu odeio responder, e vou responder hoje."
+ },
+ {
+  "id": "A17",
+  "perfil": "A",
+  "funcao": "Conexão",
+  "texto": "O que eu diria para mim mesma no meu primeiro ano como {profissao}."
+ },
+ {
+  "id": "A18",
+  "perfil": "A",
+  "funcao": "Desejo",
+  "texto": "Como é o meu processo quando alguém chega com [PROBLEMA]."
+ },
+ {
+  "id": "A19",
+  "perfil": "A",
+  "funcao": "Desejo",
+  "texto": "O que muda quando [PROBLEMA] é tratado com método em vez de tentativa."
+ },
+ {
+  "id": "A20",
+  "perfil": "A",
+  "funcao": "Desejo",
+  "texto": "Isto é o que eu olho primeiro em qualquer caso de [TEMA]."
+ },
+ {
+  "id": "A21",
+  "perfil": "A",
+  "funcao": "Desejo",
+  "texto": "[RESULTADO] não depende de sorte. Depende destas três decisões."
+ },
+ {
+  "id": "A22",
+  "perfil": "A",
+  "funcao": "Ação",
+  "texto": "Se você está em [SITUAÇÃO], estes são os dois próximos passos."
+ },
+ {
+  "id": "A23",
+  "perfil": "A",
+  "funcao": "Ação",
+  "texto": "Guarde esta lista para a próxima vez que precisar decidir sobre [TEMA]."
+ },
+ {
+  "id": "A24",
+  "perfil": "A",
+  "funcao": "Ação",
+  "texto": "Antes de contratar qualquer [PROFISSIONAL DA SUA ÁREA], faça estas três perguntas."
+ },
+ {
+  "id": "A25",
+  "perfil": "A",
+  "funcao": "Ação",
+  "texto": "Se isso está acontecendo com você, {acao}."
+ },
+ {
+  "id": "B01",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "Vou dizer uma coisa impopular sobre o trabalho de {profissao}: [SUA OPINIÃO]."
+ },
+ {
+  "id": "B02",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "Todo mundo repete que [CONSELHO COMUM]. Para {publico}, isso está errado."
+ },
+ {
+  "id": "B03",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "O maior problema de quem é {profissao} hoje não é [PROBLEMA ÓBVIO]. É outro."
+ },
+ {
+  "id": "B04",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "Se o seu [PROFISSIONAL/FORNECEDOR] te disser isso, desconfie."
+ },
+ {
+  "id": "B05",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "Existe uma prática comum no meu mercado que eu me recuso a fazer."
+ },
+ {
+  "id": "B06",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "Pararam de falar sobre [ASSUNTO] e é exatamente por isso que continua acontecendo."
+ },
+ {
+  "id": "B07",
+  "perfil": "B",
+  "funcao": "Alcance",
+  "texto": "Não é falta de [DESCULPA COMUM]. É [CAUSA REAL], e ninguém quer dizer isso."
+ },
+ {
+  "id": "B08",
+  "perfil": "B",
+  "funcao": "Interesse",
+  "texto": "[PRÁTICA POPULAR] virou regra sem nunca ter sido testada. Eu testei."
+ },
+ {
+  "id": "B09",
+  "perfil": "B",
+  "funcao": "Interesse",
+  "texto": "A pergunta não é [PERGUNTA COMUM]. A pergunta certa é outra."
+ },
+ {
+  "id": "B10",
+  "perfil": "B",
+  "funcao": "Interesse",
+  "texto": "Duas pessoas fazem a mesma coisa e só uma consegue [RESULTADO]. Eis a diferença."
+ },
+ {
+  "id": "B11",
+  "perfil": "B",
+  "funcao": "Interesse",
+  "texto": "Quem disse que [CRENÇA DO MERCADO] nunca trabalhou com {publico}."
+ },
+ {
+  "id": "B12",
+  "perfil": "B",
+  "funcao": "Interesse",
+  "texto": "Existe um motivo pelo qual isso é vendido assim, e não tem a ver com você."
+ },
+ {
+  "id": "B13",
+  "perfil": "B",
+  "funcao": "Interesse",
+  "texto": "Se [SOLUÇÃO DA MODA] funcionasse mesmo, [CONSEQUÊNCIA QUE NÃO ACONTECE]."
+ },
+ {
+  "id": "B14",
+  "perfil": "B",
+  "funcao": "Conexão",
+  "texto": "Eu já defendi o contrário disso. Mudei de opinião por um motivo específico."
+ },
+ {
+  "id": "B15",
+  "perfil": "B",
+  "funcao": "Conexão",
+  "texto": "Perdi [O QUE VOCÊ PERDEU] por não dizer isso antes."
+ },
+ {
+  "id": "B16",
+  "perfil": "B",
+  "funcao": "Conexão",
+  "texto": "Já recusei trabalho por causa desta regra minha."
+ },
+ {
+  "id": "B17",
+  "perfil": "B",
+  "funcao": "Conexão",
+  "texto": "Vou falar de uma coisa que pode me custar seguidores."
+ },
+ {
+  "id": "B18",
+  "perfil": "B",
+  "funcao": "Desejo",
+  "texto": "Não trabalho com quem quer [O QUE VOCÊ RECUSA]. Vou explicar por quê."
+ },
+ {
+  "id": "B19",
+  "perfil": "B",
+  "funcao": "Desejo",
+  "texto": "O jeito comum de resolver [PROBLEMA] cria um problema maior daqui a [TEMPO]."
+ },
+ {
+  "id": "B20",
+  "perfil": "B",
+  "funcao": "Desejo",
+  "texto": "Se você quer [RESULTADO FÁCIL], eu não sou a pessoa. Se quer [RESULTADO REAL], continua vendo."
+ },
+ {
+  "id": "B21",
+  "perfil": "B",
+  "funcao": "Desejo",
+  "texto": "A pergunta que separa quem resolve [PROBLEMA] de quem só administra."
+ },
+ {
+  "id": "B22",
+  "perfil": "B",
+  "funcao": "Ação",
+  "texto": "Se você concorda com isso, {acao}."
+ },
+ {
+  "id": "B23",
+  "perfil": "B",
+  "funcao": "Ação",
+  "texto": "Comenta aqui se você já ouviu essa frase de alguém do mercado."
+ },
+ {
+  "id": "B24",
+  "perfil": "B",
+  "funcao": "Ação",
+  "texto": "Manda para quem ainda acredita em [CRENÇA]."
+ },
+ {
+  "id": "B25",
+  "perfil": "B",
+  "funcao": "Ação",
+  "texto": "Se isso te incomodou, provavelmente a gente vai se entender. {acao}."
+ },
+ {
+  "id": "C01",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "Um cliente chegou dizendo [FRASE QUE ELE DISSE]. O que aconteceu depois mudou como eu trabalho."
+ },
+ {
+  "id": "C02",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "Essa história tem [TEMPO] e ainda me lembro dela toda vez que alguém me pergunta sobre [TEMA]."
+ },
+ {
+  "id": "C03",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "A pior semana que eu tive como {profissao} começou com uma decisão pequena."
+ },
+ {
+  "id": "C04",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "Eu quase desisti de [O QUE VOCÊ QUASE LARGOU]. Duas coisas me fizeram continuar."
+ },
+ {
+  "id": "C05",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "Recebi uma mensagem ontem que resume tudo que eu tento explicar aqui."
+ },
+ {
+  "id": "C06",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "Esse caso parecia simples. Não era."
+ },
+ {
+  "id": "C07",
+  "perfil": "C",
+  "funcao": "Alcance",
+  "texto": "Tem uma frase que uma [PESSOA] me disse e eu nunca mais esqueci."
+ },
+ {
+  "id": "C08",
+  "perfil": "C",
+  "funcao": "Interesse",
+  "texto": "No começo eu achava que [CRENÇA ANTIGA]. Um caso específico me provou o contrário."
+ },
+ {
+  "id": "C09",
+  "perfil": "C",
+  "funcao": "Interesse",
+  "texto": "Duas pessoas com o mesmo [PROBLEMA] e resultados opostos. A diferença foi uma escolha."
+ },
+ {
+  "id": "C10",
+  "perfil": "C",
+  "funcao": "Interesse",
+  "texto": "Eu já cometi esse erro. Vou contar o que ele me custou."
+ },
+ {
+  "id": "C11",
+  "perfil": "C",
+  "funcao": "Interesse",
+  "texto": "Foi só depois de [MARCO] que eu entendi o que estava faltando."
+ },
+ {
+  "id": "C12",
+  "perfil": "C",
+  "funcao": "Interesse",
+  "texto": "Essa história começa com [SITUAÇÃO BANAL] e termina em [RESULTADO INESPERADO]."
+ },
+ {
+  "id": "C13",
+  "perfil": "C",
+  "funcao": "Interesse",
+  "texto": "O que eu aprendi atendendo {publico} durante [TEMPO]."
+ },
+ {
+  "id": "C14",
+  "perfil": "C",
+  "funcao": "Conexão",
+  "texto": "Por que eu escolhi ser {profissao}, e a parte que quase ninguém sabe."
+ },
+ {
+  "id": "C15",
+  "perfil": "C",
+  "funcao": "Conexão",
+  "texto": "Tem um dia de trabalho que eu não esqueço. Foi [O QUE ACONTECEU]."
+ },
+ {
+  "id": "C16",
+  "perfil": "C",
+  "funcao": "Conexão",
+  "texto": "Já chorei depois de um atendimento. Vou explicar por quê."
+ },
+ {
+  "id": "C17",
+  "perfil": "C",
+  "funcao": "Conexão",
+  "texto": "O que a minha família acha que eu faço versus o que eu faço de verdade."
+ },
+ {
+  "id": "C18",
+  "perfil": "C",
+  "funcao": "Desejo",
+  "texto": "Como foi o processo de [CLIENTE OU CASO], do primeiro contato ao resultado."
+ },
+ {
+  "id": "C19",
+  "perfil": "C",
+  "funcao": "Desejo",
+  "texto": "Essa pessoa chegou em [PONTO A] e saiu em [PONTO B]. Foram [TEMPO] e três decisões."
+ },
+ {
+  "id": "C20",
+  "perfil": "C",
+  "funcao": "Desejo",
+  "texto": "O que acontece nos bastidores entre a primeira conversa e o [RESULTADO]."
+ },
+ {
+  "id": "C21",
+  "perfil": "C",
+  "funcao": "Desejo",
+  "texto": "Ela quase não marcou. Vou contar o que a fez mudar de ideia."
+ },
+ {
+  "id": "C22",
+  "perfil": "C",
+  "funcao": "Ação",
+  "texto": "Se você se viu nessa história, {acao}."
+ },
+ {
+  "id": "C23",
+  "perfil": "C",
+  "funcao": "Ação",
+  "texto": "Me conta nos comentários: você já passou por isso?"
+ },
+ {
+  "id": "C24",
+  "perfil": "C",
+  "funcao": "Ação",
+  "texto": "Se você está no começo dessa mesma história, comece por aqui."
+ },
+ {
+  "id": "C25",
+  "perfil": "C",
+  "funcao": "Ação",
+  "texto": "Salva esse relato para quando você estiver em dúvida sobre [DECISÃO]."
+ },
+ {
+  "id": "D01",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "Olha o que acontece quando [AÇÃO]. Sem corte."
+ },
+ {
+  "id": "D02",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "Antes e depois de [PROCESSO]. A diferença está no detalhe do meio."
+ },
+ {
+  "id": "D03",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "Vou fazer [TAREFA] em tempo real para você ver o que ninguém mostra."
+ },
+ {
+  "id": "D04",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "[NÚMERO] segundos mostrando como [RESULTADO] é feito de verdade."
+ },
+ {
+  "id": "D05",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "Isso aqui parece simples. Repara na parte que quase todo mundo pula."
+ },
+ {
+  "id": "D06",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "O passo que muda tudo em [PROCESSO] acontece antes de começar."
+ },
+ {
+  "id": "D07",
+  "perfil": "D",
+  "funcao": "Alcance",
+  "texto": "Testei [OPÇÃO A] e [OPÇÃO B] lado a lado. O resultado me surpreendeu."
+ },
+ {
+  "id": "D08",
+  "perfil": "D",
+  "funcao": "Interesse",
+  "texto": "Três formas de fazer [TAREFA]. Só uma entrega [RESULTADO]."
+ },
+ {
+  "id": "D09",
+  "perfil": "D",
+  "funcao": "Interesse",
+  "texto": "Repara na diferença entre o jeito rápido e o jeito certo."
+ },
+ {
+  "id": "D10",
+  "perfil": "D",
+  "funcao": "Interesse",
+  "texto": "O erro está no minuto [X] desse processo. Vou mostrar exatamente onde."
+ },
+ {
+  "id": "D11",
+  "perfil": "D",
+  "funcao": "Interesse",
+  "texto": "O que dá errado quando você faz [TAREFA] sem [ETAPA]."
+ },
+ {
+  "id": "D12",
+  "perfil": "D",
+  "funcao": "Interesse",
+  "texto": "Mesma ferramenta, duas técnicas, resultados diferentes."
+ },
+ {
+  "id": "D13",
+  "perfil": "D",
+  "funcao": "Interesse",
+  "texto": "Vou mostrar o processo inteiro de [TAREFA] do início ao fim."
+ },
+ {
+  "id": "D14",
+  "perfil": "D",
+  "funcao": "Conexão",
+  "texto": "Meu setup de trabalho como {profissao}, e por que cada coisa está aí."
+ },
+ {
+  "id": "D15",
+  "perfil": "D",
+  "funcao": "Conexão",
+  "texto": "Um dia normal de trabalho, sem edição bonita."
+ },
+ {
+  "id": "D16",
+  "perfil": "D",
+  "funcao": "Conexão",
+  "texto": "Errei na frente da câmera. Deixei no vídeo de propósito."
+ },
+ {
+  "id": "D17",
+  "perfil": "D",
+  "funcao": "Conexão",
+  "texto": "O que eu faço antes de qualquer [TAREFA] e quase nunca mostro."
+ },
+ {
+  "id": "D18",
+  "perfil": "D",
+  "funcao": "Desejo",
+  "texto": "Como eu entrego [RESULTADO]. O processo completo em [TEMPO]."
+ },
+ {
+  "id": "D19",
+  "perfil": "D",
+  "funcao": "Desejo",
+  "texto": "Isso aqui é o que o cliente não vê e é o que faz a diferença."
+ },
+ {
+  "id": "D20",
+  "perfil": "D",
+  "funcao": "Desejo",
+  "texto": "Bastidores de um [TRABALHO/ATENDIMENTO] real, do começo ao fim."
+ },
+ {
+  "id": "D21",
+  "perfil": "D",
+  "funcao": "Desejo",
+  "texto": "O detalhe que separa um trabalho feito de um trabalho bem feito."
+ },
+ {
+  "id": "D22",
+  "perfil": "D",
+  "funcao": "Ação",
+  "texto": "Quer que eu faça esse processo com você? {acao}."
+ },
+ {
+  "id": "D23",
+  "perfil": "D",
+  "funcao": "Ação",
+  "texto": "Salva este vídeo para a próxima vez que precisar fazer [TAREFA]."
+ },
+ {
+  "id": "D24",
+  "perfil": "D",
+  "funcao": "Ação",
+  "texto": "Tenta fazer assim e me conta o resultado."
+ },
+ {
+  "id": "D25",
+  "perfil": "D",
+  "funcao": "Ação",
+  "texto": "Se você quer [RESULTADO] sem tentativa e erro, {acao}."
+ }
+];</script>
+<script>/* ── 100 ganchos adaptáveis: lê o diagnóstico salvo e preenche as variáveis ── */
+
+const CH = "dna_loope_v1";
+const NOMES = {A:"Especialista", B:"Provocador", C:"Narrador", D:"Demonstrador"};
+const CORES = {A:"#ff0101", B:"#111111", C:"#7a7a7c", D:"#ff8a8a"};
+const FUNCOES = ["Alcance","Interesse","Conexão","Desejo","Ação"];
+const PAPEL = {
+  "Alcance":  "para ser visto por quem ainda não te conhece",
+  "Interesse":"para segurar quem parou no seu conteúdo",
+  "Conexão":  "para a pessoa confiar em você, não só no seu serviço",
+  "Desejo":   "para mostrar como é ser atendido por você",
+  "Ação":     "para pedir o próximo passo sem constrangimento"
+};
+const CTA_CURTO = {
+  "Me mandar mensagem no direct":"me chama no direct",
+  "Agendar pelo link":"agenda pelo link",
+  "Salvar e acompanhar":"salva esse conteúdo",
+  "Comentar e participar":"comenta aqui"
+};
+
+let respostas = {}, dados = {};
+try{
+  const g = JSON.parse(localStorage.getItem(CH));
+  if (g){ respostas = g.respostas || {}; dados = g.dados || {}; }
+}catch(e){}
+
+let filtroPerfil = "todos", filtroFuncao = "todas";
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function preencher(txt){
+  const mapa = {
+    "{profissao}": dados.profissao || "sua área",
+    "{publico}":   dados.publico   || "o seu público",
+    "{resultado}": dados.resultado || "o resultado que você entrega",
+    "{acao}":      CTA_CURTO[dados.acao] || "falar com você"
+  };
+  return String(txt).replace(/\{(profissao|publico|resultado|acao)\}/g, m => mapa[m] || m);
+}
+
+/* ordem dos perfis a partir do diagnostico; sem diagnostico, ordem natural */
+function ordemPerfis(){
+  const c = {A:0,B:0,C:0,D:0};
+  Object.values(respostas).forEach(v => { if (c[v] !== undefined) c[v]++; });
+  const base = ["A","B","C","D"];
+  if (!Object.values(c).some(n => n > 0)) return {ordem: base, temDna: false, cont: c};
+  return {ordem: base.slice().sort((x,y) => c[y]-c[x] || base.indexOf(x)-base.indexOf(y)),
+          temDna: true, cont: c};
+}
+
+function listar(){
+  const {ordem} = ordemPerfis();
+  return GANCHOS
+    .filter(g => filtroPerfil === "todos" || g.perfil === filtroPerfil)
+    .filter(g => filtroFuncao === "todas" || g.funcao === filtroFuncao)
+    .sort((a,b) => ordem.indexOf(a.perfil) - ordem.indexOf(b.perfil)
+                || FUNCOES.indexOf(a.funcao) - FUNCOES.indexOf(b.funcao)
+                || a.id.localeCompare(b.id));
+}
+
+function copiar(id, botao){
+  const g = GANCHOS.find(x => x.id === id);
+  const txt = preencher(g.texto);
+  const fim = () => {
+    botao.textContent = "Copiado";
+    botao.classList.add("ok");
+    setTimeout(() => { botao.textContent = "Copiar"; botao.classList.remove("ok"); }, 1600);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(fim).catch(() => fallback(txt, fim));
+  } else fallback(txt, fim);
+}
+function fallback(txt, fim){
+  const t = document.createElement("textarea");
+  t.value = txt; t.style.position = "fixed"; t.style.opacity = "0";
+  document.body.appendChild(t); t.select();
+  try{ document.execCommand("copy"); fim(); }catch(e){}
+  document.body.removeChild(t);
+}
+
+function filtrar(tipo, valor){
+  if (tipo === "perfil") filtroPerfil = valor; else filtroFuncao = valor;
+  pintar();
+}
+
+function pintar(){
+  const {ordem, temDna} = ordemPerfis();
+  const lista = listar();
+  const seu = NOMES[ordem[0]];
+
+  const cabecalho = temDna
+    ? `<p class="lead">Seu DNA é <b>${esc(seu)}</b>, então os ganchos do seu perfil vêm
+       primeiro. Os outros continuam aqui porque você vai querer variar. Tudo que aparece
+       entre colchetes é o que só você sabe preencher.</p>`
+    : `<p class="lead">Cem aberturas prontas, organizadas pelos quatro perfis do Método MAPA
+       e pela função de cada conteúdo. O que aparece entre colchetes é o que só você sabe
+       preencher.</p>
+       <div class="aviso"><b>Faça o diagnóstico primeiro.</b> Se você responder as vinte
+       perguntas do DNA de Conteúdo, esta página passa a ordenar os ganchos pelo seu perfil
+       e a preencher o nome do seu público e da sua área automaticamente.
+       <a href="../">Fazer o diagnóstico</a></div>`;
+
+  const chips = (tipo, atual, opcoes) => `<div class="pills">` + opcoes.map(o =>
+     `<button class="pill${atual === o.v ? " on" : ""}"
+       onclick="filtrar('${tipo}','${o.v}')">${esc(o.t)}</button>`).join("") + `</div>`;
+
+  let ultimoPerfil = "", ultimaFuncao = "", corpo = "";
+  lista.forEach(g => {
+    if (g.perfil !== ultimoPerfil){
+      ultimoPerfil = g.perfil; ultimaFuncao = "";
+      const pos = ordem.indexOf(g.perfil);
+      const rot = !temDna ? "Perfil"
+        : pos === 0 ? "Seu perfil principal"
+        : pos === 1 ? "Seu perfil complementar" : "Para variar";
+      corpo += `<div class="grupo"><span class="gp" style="background:${CORES[g.perfil]}"></span>
+        <div><span class="gr">${esc(rot)}</span><h2>${esc(NOMES[g.perfil])}</h2></div></div>`;
+    }
+    if (g.funcao !== ultimaFuncao){
+      ultimaFuncao = g.funcao;
+      corpo += `<div class="fx"><b>${esc(g.funcao)}</b><span>${esc(PAPEL[g.funcao])}</span></div>`;
+    }
+    corpo += `<div class="gc">
+      <span class="cod">${esc(g.id)}</span>
+      <p>${esc(preencher(g.texto))}</p>
+      <button class="cp" onclick="copiar('${g.id}', this)">Copiar</button>
+    </div>`;
+  });
+
+  if (!lista.length) corpo = `<p class="vazio">Nenhum gancho nesse cruzamento de filtros.</p>`;
+
+  document.getElementById("app").innerHTML = `
+  <div class="tela">
+    <div class="selo">Order bump · Método MAPA</div>
+    <h1>Cem ganchos<br>para <em>continuar</em></h1>
+    ${cabecalho}
+
+    <div class="filtros">
+      <div class="fl"><span>Perfil</span>
+        ${chips("perfil", filtroPerfil, [{v:"todos",t:"Todos"}].concat(
+          ordem.map(p => ({v:p, t:NOMES[p]}))))}</div>
+      <div class="fl"><span>Função</span>
+        ${chips("funcao", filtroFuncao, [{v:"todas",t:"Todas"}].concat(
+          FUNCOES.map(f => ({v:f, t:f}))))}</div>
+    </div>
+
+    <p class="conta">${lista.length} de ${GANCHOS.length} ganchos</p>
+    ${corpo}
+
+    <div class="regra">
+      <b>Como usar sem virar repetição.</b> Um gancho só se gasta quando o conteúdo depois
+      dele é sempre o mesmo. Escolha o gancho pela função que o dia precisa, não pelo que
+      soa mais bonito: alcance quando você quer ser encontrada, ação quando você quer ser
+      procurada.
+    </div>
+
+    <div class="acoes">
+      <button class="btn" onclick="window.print()">Salvar os ganchos em PDF</button>
+      <a class="btn2" href="../">Voltar ao meu plano</a>
+    </div>
+  </div>`;
+}
+
+pintar();
+</script>
+</body>
+</html>
