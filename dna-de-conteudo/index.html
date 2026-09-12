@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DNA de Conteúdo · Loope Academy</title>
+<meta name="description" content="Descubra quais formatos de conteúdo combinam com você e receba sete roteiros prontos para gravar.">
+<meta property="og:title" content="DNA de Conteúdo">
+<meta property="og:description" content="Não é que você não leva jeito. É que o formato não é o seu.">
+<link rel="icon" href="img/simbolo-vermelho.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══ TROQUE ESTE LINK PELO CHECKOUT DA HOTMART (aparece 4 vezes) ═══ -->
+
+<style>
+:root{
+  --ink:#111111; --ground:#fafaf8; --surface:#ffffff; --dark:#0e0e0e;
+  --mid:#6e6e70; --soft:#9a9a9b; --hair:#e3e3df; --hair2:#eeeeea;
+  --red:#ff0101; --red-dp:#cc0000; --wash:#f3f3f0;
+  --pA:#ff0101; --pB:#111111; --pC:#7a7a7c; --pD:#ff8a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--ground);
+  color:var(--ink);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+em{font-style:normal;color:var(--red)}
+
+/* ── ritmo ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.col{max-width:660px}
+section{padding:82px 0}
+h1,h2,h3{letter-spacing:-.016em;text-wrap:balance}
+h1{font-weight:700;font-size:clamp(33px,5vw,58px);line-height:1.1}
+h2{font-weight:700;font-size:clamp(25px,3.4vw,38px);line-height:1.18;margin-bottom:20px}
+h3{font-weight:600;font-size:19px;line-height:1.34}
+p{margin-bottom:17px}
+p:last-child{margin-bottom:0}
+.lead{font-size:clamp(17px,1.8vw,20px);line-height:1.6;color:#33333a}
+.small{font-size:13.5px;color:var(--mid);line-height:1.5}
+
+.olho{display:flex;align-items:center;gap:13px;font-size:11px;letter-spacing:.24em;
+  text-transform:uppercase;font-weight:600;color:var(--red);margin-bottom:22px}
+.olho::after{content:"";flex:1;height:1px;background:var(--hair);max-width:200px}
+
+/* ── barra de proporção: o desenho que o produto realmente devolve ── */
+.prop{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--hair2)}
+.prop i{display:block;height:100%}
+
+/* ── topo ── */
+.topo{position:sticky;top:0;z-index:40;background:rgba(250,250,248,.93);
+  backdrop-filter:blur(9px);border-bottom:1px solid var(--hair)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:600;font-size:12px;
+  letter-spacing:.2em;text-transform:uppercase}
+.mk{position:relative;width:26px;height:15px;flex:none}
+.mk i{position:absolute;top:0;width:15px;height:15px;border-radius:50%;background:var(--red)}
+.mk i:first-child{left:0}
+.mk i:last-child{left:11px;box-shadow:-2px 0 0 0 var(--ground)}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:600;font-size:15px;
+  padding:14px 26px;border-radius:4px;text-decoration:none;transition:background .15s;
+  text-align:center}
+.btn:hover{background:var(--red-dp)}
+.btn.mini{font-size:13.5px;padding:10px 18px}
+.btn.grande{font-size:17px;padding:19px 34px;width:100%;max-width:460px}
+
+/* ── hero ── */
+.hero{padding:74px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:22px}
+.hero .lead{margin-bottom:30px;max-width:30em}
+.hero .cta-linha{display:flex;flex-direction:column;gap:11px;align-items:flex-start}
+.selo-tempo{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mid)}
+.selo-tempo b{color:var(--ink);font-weight:600}
+.hero-fig{position:relative}
+.hero-fig .quadro{position:relative;border:1px solid var(--hair);border-radius:6px;
+  overflow:hidden;max-height:600px;box-shadow:0 22px 50px -28px rgba(0,0,0,.35)}
+.hero-fig .quadro::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;
+  background:linear-gradient(to bottom,rgba(250,250,248,0),var(--ground))}
+.hero-fig figcaption{font-size:11.5px;color:var(--soft);margin-top:11px;letter-spacing:.02em}
+
+/* ── faixa de fatos ── */
+.faixa{background:var(--dark);color:#fff}
+.faixa .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:30px;
+  padding-bottom:30px}
+.faixa b{display:block;font-weight:700;font-size:29px;line-height:1.1;margin-bottom:2px}
+.faixa span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8e8e8f;
+  font-weight:500}
+
+/* ── cena ── */
+.cena{background:var(--wash)}
+.sinais{list-style:none;margin:26px 0 0;display:grid;gap:0}
+.sinais li{display:flex;gap:14px;padding:15px 0;border-top:1px solid var(--hair);
+  font-size:15.5px;line-height:1.5}
+.sinais li:last-child{border-bottom:1px solid var(--hair)}
+.sinais li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);
+  flex:none;margin-top:10px}
+.remate{margin-top:32px;font-size:clamp(19px,2.3vw,25px);line-height:1.34;font-weight:600;
+  letter-spacing:-.014em;max-width:20em}
+
+/* ── mecanismo ── */
+.mapa{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);
+  border:1px solid var(--hair);border-radius:5px;overflow:hidden;margin-top:34px}
+.mapa div{background:var(--surface);padding:22px 20px}
+.mapa .l{font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--red);
+  margin-bottom:9px}
+.mapa h3{margin-bottom:6px;font-size:16.5px}
+.mapa p{font-size:13.5px;color:var(--mid);line-height:1.5;margin:0}
+
+/* ── perfis ── */
+.perfis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.perfil{background:var(--surface);border:1px solid var(--hair);border-radius:5px;
+  padding:26px 24px}
+.perfil .cab{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.perfil .pt{width:11px;height:11px;border-radius:50%;flex:none}
+.perfil h3{font-size:20px}
+.perfil .def{font-size:15px;line-height:1.5;color:#33333a;margin-bottom:18px}
+.perfil dl{display:grid;gap:0;margin:0}
+.perfil dt{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);
+  font-weight:600;padding-top:12px;border-top:1px solid var(--hair2)}
+.perfil dd{font-size:13.5px;line-height:1.5;color:var(--mid);margin:2px 0 10px}
+.perfil dd.p{color:var(--ink);font-weight:500}
+.mix-nota{display:flex;align-items:center;gap:18px;margin-top:26px;padding:20px 22px;
+  background:var(--surface);border:1px solid var(--hair);border-radius:5px;flex-wrap:wrap}
+.mix-nota .prop{flex:1;min-width:190px}
+.mix-nota p{font-size:14px;color:var(--mid);margin:0;flex:2;min-width:270px}
+.mix-nota b{color:var(--ink);font-weight:600}
+
+/* ── entrega em duas colunas ── */
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.duas.invertida .fig{order:2}
+.duas .fig .quadro{position:relative;border:1px solid var(--hair);border-radius:6px;
+  overflow:hidden;max-height:620px;box-shadow:0 18px 40px -26px rgba(0,0,0,.3)}
+.duas .fig .quadro::after{content:"";position:absolute;left:0;right:0;bottom:0;height:100px;
+  background:linear-gradient(to bottom,rgba(250,250,248,0),var(--ground))}
+.duas .fig figcaption{font-size:11.5px;color:var(--soft);margin-top:10px}
+
+/* ── recebe ── */
+.recebe{list-style:none;margin-top:30px}
+.recebe li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 0;
+  border-top:1px solid var(--hair)}
+.recebe li:last-child{border-bottom:1px solid var(--hair)}
+.recebe .q{font-weight:700;font-size:13px;color:var(--red);
+  font-variant-numeric:tabular-nums;padding-top:2px;width:44px}
+.recebe h3{font-size:16.5px;margin-bottom:3px}
+.recebe p{font-size:14px;color:var(--mid);line-height:1.5;margin:0}
+
+/* ── antes e depois ── */
+.par{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.lado{border:1px solid var(--hair);border-radius:5px;padding:24px;background:var(--surface)}
+.lado.bom{border-color:var(--ink);border-width:1.5px}
+.lado .rot{font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:600;
+  color:var(--soft);margin-bottom:14px}
+.lado.bom .rot{color:var(--red)}
+.lado .fala{font-size:15.5px;line-height:1.5;padding-bottom:16px;margin-bottom:16px;
+  border-bottom:1px solid var(--hair2)}
+.lado.ruim .fala{color:var(--mid)}
+.lado ul{list-style:none;font-size:13.5px;line-height:1.5;color:var(--mid);display:grid;
+  gap:7px}
+.lado li{display:flex;gap:9px}
+.lado li::before{content:"";width:5px;height:5px;border-radius:50%;flex:none;margin-top:8px;
+  background:var(--hair)}
+.lado.bom li::before{background:var(--red)}
+
+/* ── para quem ── */
+.quem{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.quem > div{padding:26px 24px;border-radius:5px}
+.quem .sim{background:var(--surface);border:1.5px solid var(--ink)}
+.quem .nao{background:transparent;border:1px solid var(--hair)}
+.quem h3{font-size:17px;margin-bottom:16px}
+.quem ul{list-style:none;display:grid;gap:11px;font-size:14.5px;line-height:1.5}
+.quem li{display:flex;gap:11px}
+.quem li::before{font-weight:600;flex:none;width:14px}
+.quem .sim li::before{content:"+";color:var(--red)}
+.quem .nao li::before{content:"–";color:var(--soft)}
+.quem .nao li{color:var(--mid)}
+
+/* ── oferta ── */
+.oferta{background:var(--dark);color:#fff}
+.oferta .olho{color:var(--red)}
+.oferta .olho::after{background:#2b2b2b}
+.oferta h2{color:#fff}
+.oferta .lead{color:#bebebd}
+.caixa{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;margin-top:38px;
+  border:1px solid #262626;border-radius:6px;overflow:hidden}
+.preco{background:#151515;padding:38px 34px;display:flex;flex-direction:column;
+  justify-content:center}
+.preco .de{font-size:13px;color:#7d7d7e;margin-bottom:4px}
+.preco .valor{font-weight:700;font-size:clamp(52px,7vw,76px);line-height:1;
+  letter-spacing:-.03em}
+.preco .valor small{font-size:.36em;font-weight:600;vertical-align:.62em;margin-right:4px;
+  letter-spacing:0}
+.preco .cond{font-size:13.5px;color:#9d9d9e;margin-top:10px}
+.inclui{padding:34px;background:#101010}
+.inclui ul{list-style:none;display:grid;gap:0}
+.inclui li{display:flex;gap:13px;padding:11px 0;border-bottom:1px solid #232323;
+  font-size:14.5px;line-height:1.45}
+.inclui li:last-child{border-bottom:none}
+.inclui li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);
+  flex:none;margin-top:8px}
+.inclui b{font-weight:600}
+.inclui span{color:#8e8e8f}
+.oferta .acao{margin-top:32px;display:flex;flex-direction:column;gap:13px;
+  align-items:flex-start}
+.garantia{display:flex;gap:16px;align-items:flex-start;margin-top:34px;padding:22px 24px;
+  border:1px solid #262626;border-radius:5px;max-width:640px}
+.garantia .g{font-weight:700;font-size:22px;color:var(--red);line-height:1.1;flex:none;
+  width:64px}
+.garantia p{font-size:14px;color:#b0b0af;margin:0;line-height:1.55}
+.garantia b{color:#fff;font-weight:600}
+
+/* ── faq ── */
+.faq{max-width:760px}
+.faq details{border-top:1px solid var(--hair)}
+.faq details:last-of-type{border-bottom:1px solid var(--hair)}
+.faq summary{font-weight:600;font-size:16.5px;padding:20px 34px 20px 0;position:relative;
+  list-style:none;line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:19px;font-weight:400;
+  font-size:22px;color:var(--red);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .r{padding:0 34px 22px 0;font-size:15px;line-height:1.6;color:var(--mid)}
+
+/* ── fecho ── */
+.fecho{text-align:center;padding-bottom:96px}
+.fecho h2{max-width:16em;margin-left:auto;margin-right:auto}
+.fecho .lead{max-width:34em;margin:0 auto 30px}
+.fecho .btn{margin:0 auto}
+.fecho .small{margin-top:14px}
+
+.rodape{border-top:1px solid var(--hair);padding:30px 0;font-size:12.5px;color:var(--soft)}
+.rodape .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero .wrap,.duas,.par,.quem,.perfis,.caixa{grid-template-columns:1fr}
+  .duas{gap:34px}
+  .duas.invertida .fig{order:0}
+  .mapa{grid-template-columns:1fr 1fr}
+  .faixa .wrap{grid-template-columns:1fr 1fr;gap:24px}
+  .hero{padding-top:48px}
+  section{padding:60px 0}
+  .btn.grande{max-width:none}
+}
+@media (max-width:520px){
+  .wrap{padding:0 20px}
+  .mapa{grid-template-columns:1fr}
+  .faixa b{font-size:25px}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}
+  html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <span class="marca"><span class="mk"><i></i><i></i></span>Loope Academy</span>
+    <a class="btn mini" href="https://pay.hotmart.com/SEU-LINK">Fazer o diagnóstico</a>
+  </div>
+</header>
+
+<!-- 1 · tese -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="olho">Para quem vende o próprio trabalho</div>
+      <h1>Não é que você<br>não leva jeito.<br>É que o <em>formato</em><br>não é o seu.</h1>
+      <p class="lead">Vinte perguntas sobre como você comunica de verdade. No fim, você
+      descobre quais formatos de conteúdo combinam com a sua personalidade, com o seu
+      negócio e com o tempo que você tem, e recebe sete roteiros prontos para gravar.</p>
+      <div class="cta-linha">
+        <a class="btn grande" href="https://pay.hotmart.com/SEU-LINK">Descobrir meu DNA de Conteúdo · R$&nbsp;47</a>
+        <span class="selo-tempo"><b>Resultado na hora.</b> Leva de 4 a 6 minutos para responder.</span>
+      </div>
+    </div>
+    <figure class="hero-fig">
+      <div class="quadro"><img src="img/resultado.png" alt="Tela de resultado do diagnóstico mostrando a combinação de perfis de conteúdo" loading="eager" width="900" height="1400"></div>
+      <figcaption>Tela real do diagnóstico, não é ilustração.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="faixa">
+  <div class="wrap">
+    <div><b>20</b><span>perguntas</span></div>
+    <div><b>4</b><span>perfis de conteúdo</span></div>
+    <div><b>20</b><span>formatos mapeados</span></div>
+    <div><b>7</b><span>roteiros seus</span></div>
+  </div>
+</div>
+
+<!-- 2 · cena de identificação -->
+<section class="cena">
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">A cena</div>
+      <h2>Você sabe o que fazer.<br>Só não consegue manter.</h2>
+      <p class="lead">Você domina o seu assunto. Sabe explicar na consulta, na reunião, no
+      atendimento. Mas na frente da câmera vira outra pessoa, e no fim da semana o
+      conteúdo é a única coisa que ficou para trás outra vez.</p>
+      <ul class="sinais">
+        <li>Você salva referência há meses e não consegue adaptar nenhuma sem parecer cópia.</li>
+        <li>Tem conhecimento de sobra e demora horas para achar um jeito interessante de apresentar.</li>
+        <li>Grava vários vídeos e sente que todos ficam iguais, ou artificiais.</li>
+        <li>Alterna uma semana de muita produção com três semanas sem publicar nada.</li>
+        <li>Pede roteiro para a inteligência artificial e recebe algo genérico, longe do seu jeito de falar.</li>
+        <li>Não sabe dizer qual conteúdo serve para alcance, qual serve para autoridade e qual serve para vender.</li>
+        <li>Desconfia que precisaria ser mais extrovertida, mais engraçada ou mais polêmica para crescer.</li>
+      </ul>
+      <p class="remate">Nada disso é falta de talento. É formato incompatível com quem
+      você é.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · mecanismo -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">O que é</div>
+      <h2>Um diagnóstico aplicado,<br>não mais um curso.</h2>
+      <p class="lead">O DNA de Conteúdo não te ensina teoria de roteiro para você aplicar
+      depois. Ele descobre como você já comunica e devolve a resposta prática: quais
+      formatos são seus, como gravar cada um e o que publicar na segunda-feira.</p>
+      <p>A teoria está dentro da entrega. Você não precisa entender de atenção, interesse,
+      desejo e ação para usar. Isso já vem distribuído ao longo dos sete dias.</p>
+    </div>
+    <div class="mapa">
+      <div><div class="l">M</div><h3>Mapear</h3>
+        <p>Vinte perguntas de comportamento revelam o seu perfil principal e o complementar.</p></div>
+      <div><div class="l">A</div><h3>Ajustar</h3>
+        <p>Público, oferta, objetivo, rotina e recursos entram na conta. O plano é seu, não do perfil.</p></div>
+      <div><div class="l">P</div><h3>Produzir</h3>
+        <p>Sete roteiros com abertura, marcação de tempo, direção de gravação e chamada.</p></div>
+      <div><div class="l">A</div><h3>Ampliar</h3>
+        <p>No fim da semana você empilha o que funcionou trocando uma variável por vez.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · os quatro perfis -->
+<section class="cena">
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">Os quatro perfis</div>
+      <h2>Quatro jeitos de comunicar.<br>Você é uma combinação de dois.</h2>
+      <p class="lead">Os perfis descrevem tendências, não caixas. O diagnóstico encontra o
+      seu principal e o seu complementar, e é a combinação dos dois que define formato,
+      ritmo, linguagem e o quanto você precisa aparecer.</p>
+    </div>
+    <div class="perfis">
+      <article class="perfil">
+        <div class="cab"><span class="pt" style="background:var(--pA)"></span><h3>Especialista</h3></div>
+        <p class="def">Organiza ideias, explica causas e transforma complexidade em clareza.</p>
+        <dl>
+          <dt>Onde rende</dt><dd>Análises, tutoriais, diagnósticos, listas comentadas e erros corrigidos.</dd>
+          <dt>Onde trava</dt><dd>Excesso de contexto, tom professoral e abertura lenta.</dd>
+          <dt>Pergunta que abre pauta</dt><dd class="p">Qual ideia consigo tornar mais simples ou mais precisa?</dd>
+        </dl>
+      </article>
+      <article class="perfil">
+        <div class="cab"><span class="pt" style="background:var(--pB)"></span><h3>Provocador</h3></div>
+        <p class="def">Cria interesse ao sustentar opiniões, contrastes e quebras de crença.</p>
+        <dl>
+          <dt>Onde rende</dt><dd>Opiniões contrárias, comparações, manifestos, comentários e alertas.</dd>
+          <dt>Onde trava</dt><dd>Polêmica vazia, agressividade e afirmação sem sustentação.</dd>
+          <dt>Pergunta que abre pauta</dt><dd class="p">Que crença aceita pelo mercado merece ser questionada?</dd>
+        </dl>
+      </article>
+      <article class="perfil">
+        <div class="cab"><span class="pt" style="background:var(--pC)"></span><h3>Narrador</h3></div>
+        <p class="def">Gera identificação usando experiências, cenas, vulnerabilidade e transformação.</p>
+        <dl>
+          <dt>Onde rende</dt><dd>Histórias pessoais, bastidores narrados, decisões e aprendizados.</dd>
+          <dt>Onde trava</dt><dd>História longa sem ponto, exposição excessiva e moral genérica.</dd>
+          <dt>Pergunta que abre pauta</dt><dd class="p">Que situação vivida ajuda meu público a se enxergar?</dd>
+        </dl>
+      </article>
+      <article class="perfil">
+        <div class="cab"><span class="pt" style="background:var(--pD)"></span><h3>Demonstrador</h3></div>
+        <p class="def">Comunica mostrando processos, objetos, telas, movimentos e resultados.</p>
+        <dl>
+          <dt>Onde rende</dt><dd>Antes e depois, tela gravada, processo, teste e take com texto.</dd>
+          <dt>Onde trava</dt><dd>Visual bonito sem ideia, dependência de edição e falta de conclusão.</dd>
+          <dt>Pergunta que abre pauta</dt><dd class="p">O que posso mostrar para provar esta ideia sem explicar por muito tempo?</dd>
+        </dl>
+      </article>
+    </div>
+    <div class="mix-nota">
+      <span class="prop" aria-hidden="true">
+        <i style="width:67%;background:var(--pA)"></i><i style="width:33%;background:var(--pB)"></i>
+      </span>
+      <p>Um resultado real do diagnóstico: <b>67% Especialista, 33% Provocador</b>. O
+      principal define o que você repete. O complementar é o que impede o seu conteúdo de
+      ficar previsível.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · o relatório e o plano -->
+<section>
+  <div class="wrap">
+    <div class="duas">
+      <div>
+        <div class="olho">O que aparece na tela</div>
+        <h2>Sete dias com dia, formato,<br>roteiro e direção.</h2>
+        <p>Você não recebe uma lista de ideias para transformar em roteiro depois. Cada dia
+        já vem com o formato escolhido para o seu perfil, a abertura escrita, a marcação de
+        tempo do vídeo, como enquadrar e gravar, qual métrica olhar e o erro mais comum
+        daquele formato.</p>
+        <p>O que estiver entre colchetes é o que só você sabe preencher: o caso real, o
+        número real, o erro que você viu acontecer. O sistema não inventa história, cliente
+        nem resultado no seu nome.</p>
+      </div>
+      <figure class="fig">
+        <div class="quadro"><img src="img/plano.png" alt="Plano de sete dias com roteiro detalhado por dia" loading="lazy" width="900" height="1400"></div>
+        <figcaption>Plano gerado a partir de um diagnóstico real.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · antes e depois -->
+<section class="cena">
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">A diferença na prática</div>
+      <h2>O mesmo tema, dois roteiros.</h2>
+      <p class="lead">À esquerda, o que a inteligência artificial devolve quando você pede
+      um roteiro sobre o seu assunto. À direita, o que sai do diagnóstico.</p>
+    </div>
+    <div class="par">
+      <div class="lado ruim">
+        <div class="rot">Roteiro genérico</div>
+        <p class="fala">"Olá pessoal, tudo bem? Hoje vou falar sobre um assunto muito
+        importante que muita gente ignora. Fica até o final que eu vou te contar tudo."</p>
+        <ul>
+          <li>Abre com saudação e promessa vaga</li>
+          <li>Serve para qualquer profissão</li>
+          <li>Sem marcação de tempo, você improvisa na hora</li>
+          <li>Nenhuma indicação de como gravar</li>
+          <li>Termina em "siga para mais conteúdos"</li>
+        </ul>
+      </div>
+      <div class="lado bom">
+        <div class="rot">Roteiro do seu DNA</div>
+        <p class="fala">"O erro que eu mais vejo em [SEU PÚBLICO] é [O ERRO QUE VOCÊ MAIS
+        VÊ]." <br><span class="small">0 a 5s · a primeira palavra já é o erro, sem
+        apresentação</span></p>
+        <ul>
+          <li>Formato escolhido pelo seu perfil, entre os vinte mapeados</li>
+          <li>Cinco blocos com o tempo de cada um</li>
+          <li>Direção de gravação: enquadramento, o que mostrar e quando</li>
+          <li>A métrica que prova se funcionou, e o erro comum do formato</li>
+          <li>Chamada alinhada ao que você quer que a pessoa faça</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · o que você recebe -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">O que você recebe</div>
+      <h2>Tudo entregue na hora,<br>na mesma página.</h2>
+      <p class="lead">Você responde, o sistema calcula e a entrega aparece. Sem espera, sem
+      alguém montando o seu plano do outro lado.</p>
+      <ul class="recebe">
+        <li><span class="q">01</span><div><h3>Seu DNA de Conteúdo</h3>
+          <p>Perfil principal e complementar com a proporção entre os dois, onde você rende, onde você trava e a pergunta que abre pauta para cada um.</p></div></li>
+        <li><span class="q">02</span><div><h3>Seus três formatos prioritários</h3>
+          <p>Selecionados entre os vinte do método, filtrados pelo seu tempo, pelos seus recursos e pelo quanto você aceita aparecer.</p></div></li>
+        <li><span class="q">03</span><div><h3>Plano de sete dias com roteiro completo</h3>
+          <p>Um formato por dia, com abertura escrita, blocos cronometrados, direção de gravação, métrica e chamada.</p></div></li>
+        <li><span class="q">04</span><div><h3>Seus outros formatos, para variar depois</h3>
+          <p>Os formatos que combinam com você e não entraram na primeira semana, com a indicação de quando usar cada um.</p></div></li>
+        <li><span class="q">05</span><div><h3>O método de ampliação</h3>
+          <p>Como pegar o conteúdo que teve melhor sinal e transformar em três variações, trocando uma variável por vez.</p></div></li>
+        <li><span class="q">06</span><div><h3>Tudo em PDF, com um clique</h3>
+          <p>O plano inteiro sai em arquivo para você imprimir, salvar ou mandar para quem grava com você.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · para quem é -->
+<section class="cena">
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">Honestidade antes da compra</div>
+      <h2>Para quem é, e para quem não é.</h2>
+    </div>
+    <div class="quem">
+      <div class="sim">
+        <h3>Faz sentido para você se</h3>
+        <ul>
+          <li>Você vende o próprio trabalho e depende da sua autoridade para aparecer oportunidade</li>
+          <li>É profissional liberal, consultor, mentor, especialista ou dono de um negócio pequeno</li>
+          <li>Já entendeu que precisa produzir e não consegue manter a constância</li>
+          <li>Tem assunto de sobra e trava na hora de escolher o formato</li>
+          <li>Quer parar de adivinhar e começar a semana sabendo o que gravar</li>
+        </ul>
+      </div>
+      <div class="nao">
+        <h3>Não é para você se</h3>
+        <ul>
+          <li>Procura garantia de viralização ou um número específico de seguidores</li>
+          <li>Ainda não tem tema, atividade, produto ou serviço sobre o que produzir</li>
+          <li>Quer terceirizar a produção inteira, sem gravar nada</li>
+          <li>É social media e busca uma formação profissional completa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · oferta -->
+<section class="oferta" id="comprar">
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">A oferta</div>
+      <h2>R$ 47 para parar de<br>começar do zero toda semana.</h2>
+      <p class="lead">Menos que uma hora do seu trabalho. Você responde hoje e sai com a
+      semana inteira definida.</p>
+    </div>
+    <div class="caixa">
+      <div class="preco">
+        <span class="de">DNA de Conteúdo, acesso imediato</span>
+        <span class="valor"><small>R$</small>47</span>
+        <span class="cond">Pagamento único. Sem assinatura, sem renovação.</span>
+      </div>
+      <div class="inclui">
+        <ul>
+          <li><span><b>Diagnóstico completo</b> com perfil principal, complementar e a proporção entre os dois</span></li>
+          <li><span><b>Três formatos prioritários</b> escolhidos entre os vinte do método</span></li>
+          <li><span><b>Sete roteiros personalizados</b> com tempo, direção de gravação, métrica e chamada</span></li>
+          <li><span><b>Seus outros formatos</b> para variar depois da primeira semana</span></li>
+          <li><span><b>Exportação em PDF</b> do plano inteiro</span></li>
+          <li><span><b>Acesso vitalício</b>, refaça o diagnóstico quantas vezes quiser</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acao">
+      <a class="btn grande" href="https://pay.hotmart.com/SEU-LINK">Quero meu DNA de Conteúdo · R$&nbsp;47</a>
+    </div>
+    <div class="garantia">
+      <span class="g">7<br>dias</span>
+      <p><b>Se não fizer sentido, você pede o dinheiro de volta.</b> Faça o diagnóstico,
+      leia o seu plano e grave o primeiro conteúdo. Se você não reconhecer o seu jeito de
+      comunicar no resultado, é só responder o e-mail da compra dentro de sete dias. Sem
+      formulário e sem pergunta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section>
+  <div class="wrap">
+    <div class="faq">
+      <div class="olho">Perguntas frequentes</div>
+      <h2>O que costumam perguntar antes.</h2>
+      <details open>
+        <summary>Isso é um curso? Vou precisar assistir aula?</summary>
+        <div class="r">Não. É um diagnóstico que devolve um plano pronto. Você responde
+        vinte perguntas, o sistema calcula e a entrega aparece na tela. O que você precisa
+        saber sobre roteiro já vem escrito dentro de cada dia.</div>
+      </details>
+      <details>
+        <summary>Quanto tempo leva para receber?</summary>
+        <div class="r">O tempo de responder, entre quatro e seis minutos. Não existe
+        espera: o resultado é calculado no seu navegador assim que você termina. Se
+        precisar sair no meio, suas respostas ficam salvas.</div>
+      </details>
+      <details>
+        <summary>Os roteiros são feitos por inteligência artificial?</summary>
+        <div class="r">Não. Os vinte formatos foram escritos um por um, com marcação de
+        tempo e direção de gravação. O que o sistema faz é escolher quais combinam com
+        você e preencher com o seu público, a sua área e o seu objetivo. Por isso nenhum
+        roteiro inventa cliente, número ou história no seu nome.</div>
+      </details>
+      <details>
+        <summary>Serve para a minha área?</summary>
+        <div class="r">Serve para quem vende o próprio trabalho e precisa de autoridade
+        para gerar oportunidade. Os roteiros são estruturas, e você preenche com o
+        vocabulário da sua profissão. Em áreas reguladas como saúde, direito e finanças,
+        os campos entre colchetes existem justamente para você respeitar o que o seu
+        conselho permite dizer.</div>
+      </details>
+      <details>
+        <summary>Preciso aparecer no vídeo?</summary>
+        <div class="r">Não necessariamente. Uma das perguntas do diagnóstico é exatamente
+        sobre isso. Se você prefere não aparecer, o plano prioriza formatos de tela
+        gravada, voz em off, processo e texto em vídeo.</div>
+      </details>
+      <details>
+        <summary>E se o resultado não me representar?</summary>
+        <div class="r">Você pode refazer o diagnóstico quantas vezes quiser, o acesso é
+        vitalício. E se ainda assim não fizer sentido, a garantia de sete dias devolve o
+        seu dinheiro.</div>
+      </details>
+      <details>
+        <summary>Preciso de equipamento?</summary>
+        <div class="r">Celular. Uma das perguntas levanta o que você tem, e o plano só
+        indica formatos que você consegue gravar com os recursos que declarou.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- fecho -->
+<section class="fecho">
+  <div class="wrap">
+    <h2>Antes de pedir trinta roteiros para uma inteligência artificial, descubra como você
+    realmente comunica.</h2>
+    <p class="lead">Vinte perguntas. De quatro a seis minutos. Uma semana inteira de
+    conteúdo definida no fim.</p>
+    <a class="btn grande" href="https://pay.hotmart.com/SEU-LINK">Descobrir meu DNA de Conteúdo · R$&nbsp;47</a>
+    <p class="small">Acesso imediato e vitalício · 7 dias de garantia · Pagamento único</p>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>Loope Academy · Agência Loope</span>
+    <span>DNA de Conteúdo · Método MAPA</span>
+  </div>
+</footer>
+
+</body>
+</html>
