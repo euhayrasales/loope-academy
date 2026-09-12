@@ -19,6 +19,7 @@
   --ground:#0a0a0a; --surface:#151515; --ink:#e8e4db; --luz:#ffffff;
   --mid:#918d85; --soft:#65625c; --hair:#262626; --hair2:#1b1b1b;
   --red:#ff0101; --red-dp:#ff3333;
+  --acao:#0e9f4a; --acao-dp:#0b8a3e;   /* verde: só o botão usa, para ele não sumir no vermelho */
   --pA:#ff0101; --pB:#e8e4db; --pC:#8a867e; --pD:#ff7a7a;
 }
 /* a seção clara redefine os mesmos tokens: os componentes não mudam */
@@ -75,12 +76,14 @@ p:last-child{margin-bottom:0}
 .mk i:first-child{left:0}
 .mk i:last-child{left:11px;box-shadow:-2px 0 0 0 var(--ground)}
 .marca{color:var(--ink)}
-.btn{display:inline-block;background:var(--red);color:#fff;font-weight:600;font-size:15px;
+.btn{display:inline-block;background:var(--acao);color:#fff;font-weight:600;font-size:15px;
   padding:15px 28px;border-radius:8px;text-decoration:none;transition:background .15s;
   text-align:center}
-.btn:hover{background:var(--red-dp)}
+.btn:hover{background:var(--acao-dp)}
 .btn.mini{font-size:13.5px;padding:10px 18px}
 .btn.grande{font-size:17px;padding:19px 34px;width:100%;max-width:460px}
+.btn.verde{background:#15803d}
+.btn.verde:hover{background:#16a34a}
 
 /* ── hero ── */
 .hero{padding:78px 0 96px}
@@ -93,9 +96,8 @@ p:last-child{margin-bottom:0}
 .selo-tempo{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mid)}
 .selo-tempo b{color:var(--ink);font-weight:600}
 .hero-fig{position:relative}
-.hero-fig .quadro{position:relative;border:1px solid var(--hair);border-radius:9px;
-  overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.9)}
-.hero-fig .quadro img{display:block;width:100%}
+.hero-fig .neon{display:block;width:106%;max-width:none;margin-left:-3%;height:auto}
+@media (max-width:900px){.hero-fig .neon{width:100%;margin-left:0}}
 .hero-fig figcaption{font-size:11.5px;color:var(--soft);margin-top:11px;letter-spacing:.02em}
 
 /* ── faixa de fatos ── */
@@ -333,7 +335,7 @@ p:last-child{margin-bottom:0}
 .barra .val{flex:none;color:#fff;line-height:1.15}
 .barra .val b{display:block;font-weight:700;font-size:19px}
 .barra .val span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8e8e8f}
-.barra .btn{flex:1;padding:14px 16px;font-size:15px}
+.barra .btn{flex:1;padding:14px 16px;font-size:15px;background:var(--acao)}
 @media (max-width:900px){
   .barra{display:flex}
   body{padding-bottom:74px}
@@ -380,7 +382,7 @@ src="https://www.facebook.com/tr?id=975744655360262&ev=PageView&noscript=1"></no
       </div>
     </div>
     <figure class="hero-fig">
-      <div class="quadro"><img src="img/mock-consultor-notebook.jpg" alt="O Consultor DNA de Conteúdo aberto num notebook" fetchpriority="high" loading="eager" width="1600" height="1045"></div>
+      <img class="neon" src="img/mockup-neon.jpg" alt="O Consultor DNA de Conteúdo aberto num notebook" fetchpriority="high" loading="eager" width="1200" height="801">
       <figcaption>O Consultor DNA de Conteúdo, na sua área da Hotmart.</figcaption>
     </figure>
   </div>
@@ -786,7 +788,7 @@ src="https://www.facebook.com/tr?id=975744655360262&ev=PageView&noscript=1"></no
       </div>
     </div>
     <div class="acao">
-      <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Quero meu DNA de Conteúdo · R$&nbsp;47</a>
+      <a class="btn grande verde" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Quero meu DNA de Conteúdo · R$&nbsp;47</a>
     </div>
     <div class="garantia">
       <span class="g">7<br>dias</span>
