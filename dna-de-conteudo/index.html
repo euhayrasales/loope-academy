@@ -32,6 +32,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 em{font-style:normal;color:var(--red)}
 
+/* item de grid nao encolhe abaixo do min-content sem isto: imagem larga estoura a linha */
+.hero .wrap > *, .duas > *, .caminhos > *, .par > *, .quem > *, .perfis > *,
+.caixa > *, .mapa > *, .faixa .wrap > *, .recebe li > *{min-width:0}
+
 /* ── ritmo ── */
 .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
 .col{max-width:660px}
@@ -278,6 +282,20 @@ p:last-child{margin-bottom:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}
   html{scroll-behavior:auto}}
+
+/* ── barra de compra fixa no celular ── */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:rgba(14,14,14,.97);backdrop-filter:blur(8px);padding:10px 16px;
+  border-top:1px solid #262626;align-items:center;gap:14px}
+.barra .val{flex:none;color:#fff;line-height:1.15}
+.barra .val b{display:block;font-weight:700;font-size:19px}
+.barra .val span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8e8e8f}
+.barra .btn{flex:1;padding:14px 16px;font-size:15px}
+@media (max-width:900px){
+  .barra{display:flex}
+  body{padding-bottom:74px}
+}
+@media print{.barra{display:none}}
 </style>
 </head>
 <body>
@@ -332,15 +350,15 @@ p:last-child{margin-bottom:0}
       assistir, nem material para estudar antes.</p>
       <ul class="recebe">
         <li><span class="q">01</span><div><h3>O Consultor DNA de Conteúdo</h3>
-          <p>Um agente que fica no seu acesso. Ele faz o diagnóstico, monta o plano, adapta um roteiro a um tema seu, refaz um dia que não funcionou e monta as semanas seguintes a partir do que você publicou.</p></div></li>
+          <p>Faz o diagnóstico, monta o plano, adapta roteiro a um tema seu e monta as semanas seguintes.</p></div></li>
         <li><span class="q">02</span><div><h3>Seu perfil de comunicação</h3>
-          <p>Principal e complementar entre os quatro do Método MAPA, com a proporção entre os dois, onde você rende, onde você trava e a pergunta que abre pauta.</p></div></li>
+          <p>Perfil principal e complementar, a proporção entre os dois e onde cada um rende.</p></div></li>
         <li><span class="q">03</span><div><h3>Sete roteiros prontos para gravar</h3>
-          <p>Um formato por dia, com a abertura escrita, os blocos cronometrados, como enquadrar e gravar, a métrica para olhar e o erro comum daquele formato.</p></div></li>
+          <p>Um formato por dia, com abertura escrita, blocos cronometrados e direção de gravação.</p></div></li>
         <li><span class="q">04</span><div><h3>Seus outros formatos</h3>
-          <p>Os que combinam com você e não entraram na primeira semana, com a indicação de quando usar cada um.</p></div></li>
+          <p>Os que combinam com você e ficaram de fora da primeira semana.</p></div></li>
         <li><span class="q">05</span><div><h3>A versão em página, se você preferir clicar</h3>
-          <p>O mesmo diagnóstico em formulário, para quem quer resolver em quatro minutos sem conversar. O plano aparece pronto na tela com botão para salvar em PDF.</p></div></li>
+          <p>O mesmo diagnóstico em formulário, em quatro minutos, com botão para salvar o plano em PDF.</p></div></li>
       </ul>
       <div class="acoes" style="margin-top:34px">
         <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Começar agora · R$&nbsp;47</a>
@@ -364,9 +382,7 @@ p:last-child{margin-bottom:0}
         <li>Grava vários vídeos e sente que todos ficam iguais, ou artificiais.</li>
         <li>Alterna uma semana de muita produção com três semanas sem publicar nada.</li>
         <li>Pede roteiro para a inteligência artificial e recebe algo genérico, longe do seu jeito de falar.</li>
-        <li>Não sabe dizer qual conteúdo serve para alcance, qual serve para autoridade e qual serve para vender.</li>
-        <li>Desconfia que precisaria ser mais extrovertida, mais engraçada ou mais polêmica para crescer.</li>
-      </ul>
+        </ul>
       <p class="remate">Nada disso é falta de talento. É formato incompatível com quem
       você é.</p>
     </div>
@@ -379,13 +395,9 @@ p:last-child{margin-bottom:0}
     <div class="col">
       <div class="olho">Por que não é só pedir para o ChatGPT</div>
       <h2>A inteligência artificial<br>não te conhece. <em>Ainda</em>.</h2>
-      <p class="lead">Você já tentou. Pediu roteiro, veio algo correto e sem graça, que
-      serviria para qualquer profissional da sua área. Não é defeito da ferramenta: é que
-      ela começa a escrever sem saber quem você é, o que você vende e o que você aguenta
-      gravar.</p>
-      <p>O Consultor resolve isso invertendo a ordem. Ele não escreve nada antes de
-      descobrir três coisas: o seu jeito de comunicar, o seu negócio e o tempo que você
-      tem. Só depois ele monta.</p>
+      <p class="lead">Você já tentou: veio algo correto e sem graça, que serviria para
+      qualquer um da sua área. Ela escreve sem saber quem é você. O Consultor inverte a
+      ordem, e só escreve depois do diagnóstico.</p>
     </div>
     <div class="par" style="margin-top:34px">
       <div class="lado ruim">
@@ -452,36 +464,28 @@ p:last-child{margin-bottom:0}
         <div class="cab"><span class="pt" style="background:var(--pA)"></span><h3>Especialista</h3></div>
         <p class="def">Organiza ideias, explica causas e transforma complexidade em clareza.</p>
         <dl>
-          <dt>Onde rende</dt><dd>Análises, tutoriais, diagnósticos, listas comentadas e erros corrigidos.</dd>
-          <dt>Onde trava</dt><dd>Excesso de contexto, tom professoral e abertura lenta.</dd>
-          <dt>Pergunta que abre pauta</dt><dd class="p">Qual ideia consigo tornar mais simples ou mais precisa?</dd>
+          <dt>Rende em</dt><dd>Análises, tutoriais, diagnósticos, listas comentadas e erros corrigidos.</dd>
         </dl>
       </article>
       <article class="perfil">
         <div class="cab"><span class="pt" style="background:var(--pB)"></span><h3>Provocador</h3></div>
         <p class="def">Cria interesse ao sustentar opiniões, contrastes e quebras de crença.</p>
         <dl>
-          <dt>Onde rende</dt><dd>Opiniões contrárias, comparações, manifestos, comentários e alertas.</dd>
-          <dt>Onde trava</dt><dd>Polêmica vazia, agressividade e afirmação sem sustentação.</dd>
-          <dt>Pergunta que abre pauta</dt><dd class="p">Que crença aceita pelo mercado merece ser questionada?</dd>
+          <dt>Rende em</dt><dd>Opiniões contrárias, comparações, manifestos, comentários e alertas.</dd>
         </dl>
       </article>
       <article class="perfil">
         <div class="cab"><span class="pt" style="background:var(--pC)"></span><h3>Narrador</h3></div>
         <p class="def">Gera identificação usando experiências, cenas, vulnerabilidade e transformação.</p>
         <dl>
-          <dt>Onde rende</dt><dd>Histórias pessoais, bastidores narrados, decisões e aprendizados.</dd>
-          <dt>Onde trava</dt><dd>História longa sem ponto, exposição excessiva e moral genérica.</dd>
-          <dt>Pergunta que abre pauta</dt><dd class="p">Que situação vivida ajuda meu público a se enxergar?</dd>
+          <dt>Rende em</dt><dd>Histórias pessoais, bastidores narrados, decisões e aprendizados.</dd>
         </dl>
       </article>
       <article class="perfil">
         <div class="cab"><span class="pt" style="background:var(--pD)"></span><h3>Demonstrador</h3></div>
         <p class="def">Comunica mostrando processos, objetos, telas, movimentos e resultados.</p>
         <dl>
-          <dt>Onde rende</dt><dd>Antes e depois, tela gravada, processo, teste e take com texto.</dd>
-          <dt>Onde trava</dt><dd>Visual bonito sem ideia, dependência de edição e falta de conclusão.</dd>
-          <dt>Pergunta que abre pauta</dt><dd class="p">O que posso mostrar para provar esta ideia sem explicar por muito tempo?</dd>
+          <dt>Rende em</dt><dd>Antes e depois, tela gravada, processo, teste e take com texto.</dd>
         </dl>
       </article>
     </div>
@@ -493,6 +497,8 @@ p:last-child{margin-bottom:0}
       principal define o que você repete. O complementar é o que impede o seu conteúdo de
       ficar previsível.</p>
     </div>
+    <div class="acoes" style="margin-top:34px;justify-content:center"><a class="btn grande" style="margin:0 auto" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Descobrir o meu · R$&nbsp;47</a></div>
+
   </div>
 </section>
 
@@ -550,13 +556,11 @@ p:last-child{margin-bottom:0}
       <div>
         <div class="olho">O plano por dentro</div>
         <h2>Cada dia já vem com<br>roteiro e <em>direção</em>.</h2>
-        <p>Você não recebe uma lista de ideias para transformar em roteiro depois. Cada dia
-        já vem com o formato escolhido para o seu perfil, a abertura escrita, a marcação de
-        tempo do vídeo, como enquadrar e gravar, qual métrica olhar e o erro mais comum
-        daquele formato.</p>
-        <p>O que estiver entre colchetes é o que só você sabe preencher: o caso real, o
-        número real, o erro que você viu acontecer. Nem a página nem o Consultor inventam
-        história, cliente ou resultado no seu nome.</p>
+        <p>Não é lista de ideias para virar roteiro depois. Cada dia vem com o formato
+        escolhido para o seu perfil, a abertura escrita, o tempo de cada bloco, como gravar,
+        a métrica e o erro comum daquele formato.</p>
+        <p>O que está entre colchetes só você preenche: o caso real, o número real. Nem a
+        página nem o Consultor inventam isso no seu nome.</p>
       </div>
       <figure class="fig">
         <img class="papel" src="img/mock-plano-papel.jpg" alt="O plano de sete dias impresso, com o roteiro do primeiro dia" loading="lazy" width="1500" height="1420">
@@ -585,8 +589,7 @@ p:last-child{margin-bottom:0}
           <li>Serve para qualquer profissão</li>
           <li>Sem marcação de tempo, você improvisa na hora</li>
           <li>Nenhuma indicação de como gravar</li>
-          <li>Termina em "siga para mais conteúdos"</li>
-        </ul>
+          </ul>
       </div>
       <div class="lado bom">
         <div class="rot">Depois do diagnóstico</div>
@@ -598,8 +601,7 @@ p:last-child{margin-bottom:0}
           <li>Cinco blocos com o tempo de cada um</li>
           <li>Direção de gravação: enquadramento, o que mostrar e quando</li>
           <li>A métrica que prova se funcionou, e o erro comum do formato</li>
-          <li>Chamada alinhada ao que você quer que a pessoa faça</li>
-        </ul>
+          </ul>
       </div>
     </div>
   </div>
@@ -618,7 +620,6 @@ p:last-child{margin-bottom:0}
         <ul>
           <li>Você vende o próprio trabalho e depende da sua autoridade para aparecer oportunidade</li>
           <li>É profissional liberal, consultor, mentor, especialista ou dono de um negócio pequeno</li>
-          <li>Já entendeu que precisa produzir e não consegue manter a constância</li>
           <li>Tem assunto de sobra e trava na hora de escolher o formato</li>
           <li>Quer parar de adivinhar e começar a semana sabendo o que gravar</li>
         </ul>
@@ -629,8 +630,7 @@ p:last-child{margin-bottom:0}
           <li>Procura garantia de viralização ou um número específico de seguidores</li>
           <li>Ainda não tem tema, atividade, produto ou serviço sobre o que produzir</li>
           <li>Quer terceirizar a produção inteira, sem gravar nada</li>
-          <li>É social media e busca uma formação profissional completa</li>
-        </ul>
+          </ul>
       </div>
     </div>
   </div>
@@ -681,12 +681,6 @@ p:last-child{margin-bottom:0}
     <div class="faq">
       <div class="olho">Perguntas frequentes</div>
       <h2>O que costumam perguntar antes.</h2>
-      <details open>
-        <summary>Isso é um curso? Vou precisar assistir aula?</summary>
-        <div class="r">Não. É um diagnóstico que devolve um plano pronto. Você responde
-        vinte perguntas, o sistema calcula e a entrega aparece na tela. O que você precisa
-        saber sobre roteiro já vem escrito dentro de cada dia.</div>
-      </details>
       <details>
         <summary>Quanto tempo leva para receber?</summary>
         <div class="r">O tempo de responder, entre quatro e seis minutos. Não existe
@@ -717,23 +711,12 @@ p:last-child{margin-bottom:0}
         gravada, voz em off, processo e texto em vídeo.</div>
       </details>
       <details>
-        <summary>E se o resultado não me representar?</summary>
-        <div class="r">Você pode refazer o diagnóstico quantas vezes quiser, o acesso é
-        vitalício. E se ainda assim não fizer sentido, a garantia de sete dias devolve o
-        seu dinheiro.</div>
-      </details>
-      <details>
         <summary>Como eu recebo? É um arquivo?</summary>
         <div class="r">São duas coisas, e você recebe as duas. A página do diagnóstico,
         onde você responde por cliques e o plano aparece pronto na tela com botão para
         salvar em PDF. E o Consultor DNA de Conteúdo, que fica com você depois da primeira
         semana para adaptar roteiro, refazer um dia e montar as semanas seguintes. Nada
         para baixar e instalar.</div>
-      </details>
-      <details>
-        <summary>Preciso de equipamento?</summary>
-        <div class="r">Celular. Uma das perguntas levanta o que você tem, e o plano só
-        indica formatos que você consegue gravar com os recursos que declarou.</div>
       </details>
     </div>
   </div>
@@ -756,6 +739,11 @@ p:last-child{margin-bottom:0}
     <span>DNA de Conteúdo · Método MAPA</span>
   </div>
 </footer>
+
+<a class="barra" href="https://pay.hotmart.com/B107580571E?checkoutMode=10" aria-label="Comprar o DNA de Conteúdo por 47 reais">
+  <span class="val"><b>R$ 47</b><span>pagamento único</span></span>
+  <span class="btn">Quero o meu</span>
+</a>
 
 </body>
 </html>
