@@ -340,6 +340,18 @@ p:last-child{margin-bottom:0}
 }
 @media print{.barra{display:none}}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '975744655360262');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=975744655360262&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
 
@@ -855,5 +867,27 @@ p:last-child{margin-bottom:0}
   <span class="btn">Quero o meu</span>
 </a>
 
+<script>
+/* quem clica em qualquer botão de compra */
+document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    if (window.fbq) fbq('track', 'InitiateCheckout',
+      {content_name:'DNA de Conteúdo', value:47.00, currency:'BRL'});
+  });
+});
+/* quem rola até o bloco de oferta: sinal de interesse real */
+(function(){
+  var alvo = document.getElementById('comprar');
+  if (!alvo || !window.IntersectionObserver) return;
+  var disparou = false;
+  new IntersectionObserver(function(e){
+    if (e[0].isIntersecting && !disparou){
+      disparou = true;
+      if (window.fbq) fbq('track', 'ViewContent',
+        {content_name:'Oferta DNA de Conteúdo', value:47.00, currency:'BRL'});
+    }
+  }, {threshold:.5}).observe(alvo);
+})();
+</script>
 </body>
 </html>
