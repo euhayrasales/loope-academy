@@ -1,0 +1,1530 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DNA de Conteúdo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Descubra quais formatos de conteúdo combinam com você.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;1,6..72,300&display=swap" rel="stylesheet">
+<style>:root{
+  --ink:#0a0a0a; --cream:#fffaf3; --papel:#f7f2ea; --papel2:#efe7da;
+  --red:#ff0101; --red-dp:#c40000;
+  --dim:#cfc9c0; --gray:#8a8278; --gray-c:#b5aca0; --dark:#332f29;
+  --linha:#e4ddd2; --fio:#efe9df;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--cream);
+     color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+     overflow-x:hidden;max-width:100vw}
+button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer;border:none;
+       background:none}
+input{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+em{font-style:normal;color:var(--red)}
+
+/* topo */
+.topo{background:var(--ink);color:var(--cream);padding:14px 20px;display:flex;
+      align-items:center;gap:10px}
+.mk{position:relative;width:24px;height:14px;flex:none}
+.mk i{position:absolute;top:0;width:14px;height:14px;border-radius:50%;background:var(--red)}
+.mk i:first-child{left:0}
+.mk i:last-child{left:10px;box-shadow:-2px 0 0 0 var(--ink)}
+.topo span{font-family:'Sora';font-weight:700;font-size:11px;letter-spacing:.22em;
+           text-transform:uppercase}
+
+/* progresso */
+.prog{height:3px;background:var(--papel2);position:sticky;top:0;z-index:10}
+.prog span{display:block;height:100%;background:var(--red);transition:width .3s ease}
+
+/* telas */
+.tela{max-width:620px;margin:0 auto;padding:48px 22px 70px}
+.tela.larga{max-width:820px}
+h1{font-family:'Sora';font-weight:800;font-size:clamp(31px,5.5vw,46px);line-height:1.04;
+   letter-spacing:-.035em;margin-bottom:18px;text-wrap:balance}
+h2{font-family:'Sora';font-weight:700;font-size:clamp(21px,3.4vw,27px);line-height:1.22;
+   letter-spacing:-.026em;margin-bottom:26px;text-wrap:balance}
+h3{font-family:'Sora';font-weight:700;font-size:19px;letter-spacing:-.022em}
+.lead{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:19px;line-height:1.5;
+      color:var(--dark);margin-bottom:26px}
+.sub{color:var(--gray);font-size:14.5px;margin:-14px 0 26px}
+.selo{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);
+      font-weight:700;margin-bottom:16px}
+.contador{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+          font-weight:700;margin-bottom:14px}
+.contador s{color:var(--gray-c);text-decoration:none}
+.mini{font-size:12.5px;color:var(--gray);margin-top:14px;text-align:center}
+
+.aviso{background:var(--papel);border-left:2px solid var(--red);padding:15px 18px;
+       font-size:14.5px;line-height:1.55;color:var(--dark);margin-bottom:30px}
+.aviso b{font-weight:600;color:var(--ink)}
+
+.btn{display:block;width:100%;background:var(--red);color:#fff;font-family:'Sora';
+     font-weight:700;font-size:16px;padding:16px;border-radius:3px;transition:background .15s}
+.btn:hover{background:var(--red-dp)}
+
+/* opções */
+.ops{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.op{display:flex;align-items:flex-start;gap:13px;text-align:left;padding:15px 17px;
+    border:1px solid var(--linha);border-radius:4px;background:#fff;line-height:1.45;
+    transition:border-color .13s, background .13s;font-size:15.5px}
+.op:hover{border-color:var(--gray-c);background:var(--papel)}
+.op.on{border-color:var(--red);background:#fff;box-shadow:0 0 0 1px var(--red)}
+.op .marca{width:17px;height:17px;border:1.5px solid var(--linha);border-radius:50%;
+           flex:none;margin-top:3px;position:relative;transition:all .13s}
+.op.on .marca{border-color:var(--red)}
+.op.on .marca::after{content:"";position:absolute;inset:3px;border-radius:50%;
+                     background:var(--red)}
+
+.navs{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.voltar,.avancar{font-size:14px;font-weight:600;color:var(--gray);padding:8px 0}
+.voltar:hover{color:var(--ink)}
+.avancar{color:var(--red);font-family:'Sora';font-weight:700}
+
+/* alinhamento */
+.campos{display:flex;flex-direction:column;gap:20px;margin-bottom:30px}
+.campo{display:block}
+.campo > span{display:block;font-size:13.5px;font-weight:600;margin-bottom:8px;
+              color:var(--dark)}
+.campo input{width:100%;padding:12px 14px;border:1px solid var(--linha);border-radius:3px;
+             background:#fff;font-size:15px}
+.campo input:focus{outline:none;border-color:var(--ink)}
+.pills{display:flex;gap:7px;flex-wrap:wrap}
+.pill{padding:9px 14px;border:1px solid var(--linha);border-radius:99px;font-size:13.5px;
+      font-weight:500;background:#fff;transition:all .13s}
+.pill:hover{border-color:var(--gray-c)}
+.pill.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+/* resultado */
+.res h1.dna{font-size:clamp(27px,4.6vw,40px);margin-bottom:26px}
+.mix{background:var(--papel);padding:18px 20px;border-radius:4px;margin-bottom:30px}
+.mixl{display:flex;align-items:center;gap:11px;padding:6px 0;font-size:14px}
+.mixl .pt{width:9px;height:9px;border-radius:50%;flex:none}
+.mixl .nm{width:112px;font-weight:600;flex:none}
+.mixl .bar{flex:1;height:6px;background:var(--papel2);border-radius:99px;overflow:hidden}
+.mixl .bar i{display:block;height:100%;border-radius:99px}
+.mixl .vl{width:22px;text-align:right;font-family:'Sora';font-weight:700;
+          font-variant-numeric:tabular-nums;flex:none}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:34px}
+.carta{border:1px solid var(--linha);border-top:3px solid var(--red);border-radius:4px;
+       padding:20px;background:#fff}
+.carta.comp{border-top-color:var(--gray)}
+.carta .rot{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);
+            font-weight:700;margin-bottom:8px}
+.carta h3{margin-bottom:10px}
+.carta .fr{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:17px;
+           line-height:1.44;color:var(--dark);margin-bottom:16px}
+.linha{font-size:13.5px;line-height:1.5;padding:9px 0;border-top:1px solid var(--fio);
+       color:var(--dark)}
+.linha b{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--gray);font-weight:700;margin-bottom:3px}
+.linha i{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px}
+.linha.alerta b{color:var(--red)}
+
+h3.sec{margin:0 0 14px}
+.fmts{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:34px}
+.fmt{border:1px solid var(--linha);border-radius:4px;padding:16px;background:#fff}
+.fmt .n{font-family:'Sora';font-weight:800;font-size:11px;color:var(--red);display:block;
+        margin-bottom:7px}
+.fmt b{display:block;font-family:'Sora';font-weight:700;font-size:15px;line-height:1.28;
+       letter-spacing:-.018em;margin-bottom:6px}
+.fmt .de{font-size:11px;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;
+         font-weight:600}
+
+.proximo{background:var(--ink);color:var(--cream);padding:26px;border-radius:4px;
+         margin-bottom:22px}
+.proximo .rot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);
+              font-weight:700;margin-bottom:10px}
+.proximo p{font-size:15px;line-height:1.55;color:var(--dim);margin-bottom:20px}
+.proximo b{color:var(--cream);font-weight:600}
+.proximo .mini{color:var(--gray)}
+
+.refazer{display:block;margin:0 auto;font-size:13px;color:var(--gray);
+         text-decoration:underline;text-underline-offset:3px}
+.refazer:hover{color:var(--red)}
+
+@media (max-width:720px){
+  .duo,.fmts{grid-template-columns:1fr}
+  .tela{padding:34px 18px 60px}
+  .mixl .nm{width:92px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+
+/* ── plano ── */
+.plano .abertura{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:19px;
+  line-height:1.5;color:var(--dark);margin-bottom:24px}
+.plano .abertura b{font-weight:400;color:var(--ink)}
+.regra{background:var(--papel);border-left:2px solid var(--red);padding:15px 18px;
+  font-size:14.5px;line-height:1.55;color:var(--dark);margin-bottom:30px}
+.regra b{font-weight:600;color:var(--ink)}
+.dia{border:1px solid var(--linha);border-radius:5px;padding:22px;margin-bottom:16px;
+  background:#fff;break-inside:avoid}
+.dia-topo{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding-bottom:12px;border-bottom:1px solid var(--fio);margin-bottom:13px;flex-wrap:wrap}
+.dn{font-family:'Sora';font-weight:800;font-size:12px;color:var(--red);letter-spacing:.08em;
+  margin-right:10px}
+.dp{font-size:11px;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;
+  font-weight:600}
+.dt{font-size:11px;color:var(--gray-c);letter-spacing:.06em}
+.dia h3{margin-bottom:6px}
+.dnota{font-size:13.5px;color:var(--gray);margin-bottom:15px}
+.gancho{background:var(--ink);color:var(--cream);padding:15px 17px;border-radius:4px;
+  font-family:'Newsreader',Georgia,serif;font-size:17.5px;line-height:1.45;margin-bottom:15px}
+.gancho b{display:block;font-family:'Inter';font-size:9.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:700}
+.beats{margin-bottom:16px}
+.beat{display:flex;gap:13px;padding:8px 0;border-bottom:1px solid var(--fio);font-size:14px;
+  line-height:1.5}
+.beat:last-child{border-bottom:none}
+.bt{font-family:'Sora';font-weight:700;font-size:11px;color:var(--red);width:54px;flex:none;
+  padding-top:2px}
+.dfim{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:14px;
+  border-top:1px solid var(--fio);font-size:13px;line-height:1.5;color:var(--dark)}
+.dfim b{display:block;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:3px;font-weight:700}
+.dfim .cuid b{color:var(--red)}
+.outros{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px}
+.outro{border:1px solid var(--linha);border-radius:4px;padding:15px;background:#fff}
+.outro b{display:block;font-family:'Sora';font-weight:700;font-size:15px;margin-bottom:4px}
+.outro span{font-size:10.5px;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600}
+.outro p{font-size:13px;color:var(--dark);margin-top:7px;line-height:1.45}
+.acoes{display:flex;gap:10px;margin-top:8px}
+.acoes .btn,.acoes .btn2{flex:1}
+.btn2{display:block;background:none;border:1px solid var(--linha);color:var(--dark);
+  font-family:'Sora';font-weight:700;font-size:15px;padding:15px;border-radius:3px;
+  transition:all .15s}
+.btn2:hover{border-color:var(--ink)}
+@media (max-width:720px){.dfim,.outros{grid-template-columns:1fr}.acoes{flex-direction:column}}
+@media print{
+  .topo,.prog,.acoes,.regra:last-of-type{display:none!important}
+  body{font-size:11pt} .tela{padding:0;max-width:none}
+  .dia{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+  .gancho{background:#f2ece2;color:#000}
+  .gancho b{color:#c40000}
+}
+</style>
+</head>
+<body>
+<header class="topo"><span class="mk"><i></i><i></i></span><span>Loope Academy</span></header>
+<main id="app"></main>
+<script>const PERGUNTAS = [
+ {
+  "n": 1,
+  "p": "Quando preciso explicar uma ideia, normalmente eu",
+  "op": [
+   "Organizo os pontos até que façam sentido.",
+   "Começo pelo que as pessoas entendem errado.",
+   "Lembro de uma situação que ilustra o assunto.",
+   "Procuro algo que eu possa mostrar."
+  ]
+ },
+ {
+  "n": 2,
+  "p": "O tipo de conteúdo que mais facilmente nasce na minha cabeça é",
+  "op": [
+   "Uma explicação ou análise.",
+   "Uma opinião ou contraponto.",
+   "Uma história ou reflexão.",
+   "Uma demonstração ou transformação."
+  ]
+ },
+ {
+  "n": 3,
+  "p": "As pessoas costumam elogiar minha capacidade de",
+  "op": [
+   "Tornar assuntos difíceis mais claros.",
+   "Dizer o que outras pessoas evitam dizer.",
+   "Fazer com que elas se sintam compreendidas.",
+   "Mostrar na prática como algo funciona."
+  ]
+ },
+ {
+  "n": 4,
+  "p": "Antes de gravar, sinto mais segurança quando tenho",
+  "op": [
+   "Uma estrutura lógica bem definida.",
+   "Uma frase forte para defender.",
+   "Uma experiência verdadeira para contar.",
+   "Uma cena, objeto, tela ou processo para mostrar."
+  ]
+ },
+ {
+  "n": 5,
+  "p": "Quando discordo de algo no meu mercado, eu prefiro",
+  "op": [
+   "Explicar os critérios e apresentar uma análise.",
+   "Assumir uma posição direta e argumentar.",
+   "Contar quando essa crença me prejudicou ou ajudou.",
+   "Fazer um teste ou comparação visível."
+  ]
+ },
+ {
+  "n": 6,
+  "p": "Em uma conversa, eu prendo mais atenção quando",
+  "op": [
+   "Ensino uma lógica nova.",
+   "Crio um contraste inesperado.",
+   "Descrevo uma situação com detalhes.",
+   "Mostro evidências ou exemplos concretos."
+  ]
+ },
+ {
+  "n": 7,
+  "p": "Se eu tivesse apenas quinze minutos para produzir, escolheria",
+  "op": [
+   "Explicar um conceito em três pontos.",
+   "Gravar uma opinião curta.",
+   "Contar um aprendizado recente.",
+   "Filmar um processo e acrescentar texto."
+  ]
+ },
+ {
+  "n": 8,
+  "p": "Meu principal objetivo com conteúdo hoje é",
+  "op": [
+   "Ser percebido como referência.",
+   "Ser lembrado por uma visão própria.",
+   "Criar proximidade e confiança.",
+   "Provar a qualidade do meu trabalho."
+  ]
+ },
+ {
+  "n": 9,
+  "p": "Sem um roteiro completo, eu geralmente",
+  "op": [
+   "Consigo falar se tiver tópicos organizados.",
+   "Consigo falar se souber a tese que vou defender.",
+   "Consigo falar se a história for minha.",
+   "Prefiro mostrar e usar pouco texto falado."
+  ]
+ },
+ {
+  "n": 10,
+  "p": "O comentário que mais gostaria de receber é",
+  "op": [
+   "Agora finalmente entendi.",
+   "Nunca tinha pensado por esse lado.",
+   "Parecia que você estava falando comigo.",
+   "Ver isso acontecendo me convenceu."
+  ]
+ },
+ {
+  "n": 11,
+  "p": "Minha abertura mais natural seria",
+  "op": [
+   "Existem três razões para isso acontecer.",
+   "Vou dizer uma coisa que pode incomodar.",
+   "Eu percebi isso depois de viver uma situação específica.",
+   "Olha o que acontece quando faço isto."
+  ]
+ },
+ {
+  "n": 12,
+  "p": "Quando apresento uma prova, prefiro usar",
+  "op": [
+   "Critérios, dados e explicações.",
+   "Uma comparação que revele a contradição.",
+   "Um relato com contexto humano.",
+   "Uma tela, resultado, objeto ou execução."
+  ]
+ },
+ {
+  "n": 13,
+  "p": "Na minha rotina, encontro mais pautas em",
+  "op": [
+   "Dúvidas e erros recorrentes dos clientes.",
+   "Crenças e comportamentos do mercado.",
+   "Conversas, decisões e acontecimentos pessoais.",
+   "Processos, bastidores e entregas."
+  ]
+ },
+ {
+  "n": 14,
+  "p": "Quando um assunto está em alta, minha vontade é",
+  "op": [
+   "Explicar o que ele realmente significa.",
+   "Questionar o consenso.",
+   "Relacioná-lo a uma experiência.",
+   "Testar ou reproduzir algo visualmente."
+  ]
+ },
+ {
+  "n": 15,
+  "p": "Para apresentar uma oferta, sinto mais conforto em",
+  "op": [
+   "Explicar o problema, o método e a solução.",
+   "Mostrar por que o caminho comum falha.",
+   "Contar a transformação de alguém.",
+   "Demonstrar o resultado e o processo."
+  ]
+ },
+ {
+  "n": 16,
+  "p": "O que mais fortalece minha autoridade é",
+  "op": [
+   "Profundidade e clareza.",
+   "Posicionamento e coragem.",
+   "Coerência e humanidade.",
+   "Execução e evidência."
+  ]
+ },
+ {
+  "n": 17,
+  "p": "Diante da câmera, eu me sinto melhor",
+  "op": [
+   "Ensinando algo que domino.",
+   "Defendendo uma ideia em que acredito.",
+   "Conversando como se fosse com uma pessoa.",
+   "Fazendo uma atividade enquanto gravo."
+  ]
+ },
+ {
+  "n": 18,
+  "p": "Quando surge uma ideia, minha primeira pergunta é",
+  "op": [
+   "Como explico isso com lógica?",
+   "Qual é o ponto mais provocador?",
+   "Onde isso apareceu na minha vida?",
+   "Como torno isso visível?"
+  ]
+ },
+ {
+  "n": 19,
+  "p": "Meu conteúdo perde força quando eu",
+  "op": [
+   "Incluo informação demais.",
+   "Forço uma polêmica.",
+   "Demoro para chegar ao ponto.",
+   "Priorizo estética e esqueço a mensagem."
+  ]
+ },
+ {
+  "n": 20,
+  "p": "A frase que mais combina comigo é",
+  "op": [
+   "Quero ajudar as pessoas a entender.",
+   "Quero fazê-las reconsiderar.",
+   "Quero que elas se reconheçam.",
+   "Quero que elas vejam com os próprios olhos."
+  ]
+ }
+];
+const FORMATOS = [
+ {
+  "id": "D1",
+  "perfil": "D",
+  "nome": "Gravação de tela",
+  "funcao": "Autoridade",
+  "duracao": "40 a 70 segundos",
+  "tipo": "Captura de tela com voz",
+  "quando": "Quando parte do seu trabalho acontece no computador e ninguém vê.",
+  "gancho": "Vou fazer [TAREFA QUE VOCÊ FAZ NA TELA] na sua frente, sem corte.",
+  "beats": [
+   [
+    "0-5s",
+    "A tela já aparecendo, com a tarefa começando. Nada de abrir com o seu rosto."
+   ],
+   [
+    "5-25s",
+    "Executando, narrando só as decisões — não descreva o que se vê, explique por que você clica ali."
+   ],
+   [
+    "25-50s",
+    "O ponto onde a maioria erra. Pare, mostre, explique o critério."
+   ],
+   [
+    "50-70s",
+    "O resultado pronto e o tempo que levou. Chamada."
+   ]
+  ],
+  "gravar": "Grave a tela em resolução alta e depois recorte para vertical na área que importa. Cursor visível. Ensaie uma vez antes — fluidez vale mais que fala perfeita.",
+  "metrica": "Tempo de visualização e mensagens pedindo 'você faz isso pra mim?'.",
+  "cuidado": "Cubra todo dado de cliente antes de gravar. Confira duas vezes antes de publicar."
+ },
+ {
+  "id": "D2",
+  "perfil": "D",
+  "nome": "Processo em time-lapse",
+  "funcao": "Alcance",
+  "duracao": "20 a 35 segundos",
+  "tipo": "Time-lapse com texto na tela",
+  "quando": "Quando o seu trabalho tem uma transformação visível ao longo do tempo.",
+  "gancho": "[TEMPO REAL] de trabalho em 20 segundos.",
+  "beats": [
+   [
+    "0-3s",
+    "O estado inicial, parado, com o texto do tempo real na tela."
+   ],
+   [
+    "3-20s",
+    "O time-lapse. Texto aparecendo em dois ou três momentos, marcando etapas."
+   ],
+   [
+    "20-30s",
+    "O resultado, parado, alguns segundos a mais — o olho precisa de tempo para absorver."
+   ],
+   [
+    "30-35s",
+    "Chamada em texto na tela."
+   ]
+  ],
+  "gravar": "Tripé obrigatório: a câmera não pode se mover. Grave em intervalos ou acelere depois. Luz estável do início ao fim.",
+  "metrica": "Alcance e compartilhamento. É o formato que mais viaja para fora da sua audiência.",
+  "cuidado": "Sem texto explicando o que é, vira vídeo bonito e esquecível. O texto é obrigatório."
+ },
+ {
+  "id": "D3",
+  "perfil": "D",
+  "nome": "Teste ao vivo",
+  "funcao": "Interesse",
+  "duracao": "40 a 60 segundos",
+  "tipo": "Reels demonstrativo",
+  "quando": "Quando existe uma dúvida prática que dá para responder fazendo em vez de explicando.",
+  "gancho": "Perguntam se [DÚVIDA COMUM DO SEU PÚBLICO]. Vou testar agora.",
+  "beats": [
+   [
+    "0-6s",
+    "A dúvida e o anúncio do teste. A pessoa fica para ver o resultado."
+   ],
+   [
+    "6-20s",
+    "As condições do teste. Rápido, mas explícito — sem isso o resultado não convence."
+   ],
+   [
+    "20-45s",
+    "O teste acontecendo. Deixe o tempo real aparecer; cortar demais levanta suspeita."
+   ],
+   [
+    "45-60s",
+    "O resultado e o que ele significa na prática para {publico}. Chamada."
+   ]
+  ],
+  "gravar": "Câmera fixa, take único quando possível. Se precisar cortar, mostre o relógio ou algo que prove continuidade.",
+  "metrica": "Retenção até o fim e comentários pedindo outros testes.",
+  "cuidado": "Se o teste der contra a sua tese, publique assim mesmo. Teste com resultado combinado é propaganda, e o público sente."
+ },
+ {
+  "id": "D4",
+  "perfil": "D",
+  "nome": "Antes e depois do processo",
+  "funcao": "Desejo",
+  "duracao": "30 a 50 segundos",
+  "tipo": "Reels com comparação",
+  "quando": "Quando o resultado do seu trabalho é visível — e as regras da sua área permitem mostrar.",
+  "gancho": "Antes e depois de [O QUE VOCÊ FEZ] — mas o que importa está no meio.",
+  "beats": [
+   [
+    "0-5s",
+    "O antes, parado, dois segundos."
+   ],
+   [
+    "5-25s",
+    "O meio: o processo, as decisões, o tempo. É o que transforma antes e depois em autoridade em vez de milagre."
+   ],
+   [
+    "25-40s",
+    "O depois. Deixe parado mais tempo que o antes."
+   ],
+   [
+    "40-50s",
+    "Uma frase sobre o que definiu o resultado. Chamada."
+   ]
+  ],
+  "gravar": "Mesma luz, mesmo ângulo, mesma distância no antes e no depois. Diferença de enquadramento destrói a credibilidade.",
+  "metrica": "Mensagens no direct com intenção de contratar.",
+  "cuidado": "Em saúde, odontologia, estética e áreas reguladas, confira o que o seu conselho permite antes de gravar. E autorização por escrito, sempre."
+ },
+ {
+  "id": "D5",
+  "perfil": "D",
+  "nome": "Take com texto",
+  "funcao": "Alcance",
+  "duracao": "15 a 25 segundos",
+  "tipo": "Reels curto sem fala",
+  "quando": "Quando você não está com voz para gravar, mas quer manter constância. É o formato mais rápido de produzir.",
+  "gancho": "[FRASE FORTE SOBRE O SEU TRABALHO] — na tela, enquanto você faz algo.",
+  "beats": [
+   [
+    "0-3s",
+    "A frase aparece sobre a cena. A cena é você trabalhando, sem olhar para a câmera."
+   ],
+   [
+    "3-12s",
+    "Duas ou três frases curtas se sucedem, no ritmo da ação."
+   ],
+   [
+    "12-20s",
+    "A última frase é a que fica. Deixe dois segundos a mais na tela."
+   ],
+   [
+    "20-25s",
+    "Chamada em texto pequeno."
+   ]
+  ],
+  "gravar": "Qualquer cena real de trabalho serve. Fonte grande, alto contraste, posicionada acima do centro — a interface do app cobre a parte de baixo.",
+  "metrica": "Alcance. Baixo esforço, bom volume.",
+  "cuidado": "Não use mais de cinco frases. E leia em voz alta antes: se não funciona falado, não funciona escrito."
+ },
+ {
+  "id": "A1",
+  "perfil": "A",
+  "nome": "Erro corrigido",
+  "funcao": "Interesse",
+  "duracao": "40 a 60 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer ser útil sem parecer aula. É o formato mais fácil de repetir.",
+  "gancho": "O erro que eu mais vejo em {publico} é [O ERRO QUE VOCÊ MAIS VÊ].",
+  "beats": [
+   [
+    "0-5s",
+    "O erro, dito de forma direta. Sem 'oi, gente', sem apresentação. A primeira palavra já é o erro."
+   ],
+   [
+    "5-15s",
+    "Por que esse erro é tentador — o que faz uma pessoa sensata cometê-lo. É aqui que quem faz isso se sente compreendida, não julgada."
+   ],
+   [
+    "15-35s",
+    "O custo real. O que acontece depois, em {resultado} ou no oposto disso. Um exemplo concreto: [SITUAÇÃO QUE VOCÊ VIU ACONTECER]."
+   ],
+   [
+    "35-50s",
+    "O que fazer no lugar, em uma frase só. Se couber, o critério que você usa para decidir: [SEU CRITÉRIO]."
+   ],
+   [
+    "50-60s",
+    "Fechamento com a chamada."
+   ]
+  ],
+  "gravar": "Câmera parada, você falando. Enquadramento do peito para cima. Se tiver um objeto ou tela que ilustre o erro, mostre entre 15 e 35 segundos.",
+  "metrica": "Salvamento. Se as pessoas salvam, o erro era mesmo comum.",
+  "cuidado": "Não liste cinco erros. Um erro, explicado bem, rende mais que cinco citados."
+ },
+ {
+  "id": "A2",
+  "perfil": "A",
+  "nome": "Análise em três pontos",
+  "funcao": "Interesse",
+  "duracao": "50 a 70 segundos",
+  "tipo": "Reels falado ou carrossel",
+  "quando": "Quando o assunto é complexo e você quer mostrar organização de raciocínio.",
+  "gancho": "Existem três razões para [SITUAÇÃO QUE SEU PÚBLICO VIVE] — e a terceira é a que quase ninguém considera.",
+  "beats": [
+   [
+    "0-6s",
+    "A situação e a promessa de três razões. Adiante que a terceira é a menos óbvia: é o que segura até o fim."
+   ],
+   [
+    "6-20s",
+    "Razão 1 — a mais conhecida. Rápida, porque serve de aquecimento."
+   ],
+   [
+    "20-35s",
+    "Razão 2 — a que gera concordância. Aqui a pessoa pensa 'é verdade'."
+   ],
+   [
+    "35-55s",
+    "Razão 3 — a sua. A que vem da sua experiência em {profissao} e que ninguém mais está falando."
+   ],
+   [
+    "55-70s",
+    "Uma frase que amarra as três e a chamada."
+   ]
+  ],
+  "gravar": "Se for falado, marque as três razões com a mão ou com corte seco. Se for carrossel: capa com a promessa, um slide por razão, último slide com a ação.",
+  "metrica": "Retenção até o fim. Se cai antes da razão 3, o gancho prometeu mais do que entregou.",
+  "cuidado": "Três é o número. Com cinco, ninguém lembra de nenhuma."
+ },
+ {
+  "id": "A3",
+  "perfil": "A",
+  "nome": "Diagnóstico em 60 segundos",
+  "funcao": "Autoridade",
+  "duracao": "60 segundos",
+  "tipo": "Reels falado com apoio visual",
+  "quando": "Quando você quer demonstrar o raciocínio que a pessoa pagaria para ter.",
+  "gancho": "Me mandaram [COISA QUE VOCÊ ANALISA] e eu vou dizer em um minuto o que eu mudaria.",
+  "beats": [
+   [
+    "0-6s",
+    "O que você vai analisar, na tela ou na mão. Nada de contexto longo."
+   ],
+   [
+    "6-25s",
+    "Primeiro ponto: o que está funcionando. Comece pelo positivo — mostra que você não analisa para atacar."
+   ],
+   [
+    "25-45s",
+    "Segundo ponto: o que eu mudaria e por quê. Aqui aparece o seu critério profissional."
+   ],
+   [
+    "45-60s",
+    "A mudança de maior impacto, se só desse para fazer uma. E a chamada."
+   ]
+  ],
+  "gravar": "Precisa do objeto da análise visível: uma tela, um documento, uma foto, um caso. Se for material de terceiro, peça autorização antes.",
+  "metrica": "Mensagens recebidas. Este formato costuma gerar 'você pode analisar o meu?'.",
+  "cuidado": "Nunca analise algo identificável sem autorização por escrito. Em área regulamentada, cuidado redobrado."
+ },
+ {
+  "id": "A4",
+  "perfil": "A",
+  "nome": "Lista comentada",
+  "funcao": "Alcance",
+  "duracao": "Carrossel de 6 a 8 slides",
+  "tipo": "Carrossel",
+  "quando": "Quando o objetivo é salvamento e alcance. É o formato que mais circula.",
+  "gancho": "[NÚMERO] coisas sobre [TEMA QUE VOCÊ DOMINA] que eu queria ter aprendido antes.",
+  "beats": [
+   [
+    "Capa",
+    "O número e a promessa. Tipografia grande, fundo limpo, zero enfeite."
+   ],
+   [
+    "Slides 2 a 6",
+    "Um item por slide. Título curto em negrito e uma frase de comentário — o comentário é o que separa a sua lista de qualquer outra."
+   ],
+   [
+    "Penúltimo",
+    "O item que só você diria. O que vem da sua prática em {profissao}, não do que se lê por aí."
+   ],
+   [
+    "Último",
+    "Uma frase de fechamento e a ação. Nada de 'espero ter ajudado'."
+   ]
+  ],
+  "gravar": "Não é gravação — é design. Use o mesmo template sempre: mesma fonte, mesma margem, mesmo lugar para o número do slide.",
+  "metrica": "Salvamento e compartilhamento.",
+  "cuidado": "Lista sem comentário é conteúdo de banco de imagem. O valor está na sua opinião sobre cada item."
+ },
+ {
+  "id": "A5",
+  "perfil": "A",
+  "nome": "Comparativo de critérios",
+  "funcao": "Desejo",
+  "duracao": "50 a 70 segundos",
+  "tipo": "Reels ou carrossel",
+  "quando": "Quando o público precisa decidir entre dois caminhos e trava na escolha.",
+  "gancho": "[OPÇÃO A] ou [OPÇÃO B]? A resposta depende de três coisas — e preço não é uma delas.",
+  "beats": [
+   [
+    "0-6s",
+    "As duas opções e a promessa de um critério de decisão."
+   ],
+   [
+    "6-22s",
+    "Quando a opção A faz sentido. Para quem, em que situação."
+   ],
+   [
+    "22-38s",
+    "Quando a opção B faz sentido. Mesma estrutura, mesmo peso — não puxe sardinha."
+   ],
+   [
+    "38-55s",
+    "O critério que decide de verdade. É aqui que você entrega a sua cabeça, e é o que ninguém copia."
+   ],
+   [
+    "55-70s",
+    "Chamada."
+   ]
+  ],
+  "gravar": "Divida a tela ou use dois objetos, um em cada mão. Estrutura visual paralela ajuda a memória.",
+  "metrica": "Comentários com dúvida específica — sinal de que a pessoa está decidindo.",
+  "cuidado": "Se você vende uma das opções, diga isso. Comparativo enviesado sem aviso destrói confiança."
+ },
+ {
+  "id": "C1",
+  "perfil": "C",
+  "nome": "A decisão que mudou o rumo",
+  "funcao": "Conexão",
+  "duracao": "50 a 70 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer que as pessoas confiem em você antes de qualquer oferta.",
+  "gancho": "Teve um dia em que eu decidi [DECISÃO QUE VOCÊ TOMOU] — e eu quase não tomei essa decisão.",
+  "beats": [
+   [
+    "0-6s",
+    "A decisão, dita como fato. Sem 'deixa eu contar uma história'."
+   ],
+   [
+    "6-22s",
+    "A cena antes: onde você estava, o que estava em jogo. Detalhes concretos — hora, lugar, o que você sentiu."
+   ],
+   [
+    "22-42s",
+    "O que pesou contra. Toda decisão boa tem um motivo bom para não ser tomada; é aqui que quem ouve se reconhece."
+   ],
+   [
+    "42-60s",
+    "O que mudou depois. Sem moral da história pronta."
+   ],
+   [
+    "60-70s",
+    "Uma pergunta para quem está na mesma encruzilhada. Chamada."
+   ]
+  ],
+  "gravar": "Sentada, luz do ambiente, tom de conversa. Olhe para a câmera como se estivesse contando para uma pessoa só.",
+  "metrica": "Comentários longos e mensagens no direct. Se vierem histórias de volta, funcionou.",
+  "cuidado": "História precisa de ponto. Se você não sabe dizer em uma frase o que ela ensina, não grave ainda."
+ },
+ {
+  "id": "C2",
+  "perfil": "C",
+  "nome": "O erro que me ensinou",
+  "funcao": "Conexão",
+  "duracao": "45 a 60 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer ser vista como alguém com experiência real, não como manual.",
+  "gancho": "Eu já fiz [ERRO QUE VOCÊ COMETEU] com um cliente. E aprendi da pior forma.",
+  "beats": [
+   [
+    "0-6s",
+    "O erro, assumido em primeira pessoa. Nada de 'algumas pessoas cometem'."
+   ],
+   [
+    "6-20s",
+    "O contexto: por que pareceu certo na hora. Ninguém erra de propósito."
+   ],
+   [
+    "20-40s",
+    "O que aconteceu. Concreto, sem dramatizar e sem expor ninguém."
+   ],
+   [
+    "40-55s",
+    "O que você faz diferente hoje em {profissao}. É aqui que o erro vira autoridade."
+   ],
+   [
+    "55-60s",
+    "Chamada."
+   ]
+  ],
+  "gravar": "Falado, sem teleprompter. Este formato ganha com a hesitação natural de quem lembra de algo desconfortável.",
+  "metrica": "Salvamento e mensagens. Vulnerabilidade real gera aproximação.",
+  "cuidado": "Nunca dê detalhe que identifique o cliente. E não invente um erro para parecer humana — as pessoas percebem."
+ },
+ {
+  "id": "C3",
+  "perfil": "C",
+  "nome": "Bastidor narrado",
+  "funcao": "Conexão",
+  "duracao": "40 a 60 segundos",
+  "tipo": "Reels com imagens do dia + voz",
+  "quando": "Quando você quer mostrar como é o trabalho de verdade, sem parecer propaganda.",
+  "gancho": "Isto aqui é o que acontece antes de [MOMENTO QUE O CLIENTE VÊ].",
+  "beats": [
+   [
+    "0-6s",
+    "A cena de bastidor, sem explicação. A imagem faz o gancho."
+   ],
+   [
+    "6-25s",
+    "O que está acontecendo e por quê. A parte que o cliente nunca vê."
+   ],
+   [
+    "25-45s",
+    "Quanto tempo, quantas pessoas, quantas decisões estão ali. É o que justifica o seu preço sem você falar de preço."
+   ],
+   [
+    "45-60s",
+    "O que isso muda no resultado de {publico}. Chamada."
+   ]
+  ],
+  "gravar": "Grave o bastidor primeiro, narre depois. Não tente narrar ao vivo enquanto trabalha — fica confuso nos dois.",
+  "metrica": "Tempo de visualização. Bastidor bom segura até o fim.",
+  "cuidado": "Bastidor sem ponto é vlog. Toda cena precisa responder: por que isso importa para quem assiste?"
+ },
+ {
+  "id": "C4",
+  "perfil": "C",
+  "nome": "A conversa que me marcou",
+  "funcao": "Desejo",
+  "duracao": "45 a 60 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer falar da dor do seu público pela boca dele, não pela sua.",
+  "gancho": "Uma [PESSOA QUE VOCÊ ATENDE] me disse uma frase semana passada que não sai da minha cabeça.",
+  "beats": [
+   [
+    "0-7s",
+    "A frase dela, reproduzida. É o gancho e o coração do conteúdo."
+   ],
+   [
+    "7-22s",
+    "O contexto: quem era, em que situação. Sem identificar."
+   ],
+   [
+    "22-42s",
+    "Por que aquilo te marcou. O que a frase revela sobre o que {publico} sente e não diz."
+   ],
+   [
+    "42-60s",
+    "O que você respondeu — ou o que gostaria de ter respondido. Chamada."
+   ]
+  ],
+  "gravar": "Falado, close. Diga a frase dela com pausa antes e depois. A pausa é o que faz a frase pesar.",
+  "metrica": "Comentários do tipo 'sou eu'. É o formato que mais gera identificação direta.",
+  "cuidado": "Peça autorização se a frase for muito específica. E jamais invente a conversa."
+ },
+ {
+  "id": "C5",
+  "perfil": "C",
+  "nome": "Antes de eu entender isso",
+  "funcao": "Interesse",
+  "duracao": "40 a 55 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer ensinar algo sem soar professoral — a história carrega a lição.",
+  "gancho": "Durante [TEMPO] eu achei que [CRENÇA QUE VOCÊ TINHA]. Até acontecer uma coisa.",
+  "beats": [
+   [
+    "0-7s",
+    "A crença antiga, assumida. Quanto mais comum ela for, mais gente se reconhece."
+   ],
+   [
+    "7-22s",
+    "Por que você acreditava nisso. A lógica fazia sentido."
+   ],
+   [
+    "22-40s",
+    "O que aconteceu que derrubou a crença: [O QUE VOCÊ VIU OU VIVEU]."
+   ],
+   [
+    "40-55s",
+    "O que você pensa hoje, em uma frase. Chamada."
+   ]
+  ],
+  "gravar": "Falado. Se tiver uma foto ou registro da época, mostre — prova de tempo aumenta a credibilidade.",
+  "metrica": "Retenção e salvamento.",
+  "cuidado": "A crença antiga precisa ser verdadeira. Se você nunca acreditou naquilo, o conteúdo soa fabricado."
+ },
+ {
+  "id": "B1",
+  "perfil": "B",
+  "nome": "Opinião que divide",
+  "funcao": "Alcance",
+  "duracao": "35 a 50 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer ser lembrada por uma posição, não por uma informação.",
+  "gancho": "Vou dizer uma coisa que talvez incomode quem trabalha com {profissao}: [SUA OPINIÃO IMPOPULAR].",
+  "beats": [
+   [
+    "0-5s",
+    "A opinião, inteira, na primeira frase. Sem preparar terreno, sem 'na minha humilde opinião'."
+   ],
+   [
+    "5-18s",
+    "Por que o senso comum acredita no contrário. Explique a lógica do outro lado com honestidade — isso é o que separa posição de birra."
+   ],
+   [
+    "18-35s",
+    "Por que você discorda. O argumento tem que vir da sua prática: [O QUE VOCÊ VIU QUE TE FEZ MUDAR DE IDEIA]."
+   ],
+   [
+    "35-50s",
+    "O que muda para {publico} se essa ideia estiver certa. E a chamada."
+   ]
+  ],
+  "gravar": "Você falando, close no rosto, sem corte. Corte e trilha enfraquecem — a força está em ser você dizendo, direto.",
+  "metrica": "Comentários e compartilhamentos. Discordância também é sinal de que funcionou.",
+  "cuidado": "Opinião sem argumento é barulho. E não escolha um alvo pessoal — critique a prática, nunca a pessoa."
+ },
+ {
+  "id": "B2",
+  "perfil": "B",
+  "nome": "Contra o consenso",
+  "funcao": "Interesse",
+  "duracao": "45 a 60 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando existe um conselho repetido no seu mercado que você sabe que não funciona.",
+  "gancho": "Todo mundo repete que [CONSELHO COMUM DO SEU MERCADO]. Isso está errado para {publico}.",
+  "beats": [
+   [
+    "0-6s",
+    "O conselho e a discordância, juntos."
+   ],
+   [
+    "6-20s",
+    "De onde veio esse conselho e por que fez sentido um dia. Você não está chamando ninguém de burro."
+   ],
+   [
+    "20-40s",
+    "Por que ele falha no caso específico de {publico}. Um exemplo: [CASO QUE VOCÊ ACOMPANHOU]."
+   ],
+   [
+    "40-55s",
+    "O que fazer no lugar."
+   ],
+   [
+    "55-60s",
+    "Chamada."
+   ]
+  ],
+  "gravar": "Pode ser falado ou com uma tela mostrando o conselho circulando por aí. Se citar alguém, cubra o nome.",
+  "metrica": "Salvamento e comentários de concordância — 'achei que era só eu'.",
+  "cuidado": "Não invente que o consenso existe. Se você não consegue mostrar duas pessoas dizendo aquilo, não é consenso."
+ },
+ {
+  "id": "B3",
+  "perfil": "B",
+  "nome": "Manifesto curto",
+  "funcao": "Desejo",
+  "duracao": "30 a 45 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando você quer atrair quem pensa como você e afastar quem não serve. Publique uma vez por mês, não mais.",
+  "gancho": "Eu não trabalho com [O QUE VOCÊ RECUSA]. E vou explicar por quê.",
+  "beats": [
+   [
+    "0-5s",
+    "O que você recusa. Uma linha, seca."
+   ],
+   [
+    "5-20s",
+    "O que acontece quando se aceita isso — o custo para quem contrata e para quem entrega."
+   ],
+   [
+    "20-35s",
+    "No que você acredita no lugar. É a sua régua em {profissao}."
+   ],
+   [
+    "35-45s",
+    "Quem serve para trabalhar com você. Chamada."
+   ]
+  ],
+  "gravar": "Sem edição, sem música, tomada única. Se errar uma palavra, mantenha — o pequeno erro reforça que é posição, não roteiro decorado.",
+  "metrica": "Mensagens no direct de quem se identifica. Menos alcance, mais qualidade.",
+  "cuidado": "Manifesto não é desabafo. Se você está com raiva de um cliente específico, não grave hoje."
+ },
+ {
+  "id": "B4",
+  "perfil": "B",
+  "nome": "Alerta do mercado",
+  "funcao": "Alcance",
+  "duracao": "40 a 55 segundos",
+  "tipo": "Reels falado",
+  "quando": "Quando existe uma prática circulando que prejudica o seu público.",
+  "gancho": "Se alguém te oferecer [PRÁTICA QUE VOCÊ VÊ NO MERCADO], preste atenção nisto antes de aceitar.",
+  "beats": [
+   [
+    "0-6s",
+    "A prática e o aviso. Tom de quem está do lado de quem ouve, não de quem acusa."
+   ],
+   [
+    "6-20s",
+    "Por que parece uma boa ideia. Explique a sedução — é o que faz a pessoa continuar vendo."
+   ],
+   [
+    "20-40s",
+    "O que costuma acontecer depois. Sem catastrofizar: descreva o mecanismo."
+   ],
+   [
+    "40-55s",
+    "Como se proteger, em dois pontos práticos. Chamada."
+   ]
+  ],
+  "gravar": "Falado, tom mais baixo e mais lento que o normal. Alerta gritado parece sensacionalismo e perde credibilidade.",
+  "metrica": "Compartilhamento — este formato costuma ser enviado no direct entre amigas.",
+  "cuidado": "Nunca cite empresa ou pessoa pelo nome. E não afirme intenção ('querem te enganar') — descreva o efeito."
+ },
+ {
+  "id": "B5",
+  "perfil": "B",
+  "nome": "Comentário sobre algo em alta",
+  "funcao": "Alcance",
+  "duracao": "30 a 45 segundos",
+  "tipo": "Reels falado ou reação de tela",
+  "quando": "Quando um assunto do seu mercado viraliza e você tem algo específico a dizer.",
+  "gancho": "Todo mundo está falando sobre [ASSUNTO DA SEMANA]. Só que ninguém comentou a parte que importa para {publico}.",
+  "beats": [
+   [
+    "0-6s",
+    "O assunto e a promessa do ângulo que falta."
+   ],
+   [
+    "6-18s",
+    "Resuma o que já está sendo dito, em uma frase. Quem chegou agora precisa entender."
+   ],
+   [
+    "18-35s",
+    "O seu ângulo: o que isso significa para {publico} especificamente."
+   ],
+   [
+    "35-45s",
+    "Chamada."
+   ]
+  ],
+  "gravar": "Grave no mesmo dia. Este formato tem prazo de validade curto — em 48 horas já perdeu a força.",
+  "metrica": "Alcance de não seguidores. É o formato que mais traz gente nova.",
+  "cuidado": "Só comente se tiver ângulo próprio. Repetir o que todos estão dizendo não gera lembrança — gera ruído."
+ }
+];</script>
+<script>/* ── motor do plano: escolhe formatos, monta 7 dias e preenche variáveis ── */
+
+const CTA_POR_OBJETIVO = {
+  "Me mandar mensagem no direct":
+    {curto:"me chama no direct", frase:"Se isso faz sentido para você, me manda uma mensagem."},
+  "Agendar pelo link":
+    {curto:"agenda pelo link", frase:"Se quiser resolver isso, o link para agendar está na bio."},
+  "Salvar e acompanhar":
+    {curto:"salva esse conteúdo", frase:"Salva esse aqui para quando você precisar."},
+  "Comentar e participar":
+    {curto:"comenta aqui", frase:"Me conta nos comentários como isso funciona aí com você."}
+};
+
+const SEMANA = [
+  {dia:"Dia 1", papel:"Principal · alcance",  fonte:"P", nota:"Abre a semana com o formato mais confortável do seu perfil."},
+  {dia:"Dia 2", papel:"Principal · autoridade", fonte:"P", nota:"Mostra competência antes de qualquer oferta."},
+  {dia:"Dia 3", papel:"Complementar",  fonte:"C", nota:"Sai da zona de conforto uma vez. É o teste da semana."},
+  {dia:"Dia 4", papel:"Principal · alcance", fonte:"P", nota:"Volta ao que funciona, com tema novo."},
+  {dia:"Dia 5", papel:"Complementar", fonte:"C", nota:"Segunda tentativa no perfil complementar, agora com menos atrito."},
+  {dia:"Dia 6", papel:"Principal · conexão ou desejo", fonte:"P", prefere:["Conexão","Desejo"],
+   nota:"Aproxima antes do convite."},
+  {dia:"Dia 7", papel:"Variação do melhor", fonte:"V", nota:"Repete o formato que teve melhor sinal, trocando só o tema."}
+];
+
+function preencher(txt, d){
+  const mapa = {
+    "{profissao}": d.profissao || "sua área",
+    "{vende}":     d.vende || "o que você vende",
+    "{publico}":   d.publico || "o seu público",
+    "{resultado}": d.resultado || "o resultado que você entrega",
+    "{acao}":      (CTA_POR_OBJETIVO[d.acao] || {}).curto || "falar com você"
+  };
+  return String(txt).replace(/\{(profissao|vende|publico|resultado|acao)\}/g,
+    m => mapa[m] || m);
+}
+
+/* seleciona formatos: 3 do principal + 2 do complementar, respeitando recursos */
+function escolherFormatos(r, d){
+  const podeTela  = (d.recursos||[]).includes("Editor ou equipe") || true;
+  const semAparecer = d.camera === "Mostrar processos sem aparecer";
+  const curto = d.sessao === "Até 30 minutos";
+
+  const doPerfil = id => FORMATOS.filter(f => f.perfil === id);
+  const ordenar = lista => lista.slice().sort((a,b) => {
+    // quem não quer aparecer: prioriza formatos sem fala direta
+    const semFalaA = /tela|time-lapse|texto/i.test(a.tipo) ? 0 : 1;
+    const semFalaB = /tela|time-lapse|texto/i.test(b.tipo) ? 0 : 1;
+    if (semAparecer && semFalaA !== semFalaB) return semFalaA - semFalaB;
+    // sessão curta: prioriza formatos mais curtos
+    if (curto){
+      const durA = parseInt(a.duracao) || 60, durB = parseInt(b.duracao) || 60;
+      if (durA !== durB) return durA - durB;
+    }
+    return 0;
+  });
+
+  const P = ordenar(doPerfil(r.principal.id));
+  const C = ordenar(doPerfil(r.complementar.id));
+  return {principais: P.slice(0,3), complementares: C.slice(0,2), P, C};
+}
+
+/* monta os 7 dias */
+function montarSemana(r, d){
+  const esc = escolherFormatos(r, d);
+  const cta = CTA_POR_OBJETIVO[d.acao] || CTA_POR_OBJETIVO["Salvar e acompanhar"];
+  const usados = new Set();
+  const pegar = (lista, prefere) => {
+    // primeiro tenta a função pedida, entre os ainda não usados
+    if (prefere){
+      const alvo = lista.find(f => !usados.has(f.id) && prefere.includes(f.funcao));
+      if (alvo){ usados.add(alvo.id); return alvo; }
+    }
+    const livre = lista.find(f => !usados.has(f.id));
+    if (livre){ usados.add(livre.id); return livre; }
+    return lista[0];   // só repete se a lista acabar
+  };
+  return SEMANA.map(s => {
+    let f;
+    if (s.fonte === "P") f = pegar(esc.P, s.prefere);
+    else if (s.fonte === "C") f = pegar(esc.C, s.prefere);
+    else f = esc.principais[0];   // dia 7 repete de propósito: é a variação
+    return {...s, formato: f, cta, variacao: s.fonte === "V"};
+  });
+}
+
+/* abertura personalizada do relatório */
+function abertura(r, d){
+  const p = r.principal, s = r.complementar;
+  const fmts = escolherFormatos(r, d).principais.map(f => f.nome);
+  const fraco = r.bruto[r.bruto.length - 1];   // perfil de menor pontuação
+  return preencher(
+    `Seu DNA combina <b>${p.nome}</b> e <b>${s.nome}</b>. Seu conteúdo ganha força quando ` +
+    `você ${p.forca.charAt(0).toLowerCase() + p.forca.slice(1).replace(/\.$/,"")}, ` +
+    `mas perde naturalidade quando tenta ${fraco.forcar}. ` +
+    `Nos próximos sete dias, sua prioridade é usar <b>${fmts[0]}</b>, <b>${fmts[1]}</b> e ` +
+    `<b>${fmts[2]}</b> para falar com {publico} sobre {resultado} — e conduzir essas ` +
+    `pessoas a {acao}.`, d);
+}
+</script>
+<script>/* ── perfis ── */
+const PERFIS = {
+  A: {id:"A", nome:"Especialista", cor:"#ff0101",
+      forca:"Organiza ideias, explica causas e transforma complexidade em clareza.",
+      ativo:"Clareza",
+      usa:"Análises, tutoriais, diagnósticos, listas comentadas e erros corrigidos.",
+      risco:"Excesso de contexto, tom professoral e abertura lenta.",
+      pergunta:"Qual ideia consigo tornar mais simples ou mais precisa?",
+      forcar:"puxar polêmica ou expor a vida pessoal só para parecer mais espontânea",
+      formatos:["Erro corrigido","Análise em três pontos","Diagnóstico em 60 segundos",
+                "Lista comentada","Comparativo de critérios"]},
+  B: {id:"B", nome:"Provocador", cor:"#0a0a0a",
+      forca:"Cria interesse ao sustentar opiniões, contrastes e quebras de crença.",
+      ativo:"Tensão",
+      usa:"Opiniões contrárias, comparações, manifestos, comentários e alertas.",
+      risco:"Polêmica vazia, agressividade e afirmações sem sustentação.",
+      pergunta:"Que crença aceita pelo mercado merece ser questionada?",
+      forcar:"explicar longamente ou suavizar a própria posição para agradar todo mundo",
+      formatos:["Opinião que divide","Contra o consenso","Manifesto curto",
+                "Alerta do mercado","Comentário sobre algo em alta"]},
+  C: {id:"C", nome:"Narrador", cor:"#8a8278",
+      forca:"Gera identificação usando experiências, cenas, vulnerabilidade e transformação.",
+      ativo:"Identificação",
+      usa:"Histórias pessoais, bastidores narrados, confissões, decisões e aprendizados.",
+      risco:"Histórias longas sem ponto, exposição excessiva e moral genérica.",
+      pergunta:"Que situação vivida ajuda meu público a se enxergar?",
+      forcar:"dar aula, listar tópicos e falar em tom técnico",
+      formatos:["A decisão que mudou o rumo","O erro que me ensinou","Bastidor narrado",
+                "A conversa que me marcou","Antes de eu entender isso"]},
+  D: {id:"D", nome:"Demonstrador", cor:"#c40000",
+      forca:"Comunica mostrando processos, objetos, telas, movimentos e resultados.",
+      ativo:"Evidência",
+      usa:"Antes e depois, tela gravada, processo, transformação, teste e take com texto.",
+      risco:"Visual bonito sem ideia, dependência de edição e falta de conclusão.",
+      pergunta:"O que posso mostrar para provar esta ideia sem explicá-la por muito tempo?",
+      forcar:"falar por muito tempo olhando para a câmera sem nada para mostrar",
+      formatos:["Gravação de tela","Processo em time-lapse","Teste ao vivo",
+                "Antes e depois do processo","Take com texto"]}
+};
+const ORDEM = ["A","B","C","D"];
+
+/* ── perguntas de alinhamento ── */
+const ALINHA = [
+  {k:"profissao", t:"Sua profissão, nicho ou área de atuação", tipo:"texto",
+   ph:"ex.: dentista, advogada tributarista, consultor financeiro"},
+  {k:"vende", t:"O que você vende hoje", tipo:"texto",
+   ph:"ex.: consulta particular, mentoria em grupo, assessoria mensal"},
+  {k:"publico", t:"Quem você quer atrair", tipo:"texto",
+   ph:"ex.: mulheres de 30 a 50 que adiam tratamento"},
+  {k:"resultado", t:"Que resultado o seu trabalho ajuda essa pessoa a alcançar", tipo:"texto",
+   ph:"ex.: voltar a sorrir sem constrangimento"},
+  {k:"objetivo", t:"Objetivo principal do conteúdo nos próximos 30 dias", tipo:"escolha",
+   op:["Ser conhecida por quem ainda não me segue","Ser lembrada por uma visão própria",
+       "Criar proximidade e confiança","Gerar conversas e agendamentos"]},
+  {k:"frequencia", t:"Quantas vezes por semana você consegue publicar", tipo:"escolha",
+   op:["1 a 2","3 a 4","5 ou mais"]},
+  {k:"sessao", t:"Quanto tempo consegue reservar para uma sessão de gravação", tipo:"escolha",
+   op:["Até 30 minutos","1 hora","2 horas ou mais"]},
+  {k:"camera", t:"Diante da câmera, você prefere", tipo:"escolha",
+   op:["Falar direto para a câmera","Usar voz em off","Mostrar processos sem aparecer",
+       "Combinar formatos"]},
+  {k:"recursos", t:"Que recursos você tem", tipo:"multi",
+   op:["Celular","Tripé","Iluminação","Editor ou equipe","Ambiente organizado","Microfone"]},
+  {k:"evitar", t:"Temas que você não quer abordar", tipo:"texto",
+   ph:"ex.: política, valores de honorário, casos de pacientes"},
+  {k:"naoquer", t:"Que tipo de público você não quer atrair", tipo:"texto",
+   ph:"ex.: quem busca só preço baixo"},
+  {k:"acao", t:"Que ação o público deve realizar depois de ver seu conteúdo", tipo:"escolha",
+   op:["Me mandar mensagem no direct","Agendar pelo link","Salvar e acompanhar",
+       "Comentar e participar"]}
+];
+
+/* ── estado ── */
+let passo = 0;             // 0 = intro, 1..20 = perfil, 21 = alinhamento, 22 = resultado
+let respostas = {};        // {1:"A", 2:"C", ...}
+let dados = {};            // alinhamento
+const CH = "dna_loope_v1";
+
+try{
+  const g = JSON.parse(localStorage.getItem(CH));
+  if (g){ respostas = g.respostas || {}; dados = g.dados || {}; }
+}catch(e){}
+function guardar(){
+  try{ localStorage.setItem(CH, JSON.stringify({respostas, dados})); }catch(e){}
+}
+function esc(s){ return String(s).replace(/[&<>"]/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+/* ── cálculo ── */
+function calcular(){
+  const c = {A:0,B:0,C:0,D:0};
+  Object.values(respostas).forEach(v => { if (c[v] !== undefined) c[v]++; });
+  const total = Object.values(c).reduce((a,b)=>a+b,0) || 1;
+  const rank = ORDEM.slice().sort((x,y) => c[y]-c[x] || ORDEM.indexOf(x)-ORDEM.indexOf(y));
+  const p = rank[0], s = rank[1];
+  const soma = c[p] + c[s] || 1;
+  return {
+    cont: c, total,
+    principal: PERFIS[p], complementar: PERFIS[s],
+    pctP: Math.round(c[p]/soma*100), pctS: 100 - Math.round(c[p]/soma*100),
+    bruto: ORDEM.map(k => ({...PERFIS[k], n:c[k], pct: Math.round(c[k]/total*100)}))
+                .sort((a,b)=>b.n-a.n)
+  };
+}
+
+
+/* ── tela do plano ── */
+function verPlano(){
+  const r = calcular();
+  const semana = montarSemana(r, dados);
+  const esc3 = escolherFormatos(r, dados);
+  const cta = CTA_POR_OBJETIVO[dados.acao] || CTA_POR_OBJETIVO["Salvar e acompanhar"];
+
+  app().innerHTML = `
+  <div class="prog"><span style="width:100%"></span></div>
+  <div class="tela larga plano">
+    <div class="selo">Seu plano · Método MAPA</div>
+    <h1>Sete dias de conteúdo<br>com a <em>sua cara</em></h1>
+    <p class="abertura">${abertura(r, dados)}</p>
+
+    <div class="regra">
+      <b>Como ler os roteiros.</b> O que está entre colchetes é o que só você sabe — o
+      caso real, o número real, o erro que você viu. Nenhum sistema pode inventar isso
+      por você, e é justamente aí que o conteúdo deixa de ser genérico.
+    </div>
+
+    ${semana.map((s, i) => {
+      const f = s.formato;
+      return `<article class="dia">
+        <div class="dia-topo">
+          <div><span class="dn">${s.dia}</span><span class="dp">${esc(s.papel)}</span></div>
+          <span class="dt">${esc(f.duracao)} · ${esc(f.tipo)}</span>
+        </div>
+        <h3>${esc(f.nome)}</h3>
+        <p class="dnota">${esc(s.nota)}</p>
+        <div class="gancho"><b>Abertura</b>${esc(preencher(f.gancho, dados))}</div>
+        <div class="beats">
+          ${f.beats.map(b => `<div class="beat"><span class="bt">${esc(b[0])}</span>
+            <span class="bx">${esc(preencher(b[1], dados))}</span></div>`).join("")}
+        </div>
+        <div class="dfim">
+          <div><b>Como gravar</b>${esc(f.gravar)}</div>
+          <div><b>Chamada</b>${esc(cta.frase)}</div>
+          <div><b>Olhe esta métrica</b>${esc(f.metrica)}</div>
+          <div class="cuid"><b>Cuidado</b>${esc(f.cuidado)}</div>
+        </div>
+      </article>`;
+    }).join("")}
+
+    <h3 class="sec">Depois dos sete dias</h3>
+    <div class="regra">
+      <b>Empilhe o que funcionou.</b> Pegue o conteúdo com melhor sinal de interesse e
+      faça três variações dele. Mantenha a estrutura e troque <b>uma</b> variável por vez:
+      o gancho, o tema, o exemplo, o cenário ou a chamada. Trocar tudo de uma vez não
+      ensina nada — você não vai saber o que funcionou.
+    </div>
+
+    <h3 class="sec">Seus outros formatos</h3>
+    <p class="sub">Quando quiser variar sem sair do que combina com você.</p>
+    <div class="outros">
+      ${esc3.P.slice(3).concat(esc3.C.slice(2)).map(f =>
+        `<div class="outro"><b>${esc(f.nome)}</b><span>${esc(f.tipo)} · ${esc(f.funcao)}</span>
+         <p>${esc(f.quando)}</p></div>`).join("")}
+    </div>
+
+    <div class="acoes">
+      <button class="btn" onclick="window.print()">Salvar meu plano em PDF</button>
+      <button class="btn2" onclick="ir(22)">Voltar ao meu DNA</button>
+    </div>
+  </div>`;
+}
+
+/* ── render ── */
+const app = () => document.getElementById("app");
+
+function barraProgresso(){
+  const feitas = Object.keys(respostas).length;
+  const pct = passo === 0 ? 0 : passo >= 21 ? 100 : Math.round(feitas/20*90);
+  return `<div class="prog"><span style="width:${pct}%"></span></div>`;
+}
+
+function verIntro(){
+  app().innerHTML = `
+  <div class="tela intro">
+    <div class="selo">Diagnóstico · Método MAPA</div>
+    <h1>Descubra seu<br><em>DNA de Conteúdo</em></h1>
+    <p class="lead">Vinte perguntas sobre como você comunica de verdade — não sobre como
+    gostaria de comunicar. No fim, você descobre quais formatos combinam com a sua
+    personalidade, o seu negócio e o tempo que você tem.</p>
+    <div class="aviso">
+      <b>Responda pensando na vida real.</b> Escolha a alternativa que mais se parece com
+      o seu comportamento quando você tem pouco tempo e precisa produzir sozinha — não a
+      que parece mais profissional.
+    </div>
+    <button class="btn" onclick="ir(1)">Começar o diagnóstico</button>
+    <p class="mini">Leva de 4 a 6 minutos · suas respostas ficam salvas se você sair</p>
+  </div>`;
+}
+
+function verPergunta(n){
+  const q = PERGUNTAS[n-1];
+  const marcada = respostas[n];
+  app().innerHTML = `
+  ${barraProgresso()}
+  <div class="tela">
+    <div class="contador">Pergunta ${n} <s>de 20</s></div>
+    <h2>${esc(q.p)}</h2>
+    <div class="ops">
+      ${q.op.map((o,i) => {
+        const letra = ORDEM[i];
+        return `<button class="op${marcada===letra?" on":""}" data-l="${letra}">
+          <span class="marca"></span><span class="txt">${esc(o)}</span></button>`;
+      }).join("")}
+    </div>
+    <div class="navs">
+      ${n > 1 ? `<button class="voltar" onclick="ir(${n-1})">← Voltar</button>` : "<span></span>"}
+      ${marcada ? `<button class="avancar" onclick="ir(${n+1})">Avançar →</button>` : ""}
+    </div>
+  </div>`;
+  document.querySelectorAll(".op").forEach(b => b.onclick = () => {
+    respostas[n] = b.dataset.l; guardar();
+    document.querySelectorAll(".op").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    setTimeout(() => ir(n+1), 190);
+  });
+}
+
+function verAlinhamento(){
+  app().innerHTML = `
+  ${barraProgresso()}
+  <div class="tela larga">
+    <div class="contador">Últimos dados <s>· para personalizar o seu plano</s></div>
+    <h2>Sobre o seu negócio</h2>
+    <p class="sub">Isso não muda o seu DNA. Define os temas, o vocabulário e as chamadas
+    que vão entrar nos seus roteiros.</p>
+    <div class="campos">
+      ${ALINHA.map(c => {
+        const v = dados[c.k] || (c.tipo === "multi" ? [] : "");
+        if (c.tipo === "texto")
+          return `<label class="campo"><span>${esc(c.t)}</span>
+            <input type="text" data-k="${c.k}" value="${esc(v)}" placeholder="${esc(c.ph)}"></label>`;
+        if (c.tipo === "escolha")
+          return `<div class="campo"><span>${esc(c.t)}</span><div class="pills">
+            ${c.op.map(o => `<button class="pill${v===o?" on":""}" data-k="${c.k}"
+              data-v="${esc(o)}">${esc(o)}</button>`).join("")}</div></div>`;
+        return `<div class="campo"><span>${esc(c.t)}</span><div class="pills">
+          ${c.op.map(o => `<button class="pill multi${v.includes(o)?" on":""}"
+            data-k="${c.k}" data-v="${esc(o)}">${esc(o)}</button>`).join("")}</div></div>`;
+      }).join("")}
+    </div>
+    <div class="navs">
+      <button class="voltar" onclick="ir(20)">← Voltar</button>
+      <button class="avancar" onclick="ir(22)">Ver meu DNA →</button>
+    </div>
+  </div>`;
+  document.querySelectorAll("input[data-k]").forEach(i =>
+    i.oninput = () => { dados[i.dataset.k] = i.value; guardar(); });
+  document.querySelectorAll(".pill").forEach(b => b.onclick = () => {
+    const k = b.dataset.k, v = b.dataset.v;
+    if (b.classList.contains("multi")){
+      dados[k] = dados[k] || [];
+      const i = dados[k].indexOf(v);
+      i >= 0 ? dados[k].splice(i,1) : dados[k].push(v);
+      b.classList.toggle("on");
+    } else {
+      dados[k] = v;
+      document.querySelectorAll(`.pill[data-k="${k}"]`).forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+    }
+    guardar();
+  });
+}
+
+function verResultado(){
+  const r = calcular();
+  const p = r.principal, s = r.complementar;
+  app().innerHTML = `
+  ${barraProgresso()}
+  <div class="tela larga res">
+    <div class="selo">Seu resultado</div>
+    <h1 class="dna">Seu DNA é <em>${r.pctP}% ${p.nome}</em><br>e ${r.pctS}% ${s.nome}</h1>
+
+    <div class="mix">
+      ${r.bruto.map(b => `<div class="mixl">
+        <span class="pt" style="background:${b.cor}"></span>
+        <span class="nm">${b.nome}</span>
+        <span class="bar"><i style="width:${b.pct*2}%;background:${b.cor}"></i></span>
+        <span class="vl">${b.n}</span></div>`).join("")}
+    </div>
+
+    <div class="duo">
+      <div class="carta">
+        <div class="rot">Perfil principal · ${r.pctP}%</div>
+        <h3>${p.nome}</h3>
+        <p class="fr">${p.forca}</p>
+        <div class="linha"><b>Ativo central</b>${p.ativo}</div>
+        <div class="linha"><b>Onde você rende</b>${p.usa}</div>
+        <div class="linha alerta"><b>Onde você trava</b>${p.risco}</div>
+        <div class="linha"><b>Pergunta que abre pauta</b><i>${p.pergunta}</i></div>
+      </div>
+      <div class="carta comp">
+        <div class="rot">Perfil complementar · ${r.pctS}%</div>
+        <h3>${s.nome}</h3>
+        <p class="fr">${s.forca}</p>
+        <div class="linha"><b>Use para</b>${s.usa}</div>
+        <div class="linha"><b>Pergunta que abre pauta</b><i>${s.pergunta}</i></div>
+      </div>
+    </div>
+
+    <h3 class="sec">Seus três formatos prioritários</h3>
+    <div class="fmts">
+      ${[p.formatos[0], p.formatos[1], s.formatos[0]].map((f,i) =>
+        `<div class="fmt"><span class="n">${String(i+1).padStart(2,"0")}</span>
+         <b>${esc(f)}</b><span class="de">${i<2 ? p.nome : s.nome}</span></div>`).join("")}
+    </div>
+
+    <div class="proximo">
+      <div class="rot">O que vem agora</div>
+      <p>Seus <b>sete roteiros personalizados</b>, o <b>plano de sete dias</b> e a
+      <b>direção de gravação</b> são montados a partir deste diagnóstico cruzado com o que
+      você contou sobre o seu negócio.</p>
+      <button class="btn" onclick="ir(23)">Ver meu plano de 7 dias</button>
+      <p class="mini">Roteiros, direção de gravação e o que publicar em cada dia.</p>
+    </div>
+
+    <button class="refazer" onclick="reiniciar()">Refazer o diagnóstico</button>
+  </div>`;
+
+}
+
+function resumo(r){
+  const L = [];
+  L.push("DNA DE CONTEÚDO — RESULTADO");
+  L.push(`${r.pctP}% ${r.principal.nome} · ${r.pctS}% ${r.complementar.nome}`);
+  L.push(`Contagem: ` + r.bruto.map(b => `${b.nome} ${b.n}`).join(" · "));
+  L.push("");
+  L.push("RESPOSTAS: " + Array.from({length:20}, (_,i) =>
+    (respostas[i+1] || "-")).join(""));
+  L.push("");
+  L.push("NEGÓCIO");
+  ALINHA.forEach(c => {
+    let v = dados[c.k];
+    if (Array.isArray(v)) v = v.join(", ");
+    L.push(`${c.t}: ${v || "—"}`);
+  });
+  return L.join("\n");
+}
+
+function reiniciar(){
+  if (!confirm("Refazer o diagnóstico do zero?")) return;
+  respostas = {}; dados = {}; guardar(); ir(0);
+}
+
+function ir(n){
+  passo = n;
+  window.scrollTo({top:0, behavior:"instant"});
+  if (n === 0) return verIntro();
+  if (n >= 1 && n <= 20) return verPergunta(n);
+  if (n === 21) return verAlinhamento();
+  if (n === 23) return verPlano();
+  return verResultado();
+}
+
+/* retoma de onde parou */
+(function(){
+  const feitas = Object.keys(respostas).length;
+  ir(feitas === 0 ? 0 : feitas >= 20 ? 21 : feitas + 1);
+})();
+</script>
+</body>
+</html>
