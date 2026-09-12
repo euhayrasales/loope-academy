@@ -31,7 +31,7 @@ section{background:var(--ground);color:var(--ink)}
 ::selection{background:var(--red);color:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--ground);
+body{font-size:17px;font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;background:var(--ground);
   color:var(--ink);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
   overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
@@ -46,16 +46,16 @@ em{font-style:normal;color:var(--red)}
 .caixa > *, .mapa > *, .faixa .wrap > *, .recebe li > *{min-width:0}
 
 /* ── ritmo ── */
-.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 26px}
 .col{max-width:660px}
-section{padding:82px 0}
+section{padding:108px 0}
 h1,h2,h3{letter-spacing:-.016em;text-wrap:balance}
-h1{font-weight:700;font-size:clamp(35px,5.4vw,62px);line-height:1.06;color:var(--luz)}
-h2{font-weight:700;font-size:clamp(27px,3.7vw,43px);line-height:1.12;margin-bottom:22px;color:var(--luz)}
+h1{font-weight:800;font-size:clamp(32px,4.4vw,52px);line-height:1.1;color:var(--luz)}
+h2{font-weight:700;font-size:clamp(25px,3.1vw,38px);line-height:1.16;margin-bottom:20px;color:var(--luz)}
 h3{font-weight:600;font-size:19px;line-height:1.34;color:var(--luz)}
 p{margin-bottom:17px}
 p:last-child{margin-bottom:0}
-.lead{font-size:clamp(17px,1.8vw,20px);line-height:1.62;color:var(--ink)}
+.lead{font-size:clamp(16.5px,1.5vw,18px);line-height:1.65;color:var(--ink)}
 .small{font-size:13.5px;color:var(--mid);line-height:1.5}
 
 
@@ -76,24 +76,24 @@ p:last-child{margin-bottom:0}
 .mk i:last-child{left:11px;box-shadow:-2px 0 0 0 var(--ground)}
 .marca{color:var(--ink)}
 .btn{display:inline-block;background:var(--red);color:#fff;font-weight:600;font-size:15px;
-  padding:14px 26px;border-radius:4px;text-decoration:none;transition:background .15s;
+  padding:15px 28px;border-radius:8px;text-decoration:none;transition:background .15s;
   text-align:center}
 .btn:hover{background:var(--red-dp)}
 .btn.mini{font-size:13.5px;padding:10px 18px}
 .btn.grande{font-size:17px;padding:19px 34px;width:100%;max-width:460px}
 
 /* ── hero ── */
-.hero{padding:74px 0 0}
-.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center}
+.hero{padding:78px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:45fr 55fr;gap:56px;align-items:center}
 .hero .dna{width:118px;height:auto;margin:0 0 30px -6px;
   filter:none}
-.hero h1{margin-bottom:20px}
-.hero .lead{margin-bottom:14px;max-width:30em}
+.hero h1{margin-bottom:22px}
+.hero .lead{margin-bottom:14px;max-width:32em}
 .hero .cta-linha{display:flex;flex-direction:column;gap:11px;align-items:flex-start}
 .selo-tempo{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mid)}
 .selo-tempo b{color:var(--ink);font-weight:600}
 .hero-fig{position:relative}
-.hero-fig .quadro{position:relative;border:1px solid var(--hair);border-radius:6px;
+.hero-fig .quadro{position:relative;border:1px solid var(--hair);border-radius:9px;
   overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.9)}
 .hero-fig .quadro img{display:block;width:100%}
 .hero-fig figcaption{font-size:11.5px;color:var(--soft);margin-top:11px;letter-spacing:.02em}
@@ -109,12 +109,11 @@ p:last-child{margin-bottom:0}
 /* ── cena ── */
 
 .sinais{list-style:none;margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
-.sinais li{display:flex;gap:14px;padding:15px 0;border-top:1px solid var(--hair);
-  font-size:15.5px;line-height:1.5}
+.sinais li{display:block;padding:16px 0;border-top:1px solid var(--hair);
+  font-size:17px;line-height:1.45;color:var(--luz);font-weight:500}
 
-.sinais li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);
-  flex:none;margin-top:11px}
-.remate{margin-top:52px;color:var(--luz);font-size:clamp(24px,3.4vw,40px);
+
+.remate{margin-top:52px;color:var(--luz);font-size:clamp(23px,2.9vw,34px);
   line-height:1.16;font-weight:700;letter-spacing:-.018em;max-width:none;
   padding-top:38px;border-top:2px solid var(--red)}
 
@@ -127,6 +126,14 @@ p:last-child{margin-bottom:0}
   letter-spacing:-.02em}
 .mapa h3{margin-bottom:7px;font-size:17px}
 .mapa p{font-size:13.5px;color:var(--mid);line-height:1.55;margin:0}
+
+/* ── diálogo interno positivo ── */
+.depois{margin-top:44px;padding-top:34px;border-top:1px solid var(--hair)}
+.depois h3{margin-bottom:20px;font-size:17px;color:var(--mid);font-weight:500}
+.falas{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+.falas span{font-size:17.5px;line-height:1.4;font-weight:600;color:var(--luz);
+  padding-left:16px;border-left:2px solid var(--red)}
+@media (max-width:900px){.falas{grid-template-columns:1fr}}
 
 /* ── perfis ── */
 .perfis{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin-top:30px}
@@ -149,7 +156,7 @@ p:last-child{margin-bottom:0}
 
 /* ── dois caminhos ── */
 .caminhos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
-.cam{background:var(--surface);border:1px solid var(--hair);border-radius:7px;
+.cam{background:var(--surface);border:1px solid var(--hair);border-radius:9px;
   overflow:hidden;display:flex;flex-direction:column}
 .cam .shot{background:#000;border-bottom:1px solid var(--hair);position:relative}
 .cam .shot img{display:block;width:100%}
@@ -172,13 +179,13 @@ p:last-child{margin-bottom:0}
   font-size:12.5px;color:var(--soft)}
 
 /* ── entrega em duas colunas ── */
-.duas{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.duas{display:grid;grid-template-columns:45fr 55fr;gap:56px;align-items:center}
 .duas.invertida .fig{order:2}
 .duas .fig .quadro{position:relative;border:1px solid var(--hair);border-radius:6px;
   overflow:hidden;max-height:620px;box-shadow:0 24px 60px -28px rgba(0,0,0,.9)}
 .duas .fig .quadro::after{content:"";position:absolute;left:0;right:0;bottom:0;height:100px;
   background:linear-gradient(to bottom,rgba(250,250,248,0),var(--ground))}
-.duas .fig .papel{border-radius:5px;box-shadow:0 28px 60px -26px rgba(0,0,0,.95)}
+.duas .fig .papel{border-radius:9px;box-shadow:0 28px 60px -26px rgba(0,0,0,.95)}
 .duas .fig figcaption{font-size:11.5px;color:var(--soft);margin-top:10px}
 
 /* ── recebe ── */
@@ -192,6 +199,7 @@ p:last-child{margin-bottom:0}
   font-variant-numeric:tabular-nums;padding-top:2px;width:44px}
 .recebe h3{font-size:16.5px;margin-bottom:3px}
 .recebe p{font-size:14px;color:var(--mid);line-height:1.55;margin:0}
+.recebe p b{color:var(--ink);font-weight:600}
 
 /* ── antes e depois ── */
 .par{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin-top:34px}
@@ -223,6 +231,14 @@ p:last-child{margin-bottom:0}
 .quem .nao li::before{content:"–";color:var(--soft)}
 .quem .nao li{color:var(--mid)}
 
+/* ── objeções ── */
+.obj{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:34px}
+.obj article{padding:26px 0;border-top:1px solid var(--hair)}
+.obj h3{font-size:18px;margin-bottom:10px;color:var(--red)}
+.obj p{font-size:14.5px;line-height:1.62;color:var(--mid);margin:0}
+.obj p b{color:var(--ink);font-weight:600}
+@media (max-width:900px){.obj{grid-template-columns:1fr}}
+
 /* ── quem fez ── */
 .autoria{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:start}
 .autoria .cred{display:grid;gap:0;border-top:1px solid var(--hair)}
@@ -240,8 +256,8 @@ p:last-child{margin-bottom:0}
 .oferta h2{color:var(--luz)}
 .oferta .caixa{border-color:#242424}
 .oferta .lead{color:var(--ink)}
-.caixa{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;margin-top:38px;
-  border:1px solid var(--hair);border-radius:8px;overflow:hidden}
+.caixa{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;margin-top:40px;
+  border:1px solid var(--hair);border-radius:10px;overflow:hidden}
 .preco{background:#0a0a0a;color:#e8e4db;padding:38px 34px;display:flex;flex-direction:column;
   justify-content:center}
 .preco .de{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:10px}
@@ -298,8 +314,8 @@ p:last-child{margin-bottom:0}
   .duas.invertida .fig{order:0}
   .mapa{grid-template-columns:1fr 1fr}
   .faixa .wrap{grid-template-columns:1fr 1fr;gap:24px}
-  .hero{padding-top:48px}
-  section{padding:60px 0}
+  .hero{padding:52px 0 64px}
+  section{padding:74px 0}
   .btn.grande{max-width:none}
 }
 @media (max-width:520px){
@@ -377,15 +393,15 @@ p:last-child{margin-bottom:0}
       </div>
       <ul class="recebe">
         <li><span class="q">01</span><div><h3>O Consultor DNA de Conteúdo</h3>
-          <p>Faz o diagnóstico, monta o plano, adapta roteiro a um tema seu e monta as semanas seguintes.</p></div></li>
+          <p>Faz o diagnóstico, monta o plano e as semanas seguintes. <b>Você nunca mais abre o Instagram sem saber o que gravar.</b></p></div></li>
         <li><span class="q">02</span><div><h3>Seu perfil de comunicação</h3>
-          <p>Perfil principal e complementar, a proporção entre os dois e onde cada um rende.</p></div></li>
+          <p>Perfil principal e complementar, com a proporção entre os dois. <b>Você para de tentar ser o tipo de criador que você não é.</b></p></div></li>
         <li><span class="q">03</span><div><h3>Sete roteiros prontos para gravar</h3>
-          <p>Um formato por dia, com abertura escrita, blocos cronometrados e direção de gravação.</p></div></li>
+          <p>Um por dia, com abertura escrita, blocos cronometrados e direção de gravação. <b>Você senta, lê e grava, sem escrever uma linha.</b></p></div></li>
         <li><span class="q">04</span><div><h3>Seus outros formatos</h3>
-          <p>Os que combinam com você e ficaram de fora da primeira semana.</p></div></li>
+          <p>Os que combinam com você e ficaram de fora da semana. <b>Quando cansar de um formato, já sabe qual usar no lugar.</b></p></div></li>
         <li><span class="q">05</span><div><h3>A versão em página, se você preferir clicar</h3>
-          <p>O mesmo diagnóstico em formulário, em quatro minutos, com botão para salvar o plano em PDF.</p></div></li>
+          <p>O mesmo diagnóstico em formulário, em quatro minutos. <b>Nos dias corridos, você resolve no clique e vai gravar.</b></p></div></li>
       </ul>
       <div class="acoes" style="margin-top:34px">
         <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Começar agora · R$&nbsp;47</a>
@@ -398,16 +414,17 @@ p:last-child{margin-bottom:0}
   <div class="wrap">
     <div class="col">
       <h2>A semana passa e o<br>conteúdo fica para trás.</h2>
-      <p class="lead">Você explica bem na consulta, na reunião, no atendimento. Na frente da
-      câmera vira outra pessoa.</p>
+      <p class="lead">Você explica bem na consulta, na reunião, no atendimento. Na frente
+      da câmera vira outra pessoa. E a conversa dentro da sua cabeça é sempre a mesma:</p>
       </div>
       <ul class="sinais">
-        <li>Você salva referência há meses e não consegue adaptar nenhuma sem parecer cópia.</li>
-        <li>Tem conhecimento de sobra e demora horas para achar um jeito interessante de apresentar.</li>
-        <li>Grava vários vídeos e sente que todos ficam iguais, ou artificiais.</li>
-        <li>Alterna uma semana de muita produção com três semanas sem publicar nada.</li>
-        <li>Pede roteiro para a inteligência artificial e recebe algo genérico, longe do seu jeito de falar.</li>
-        </ul>
+        <li>"Hoje não deu. Amanhã eu gravo."</li>
+        <li>"Isso todo mundo já falou, vão achar que eu tô repetindo."</li>
+        <li>"Ficou parecendo que eu tô me achando."</li>
+        <li>"Melhor não postar do que postar qualquer coisa."</li>
+        <li>"Preciso estudar mais antes de falar sobre isso."</li>
+        <li>"Ela consegue porque tem facilidade. Eu não sou assim."</li>
+      </ul>
       <p class="remate">Nada disso é falta de talento.<br>É formato incompatível com quem você é.</p>
   </div>
 </section>
@@ -443,7 +460,17 @@ p:last-child{margin-bottom:0}
         </ul>
       </div>
     </div>
-    <div class="mix-nota" style="margin-top:18px">
+    <div class="depois">
+      <h3>Como a conversa passa a ser</h3>
+      <div class="falas">
+        <span>"Hoje é quarta. Quarta é o dia do erro corrigido."</span>
+        <span>"Já sei a primeira frase. O resto eu sei de cor."</span>
+        <span>"Esse aqui eu gravo em quinze minutos, sem edição."</span>
+        <span>"Se não funcionar, eu troco só o gancho e testo de novo."</span>
+      </div>
+    </div>
+
+    <div class="mix-nota" style="margin-top:34px">
       <p style="flex:1"><b>É inteligência artificial com coleira.</b> O agente conversa, adapta e
       explica, mas não pode criar formato novo nem preencher um dado seu por conta própria.
       Essa restrição é o produto. Sem ela, seria mais um gerador de texto genérico.</p>
@@ -648,6 +675,49 @@ p:last-child{margin-bottom:0}
           <li>Quer terceirizar a produção inteira, sem gravar nada</li>
           </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · quebra das objeções -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <h2>O que você deve estar<br>pensando <em>agora</em>.</h2>
+    </div>
+    <div class="obj">
+      <article>
+        <h3>"Eu peço isso pro ChatGPT de graça."</h3>
+        <p><b>Pode, e vai receber alguma coisa.</b> O que você não recebe é a parte que faz
+        diferença: ele não sabe que você odeia falar para a câmera, não sabe que você tem
+        vinte minutos por semana, e inventa o número e o caso que faltam. Aqui os vinte
+        formatos foram escritos antes, um por um, com o tempo de cada bloco cronometrado.
+        Você paga R$ 47 uma vez para não descobrir isso testando por três meses.</p>
+      </article>
+      <article>
+        <h3>"Já fiz teste de perfil e não mudou nada."</h3>
+        <p><b>Teste que só te dá um rótulo realmente não muda.</b> Saber que você é
+        Especialista não faz você gravar. Por isso o resultado aqui não termina no perfil:
+        ele continua em sete dias com formato escolhido, abertura escrita e direção de
+        gravação. O perfil é o meio, não a entrega.</p>
+      </article>
+      <article>
+        <h3>"Vou receber o plano e não vou gravar mesmo assim."</h3>
+        <p><b>É a objeção mais honesta da lista.</b> E é por isso que uma das perguntas é
+        quanto tempo você consegue reservar para gravar, e outra é o que você tem de
+        equipamento. O plano só indica formato que cabe no que você declarou. O primeiro
+        dia costuma ser o mais curto de propósito: o objetivo é você publicar um, não sete.</p>
+      </article>
+      <article>
+        <h3>"A minha área é específica demais."</h3>
+        <p><b>Os roteiros são estrutura, não texto pronto.</b> Quem preenche o assunto é
+        você, com o vocabulário da sua profissão. E em área regulada, como saúde, direito e
+        finanças, os campos entre colchetes existem justamente para você decidir o que o seu
+        conselho permite afirmar. O sistema nunca escreve uma promessa no seu nome.</p>
+      </article>
+    </div>
+    <div class="acoes" style="margin-top:44px">
+      <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Quero o meu · R$&nbsp;47</a>
     </div>
   </div>
 </section>
