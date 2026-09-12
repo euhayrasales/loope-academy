@@ -132,6 +132,30 @@ p:last-child{margin-bottom:0}
 .mix-nota p{font-size:14px;color:var(--mid);margin:0;flex:2;min-width:270px}
 .mix-nota b{color:var(--ink);font-weight:600}
 
+/* ── dois caminhos ── */
+.caminhos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.cam{background:var(--surface);border:1px solid var(--hair);border-radius:6px;
+  overflow:hidden;display:flex;flex-direction:column}
+.cam .shot{background:#0e0e0e;border-bottom:1px solid var(--hair);position:relative}
+.cam .shot img{display:block;width:100%}
+.cam .shot{height:262px;overflow:hidden}
+.cam .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.cam .shot.recorte img{object-position:top}
+.cam .shot.foto img{object-position:center 58%}
+.cam .txt{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.cam .rot{display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:600;color:var(--soft)}
+.cam .rot i{width:7px;height:7px;border-radius:50%;background:var(--red);flex:none}
+.cam h3{font-size:19px}
+.cam p{font-size:14.5px;line-height:1.55;color:var(--mid);margin:0}
+.cam ul{list-style:none;display:grid;gap:8px;font-size:13.5px;line-height:1.45;
+  color:var(--ink);margin-top:2px}
+.cam li{display:flex;gap:10px}
+.cam li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);
+  flex:none;margin-top:7px}
+.cam .pe{margin-top:auto;padding-top:14px;border-top:1px solid var(--hair2);
+  font-size:12.5px;color:var(--soft)}
+
 /* ── entrega em duas colunas ── */
 .duas{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 .duas.invertida .fig{order:2}
@@ -139,6 +163,7 @@ p:last-child{margin-bottom:0}
   overflow:hidden;max-height:620px;box-shadow:0 18px 40px -26px rgba(0,0,0,.3)}
 .duas .fig .quadro::after{content:"";position:absolute;left:0;right:0;bottom:0;height:100px;
   background:linear-gradient(to bottom,rgba(250,250,248,0),var(--ground))}
+.duas .fig .papel{border-radius:5px;box-shadow:0 24px 50px -30px rgba(0,0,0,.55)}
 .duas .fig figcaption{font-size:11.5px;color:var(--soft);margin-top:10px}
 
 /* ── recebe ── */
@@ -238,7 +263,7 @@ p:last-child{margin-bottom:0}
 .rodape .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 
 @media (max-width:900px){
-  .hero .wrap,.duas,.par,.quem,.perfis,.caixa{grid-template-columns:1fr}
+  .hero .wrap,.duas,.par,.quem,.perfis,.caixa,.caminhos{grid-template-columns:1fr}
   .duas{gap:34px}
   .duas.invertida .fig{order:0}
   .mapa{grid-template-columns:1fr 1fr}
@@ -403,31 +428,77 @@ p:last-child{margin-bottom:0}
   </div>
 </section>
 
-<!-- 5 · o relatório e o plano -->
+<!-- 5 · dois caminhos -->
 <section>
+  <div class="wrap">
+    <div class="col">
+      <div class="olho">Como você usa</div>
+      <h2>Dois caminhos para<br>a mesma <em>resposta</em>.</h2>
+      <p class="lead">Tem dia de resolver rápido, e tem dia de pensar junto. Você recebe
+      as duas formas e usa a que couber no seu dia, sem pagar a mais por isso.</p>
+    </div>
+
+    <div class="caminhos">
+      <article class="cam">
+        <div class="shot recorte"><img src="img/resultado.png" alt="Tela do diagnóstico mostrando a combinação de perfis" loading="lazy" width="900" height="1400"></div>
+        <div class="txt">
+          <div class="rot"><i></i>A página</div>
+          <h3>Quatro minutos, por cliques</h3>
+          <p>Você responde as vinte perguntas clicando, e o plano da semana aparece
+          pronto na tela. É o caminho mais rápido, e o que a maioria vai escolher.</p>
+          <ul>
+            <li>Resultado calculado na hora, sem espera</li>
+            <li>Plano inteiro com botão para salvar em PDF</li>
+            <li>Se você sair no meio, as respostas ficam salvas</li>
+          </ul>
+          <div class="pe">Para quando você quer resolver e ir gravar.</div>
+        </div>
+      </article>
+
+      <article class="cam">
+        <div class="shot foto"><img src="img/mock-consultor-notebook.jpg" alt="O Consultor DNA de Conteúdo aberto num notebook, oferecendo os dois caminhos" loading="lazy" width="1600" height="1045"></div>
+        <div class="txt">
+          <div class="rot"><i></i>O Consultor</div>
+          <h3>No seu ritmo, e depois também</h3>
+          <p>O mesmo diagnóstico em conversa. E ele continua com você depois da primeira
+          semana, que é onde a página não vai.</p>
+          <ul>
+            <li>Adapta um roteiro a um tema específico seu</li>
+            <li>Refaz um dia que não funcionou</li>
+            <li>Monta a semana seguinte a partir do que você publicou</li>
+          </ul>
+          <div class="pe">Para quando falta decidir, não só executar.</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5b · o plano por dentro -->
+<section class="cena">
   <div class="wrap">
     <div class="duas">
       <div>
-        <div class="olho">O que aparece na tela</div>
-        <h2>Sete dias com dia, formato,<br>roteiro e direção.</h2>
+        <div class="olho">O plano por dentro</div>
+        <h2>Sete dias com dia, formato,<br>roteiro e <em>direção</em>.</h2>
         <p>Você não recebe uma lista de ideias para transformar em roteiro depois. Cada dia
         já vem com o formato escolhido para o seu perfil, a abertura escrita, a marcação de
         tempo do vídeo, como enquadrar e gravar, qual métrica olhar e o erro mais comum
         daquele formato.</p>
         <p>O que estiver entre colchetes é o que só você sabe preencher: o caso real, o
-        número real, o erro que você viu acontecer. O sistema não inventa história, cliente
-        nem resultado no seu nome.</p>
+        número real, o erro que você viu acontecer. Nem a página nem o Consultor inventam
+        história, cliente ou resultado no seu nome.</p>
       </div>
       <figure class="fig">
-        <div class="quadro"><img src="img/plano.png" alt="Plano de sete dias com roteiro detalhado por dia" loading="lazy" width="900" height="1400"></div>
-        <figcaption>Plano gerado a partir de um diagnóstico real.</figcaption>
+        <img class="papel" src="img/mock-plano-papel.jpg" alt="O plano de sete dias impresso, com o roteiro do primeiro dia" loading="lazy" width="1500" height="1420">
+        <figcaption>Um dia do plano, impresso. Gerado a partir de um diagnóstico real.</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
 <!-- 7 · antes e depois -->
-<section class="cena">
+<section>
   <div class="wrap">
     <div class="col">
       <div class="olho">A diferença na prática</div>
@@ -466,7 +537,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 6 · o que você recebe -->
-<section>
+<section class="cena">
   <div class="wrap">
     <div class="col">
       <div class="olho">O que você recebe</div>
@@ -495,7 +566,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 8 · para quem é -->
-<section class="cena">
+<section>
   <div class="wrap">
     <div class="col">
       <div class="olho">Honestidade antes da compra</div>
