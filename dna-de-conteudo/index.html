@@ -16,17 +16,18 @@
 
 <style>
 :root{
-  --ground:#0a0a0a;      /* o preto da logo */
-  --wash:#101010;        /* faixa alternada, quase imperceptivel */
-  --surface:#151515;     /* painel sobre o preto */
-  --ink:#f4f1ea;         /* creme da marca, nao branco puro */
-  --mid:#9c988f;
-  --soft:#6e6b65;
-  --hair:#242424; --hair2:#1c1c1c;
-  --red:#ff0101; --red-dp:#ff3a3a;
-  --luz:#fbf9f5;         /* so onde precisa gritar */
-  --pA:#ff0101; --pB:#f4f1ea; --pC:#8a867e; --pD:#ff7a7a;
+  --ground:#0a0a0a; --surface:#151515; --ink:#e8e4db; --luz:#ffffff;
+  --mid:#918d85; --soft:#65625c; --hair:#262626; --hair2:#1b1b1b;
+  --red:#ff0101; --red-dp:#ff3333;
+  --pA:#ff0101; --pB:#e8e4db; --pC:#8a867e; --pD:#ff7a7a;
 }
+/* a seção clara redefine os mesmos tokens: os componentes não mudam */
+section.claro, .claro{
+  --ground:#f6f3ec; --surface:#ffffff; --ink:#1c1a17; --luz:#0a0a0a;
+  --mid:#605c55; --soft:#8d8980; --hair:#e2ddd2; --hair2:#ece7dc;
+  --pB:#1c1a17;
+}
+section{background:var(--ground);color:var(--ink)}
 ::selection{background:var(--red);color:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
@@ -38,7 +39,7 @@ a{color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 em{font-style:normal;color:var(--red)}
-h1 em{text-shadow:0 0 40px rgba(255,1,1,.35)}
+
 
 /* item de grid nao encolhe abaixo do min-content sem isto: imagem larga estoura a linha */
 .hero .wrap > *, .duas > *, .caminhos > *, .par > *, .quem > *, .perfis > *,
@@ -57,9 +58,8 @@ p:last-child{margin-bottom:0}
 .lead{font-size:clamp(17px,1.8vw,20px);line-height:1.62;color:var(--ink)}
 .small{font-size:13.5px;color:var(--mid);line-height:1.5}
 
-.olho{display:flex;align-items:center;gap:13px;font-size:11px;letter-spacing:.24em;
-  text-transform:uppercase;font-weight:600;color:var(--red);margin-bottom:22px}
-.olho::after{content:"";flex:1;height:1px;background:var(--hair);max-width:200px}
+.olho{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  font-weight:600;color:var(--red);margin-bottom:18px}
 
 /* ── barra de proporção: o desenho que o produto realmente devolve ── */
 .prop{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--hair2)}
@@ -87,7 +87,7 @@ p:last-child{margin-bottom:0}
 .hero{padding:74px 0 0}
 .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center}
 .hero .dna{width:118px;height:auto;margin:0 0 30px -6px;
-  filter:drop-shadow(0 0 30px rgba(255,1,1,.4))}
+  filter:none}
 .hero h1{margin-bottom:20px}
 .hero .lead{margin-bottom:14px;max-width:30em}
 .hero .cta-linha{display:flex;flex-direction:column;gap:11px;align-items:flex-start}
@@ -108,30 +108,31 @@ p:last-child{margin-bottom:0}
   color:rgba(255,255,255,.72);font-weight:500}
 
 /* ── cena ── */
-.cena{background:var(--wash)}
-.cena + .cena{background:var(--ground)}
-.sinais{list-style:none;margin:26px 0 0;display:grid;gap:0}
+
+.sinais{list-style:none;margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
 .sinais li{display:flex;gap:14px;padding:15px 0;border-top:1px solid var(--hair);
   font-size:15.5px;line-height:1.5}
-.sinais li:last-child{border-bottom:1px solid var(--hair)}
+
 .sinais li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);
-  flex:none;margin-top:11px;box-shadow:0 0 8px rgba(255,1,1,.8)}
-.remate{margin-top:32px;color:var(--luz);font-size:clamp(19px,2.3vw,25px);line-height:1.34;font-weight:600;
-  letter-spacing:-.014em;max-width:20em}
+  flex:none;margin-top:11px}
+.remate{margin-top:52px;color:var(--luz);font-size:clamp(24px,3.4vw,40px);
+  line-height:1.16;font-weight:700;letter-spacing:-.018em;max-width:none;
+  padding-top:38px;border-top:2px solid var(--red)}
 
 /* ── mecanismo ── */
-.mapa{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);
-  border:1px solid var(--hair);border-radius:5px;overflow:hidden;margin-top:34px}
-.mapa div{background:var(--surface);padding:24px 20px}
+.mapa{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;
+  border-top:1px solid var(--hair)}
+.mapa div{background:transparent;padding:26px 26px 26px 0;border-right:1px solid var(--hair)}
+.mapa div:last-child{border-right:0}
 .mapa .l{font-weight:700;font-size:30px;line-height:1;color:var(--red);margin-bottom:14px;
-  letter-spacing:-.02em;text-shadow:0 0 24px rgba(255,1,1,.45)}
+  letter-spacing:-.02em}
 .mapa h3{margin-bottom:7px;font-size:17px}
 .mapa p{font-size:13.5px;color:var(--mid);line-height:1.55;margin:0}
 
 /* ── perfis ── */
-.perfis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
-.perfil{background:var(--surface);border:1px solid var(--hair);border-radius:6px;
-  padding:26px 24px}
+.perfis{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin-top:30px}
+.perfil{background:transparent;border:0;border-top:1px solid var(--hair);
+  padding:24px 0 4px}
 .perfil .cab{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .perfil .pt{width:11px;height:11px;border-radius:50%;flex:none}
 .perfil h3{font-size:20px}
@@ -141,8 +142,8 @@ p:last-child{margin-bottom:0}
   font-weight:600;padding-top:12px;border-top:1px solid var(--hair2)}
 .perfil dd{font-size:13.5px;line-height:1.5;color:var(--mid);margin:2px 0 10px}
 .perfil dd.p{color:var(--ink);font-weight:500}
-.mix-nota{display:flex;align-items:center;gap:18px;margin-top:26px;padding:22px 24px;
-  background:var(--surface);border-left:2px solid var(--red);border-radius:0 6px 6px 0;flex-wrap:wrap}
+.mix-nota{display:flex;align-items:center;gap:20px;margin-top:34px;padding:22px 0 0;
+  border-top:2px solid var(--red);flex-wrap:wrap}
 .mix-nota .prop{flex:1;min-width:190px}
 .mix-nota p{font-size:14.5px;color:var(--ink);margin:0;flex:2;min-width:270px;line-height:1.55}
 .mix-nota b{color:var(--luz);font-weight:600}
@@ -182,19 +183,21 @@ p:last-child{margin-bottom:0}
 .duas .fig figcaption{font-size:11.5px;color:var(--soft);margin-top:10px}
 
 /* ── recebe ── */
-.recebe{list-style:none;margin-top:30px}
-.recebe li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 0;
-  border-top:1px solid var(--hair)}
-.recebe li:last-child{border-bottom:1px solid var(--hair)}
+.recebe{list-style:none;margin-top:34px;display:grid;grid-template-columns:1fr 1fr;
+  gap:0 56px;border-top:1px solid var(--hair)}
+.recebe li:nth-child(-n+3){border-top:0}
+.recebe li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:20px 0;
+  border-top:1px solid var(--hair);align-content:start}
+
 .recebe .q{font-weight:700;font-size:13px;color:var(--red);
   font-variant-numeric:tabular-nums;padding-top:2px;width:44px}
 .recebe h3{font-size:16.5px;margin-bottom:3px}
 .recebe p{font-size:14px;color:var(--mid);line-height:1.55;margin:0}
 
 /* ── antes e depois ── */
-.par{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-.lado{border:1px solid var(--hair);border-radius:6px;padding:24px;background:var(--surface)}
-.lado.bom{border-color:var(--red);background:#180909}
+.par{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin-top:34px}
+.lado{border:0;border-top:2px solid var(--hair);padding:22px 0 0;background:transparent}
+.lado.bom{border-top-color:var(--red)}
 .lado .rot{font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:600;
   color:var(--soft);margin-bottom:14px}
 .lado.bom .rot{color:var(--red)}
@@ -209,10 +212,10 @@ p:last-child{margin-bottom:0}
 .lado.bom li::before{background:var(--red)}
 
 /* ── para quem ── */
-.quem{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-.quem > div{padding:26px 24px;border-radius:5px}
-.quem .sim{background:var(--surface);border:1px solid var(--red)}
-.quem .nao{background:transparent;border:1px solid var(--hair2)}
+.quem{display:grid;grid-template-columns:1fr 1fr;gap:0 52px;margin-top:30px}
+.quem > div{padding:24px 0 0}
+.quem .sim{background:transparent;border:0;border-top:2px solid var(--red)}
+.quem .nao{background:transparent;border:0;border-top:2px solid var(--hair)}
 .quem h3{font-size:17px;margin-bottom:16px}
 .quem ul{list-style:none;display:grid;gap:11px;font-size:14.5px;line-height:1.5}
 .quem li{display:flex;gap:11px;color:var(--ink)}
@@ -232,34 +235,35 @@ p:last-child{margin-bottom:0}
 @media (max-width:900px){.autoria{grid-template-columns:1fr;gap:30px}}
 
 /* ── oferta ── */
-.oferta{background:var(--wash);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.oferta{background:var(--ground)}
 .oferta .olho{color:var(--red)}
 .oferta .olho::after{background:#2b2b2b}
 .oferta h2{color:var(--luz)}
+.oferta .caixa{border-color:#242424}
 .oferta .lead{color:var(--ink)}
 .caixa{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;margin-top:38px;
   border:1px solid var(--hair);border-radius:8px;overflow:hidden}
-.preco{background:linear-gradient(160deg,#1c0707,#120404);padding:38px 34px;display:flex;flex-direction:column;
+.preco{background:#0a0a0a;color:#e8e4db;padding:38px 34px;display:flex;flex-direction:column;
   justify-content:center}
 .preco .de{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:10px}
 .preco .valor{font-weight:700;font-size:clamp(54px,7.2vw,80px);line-height:1;
-  letter-spacing:-.03em;color:var(--luz)}
+  letter-spacing:-.03em;color:#fff}
 .preco .valor small{font-size:.36em;font-weight:600;vertical-align:.62em;margin-right:4px;
   letter-spacing:0}
-.preco .cond{font-size:13.5px;color:var(--mid);margin-top:12px}
-.inclui{padding:34px;background:#131313}
+.preco .cond{font-size:13.5px;color:#918d85;margin-top:12px}
+.inclui{padding:34px;background:#141414;color:#e8e4db}
 .inclui ul{list-style:none;display:grid;gap:0}
-.inclui li{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid var(--hair);
-  font-size:14.5px;line-height:1.45;color:var(--ink)}
+.inclui li{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid #242424;
+  font-size:14.5px;line-height:1.45;color:#e8e4db}
 .inclui li:last-child{border-bottom:none}
 .inclui li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);
   flex:none;margin-top:8px}
-.inclui b{font-weight:600;color:var(--luz)}
-.inclui span{color:var(--mid)}
+.inclui b{font-weight:600;color:#fff}
+.inclui span{color:#918d85}
 .oferta .acao{margin-top:32px;display:flex;flex-direction:column;gap:13px;
   align-items:flex-start}
-.garantia{display:flex;gap:18px;align-items:flex-start;margin-top:34px;padding:24px 26px;
-  border:1px solid var(--hair);border-radius:6px;max-width:640px;background:var(--surface)}
+.garantia{display:flex;gap:20px;align-items:flex-start;margin-top:36px;padding:26px 0 0;
+  border-top:2px solid var(--red);max-width:660px}
 .garantia .g{font-weight:700;font-size:22px;color:var(--red);line-height:1.1;flex:none;
   width:64px}
 .garantia p{font-size:14.5px;color:var(--ink);margin:0;line-height:1.58}
@@ -288,7 +292,9 @@ p:last-child{margin-bottom:0}
 .rodape .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 
 @media (max-width:900px){
-  .hero .wrap,.duas,.par,.quem,.perfis,.caixa,.caminhos{grid-template-columns:1fr}
+  .hero .wrap,.duas,.par,.quem,.perfis,.caixa,.caminhos,.recebe,.sinais{grid-template-columns:1fr}
+  .recebe li:nth-child(-n+3){border-top:1px solid var(--hair)}
+  .recebe li:first-child{border-top:0}
   .duas{gap:34px}
   .duas.invertida .fig{order:0}
   .mapa{grid-template-columns:1fr 1fr}
@@ -364,13 +370,14 @@ p:last-child{margin-bottom:0}
 </div>
 
 <!-- 2 · o que você recebe, logo de cara -->
-<section>
+<section class="claro">
   <div class="wrap">
     <div class="col">
       <div class="olho">O que você recebe</div>
       <h2>Um consultor que já<br>conhece o seu <em>jeito</em>.</h2>
       <p class="lead">Você entra, responde, e sai com a semana definida. Não tem aula para
       assistir, nem material para estudar antes.</p>
+      </div>
       <ul class="recebe">
         <li><span class="q">01</span><div><h3>O Consultor DNA de Conteúdo</h3>
           <p>Faz o diagnóstico, monta o plano, adapta roteiro a um tema seu e monta as semanas seguintes.</p></div></li>
@@ -386,18 +393,18 @@ p:last-child{margin-bottom:0}
       <div class="acoes" style="margin-top:34px">
         <a class="btn grande" href="https://pay.hotmart.com/B107580571E?checkoutMode=10">Começar agora · R$&nbsp;47</a>
       </div>
-    </div>
   </div>
 </section>
 
 <!-- 3 · cena de identificação -->
-<section class="cena">
+<section>
   <div class="wrap">
     <div class="col">
       <div class="olho">A cena</div>
       <h2>A semana passa e o<br>conteúdo fica para trás.</h2>
       <p class="lead">Você explica bem na consulta, na reunião, no atendimento. Na frente da
       câmera vira outra pessoa.</p>
+      </div>
       <ul class="sinais">
         <li>Você salva referência há meses e não consegue adaptar nenhuma sem parecer cópia.</li>
         <li>Tem conhecimento de sobra e demora horas para achar um jeito interessante de apresentar.</li>
@@ -405,14 +412,12 @@ p:last-child{margin-bottom:0}
         <li>Alterna uma semana de muita produção com três semanas sem publicar nada.</li>
         <li>Pede roteiro para a inteligência artificial e recebe algo genérico, longe do seu jeito de falar.</li>
         </ul>
-      <p class="remate">Nada disso é falta de talento. É formato incompatível com quem
-      você é.</p>
-    </div>
+      <p class="remate">Nada disso é falta de talento.<br>É formato incompatível com quem você é.</p>
   </div>
 </section>
 
 <!-- 4 · por que a IA comum falha -->
-<section>
+<section class="claro">
   <div class="wrap">
     <div class="col">
       <div class="olho">Por que não é só pedir para o ChatGPT</div>
@@ -452,7 +457,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 5 · o método -->
-<section class="cena">
+<section>
   <div class="wrap">
     <div class="col">
       <div class="olho">Como ele faz isso</div>
@@ -472,7 +477,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 4 · os quatro perfis -->
-<section class="cena">
+<section class="claro">
   <div class="wrap">
     <div class="col">
       <div class="olho">Os quatro perfis</div>
@@ -572,7 +577,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 5b · o plano por dentro -->
-<section class="cena">
+<section class="claro">
   <div class="wrap">
     <div class="duas">
       <div>
@@ -593,7 +598,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 7 · antes e depois -->
-<section class="cena">
+<section>
   <div class="wrap">
     <div class="col">
       <div class="olho">A diferença na prática</div>
@@ -630,7 +635,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 8 · para quem é -->
-<section>
+<section class="claro">
   <div class="wrap">
     <div class="col">
       <div class="olho">Honestidade antes da compra</div>
@@ -659,7 +664,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- quem fez -->
-<section class="cena">
+<section>
   <div class="wrap">
     <div class="autoria">
       <div>
@@ -686,7 +691,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- 9 · oferta -->
-<section class="oferta" id="comprar">
+<section class="oferta claro" id="comprar">
   <div class="wrap">
     <div class="col">
       <div class="olho">A oferta</div>
@@ -725,7 +730,7 @@ p:last-child{margin-bottom:0}
 </section>
 
 <!-- faq -->
-<section>
+<section class="claro">
   <div class="wrap">
     <div class="faq">
       <div class="olho">Perguntas frequentes</div>
